@@ -491,6 +491,14 @@ light_orchestrator_model() {   # $1 = assembled-agents dir; echoes the model or 
 
 case "$RUNTIME" in
     claude)
+        # Claude Code's Linux sandbox write-denies .claude/scheduled_tasks.json.
+        # When that file is absent it creates an empty mount stub for each
+        # sandboxed command and unlinks it afterwards; the cron scheduler watches
+        # the path and clears its next-fire map on every unlink, so the hourly
+        # stall check re-fires after nearly every Bash call. A real, non-empty
+        # file is ro-bound instead of stubbed, so no unlink happens.
+        _sched_tasks="$ROOT/.claude/scheduled_tasks.json"
+        [ -s "$_sched_tasks" ] || printf '{"tasks":[]}\n' > "$_sched_tasks"
         heal_claude_models
         # Pinned after the heal, so a healed tier (not the pre-heal one) is what
         # the orchestrator gets.
