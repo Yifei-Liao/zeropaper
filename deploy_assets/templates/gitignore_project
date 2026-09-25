@@ -6,6 +6,13 @@ data/**/*.h5
 data/**/*.dta
 data/**/*.xlsx
 data/crsp_daily_raw/
+# Scratch/pilot data under code/tmp/ (agents stage WRDS/CRSP pilot pulls
+# there; a licensed CRSP parquet was once committed from code/tmp/pilot/)
+code/tmp/**/*.parquet
+code/tmp/**/*.csv
+code/tmp/**/*.feather
+code/tmp/**/*.dta
+code/tmp/**/*.h5
 # edgartools local data store (EDGAR_LOCAL_DATA_DIR, pointed here by
 # code/utils/edgar_utils.py) — re-downloadable, never a tracked artifact
 data/edgar_cache/
