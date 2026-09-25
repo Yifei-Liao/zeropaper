@@ -13,6 +13,9 @@ code/tmp/**/*.csv
 code/tmp/**/*.feather
 code/tmp/**/*.dta
 code/tmp/**/*.h5
+# Transient acquisition lock files (ledger.json.lock, .acquire.lock); a
+# pipeline once tracked 149 of them. Scoped so uv.lock/renv.lock stay tracked.
+output/stage3a/acquisition/**/*.lock
 # edgartools local data store (EDGAR_LOCAL_DATA_DIR, pointed here by
 # code/utils/edgar_utils.py) — re-downloadable, never a tracked artifact
 data/edgar_cache/
