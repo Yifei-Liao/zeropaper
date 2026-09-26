@@ -2005,8 +2005,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -2401,8 +2401,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -2689,8 +2689,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -3049,8 +3049,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -3369,8 +3369,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -3937,8 +3937,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -5062,8 +5062,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -5458,8 +5458,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -5746,8 +5746,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -6106,8 +6106,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -6426,8 +6426,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -6994,8 +6994,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -8117,8 +8117,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -8503,8 +8503,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "d386f0e56d16f39630592aafb60a9894239bcc210835eaaa3d7fa43f4d12f38e",
-          "size": 42579,
+          "sha256": "2f47369072695d4439acc729b5274cc330dbbb4d39e0351b54a6b33b5096ea88",
+          "size": 43897,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -8737,8 +8737,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -9093,8 +9093,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "0e83ce6d0f8b86acb12e2ddb2203e56ea03b0f612865818fac55faa09c863490",
-          "size": 42603,
+          "sha256": "aa4c5c1292b2037b57eb8016c2c12a6db3ec0eec51ad385421522bc147234943",
+          "size": 43921,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -9365,8 +9365,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "b46c6e81c2201d8c9f11b3e26c7a837adc76220d4ebffed6ea5690c8395faaea",
-          "size": 42536,
+          "sha256": "e1b6ae7d6c51c13bb56e313a184239a74e576b147fcfefb371e5b0ba28a41d8f",
+          "size": 43854,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -9855,8 +9855,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "7b1b59deac440254a75ac1d3803a205189339ba53fa40ac6f7e3e900bd1124f7",
-          "size": 42858,
+          "sha256": "a6919ba8727f2494c5c24b717a028ce02b908875a7a3bf9c2a7a5e40e94c856c",
+          "size": 44176,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -10900,8 +10900,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -11286,8 +11286,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "2919bc74278f954ff943b5f4b6f62f2f7d2cb3455670e521b15cdc602127f42d",
-          "size": 44887,
+          "sha256": "fc73bc1e27c3e7e0d5aff7490fabbeaee022058be9486835f5637d04b9e66c47",
+          "size": 46205,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -11526,8 +11526,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -11882,8 +11882,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "500fa3adcd8d505336d6b7d72d05342025d22a52bdce7c6a52d030d0c9ba1f22",
-          "size": 44890,
+          "sha256": "0a60ddff43b8d7c8ea52d88d13ef0dee71e9bfe0271c766d1211320b1655b397",
+          "size": 46208,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -12160,8 +12160,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "0f4ac51c982588fbd3b8d7ac1586e48c42dc7b841324b898c72251e88411c2dd",
-          "size": 44863,
+          "sha256": "0160a7eb4134012d4bcb2fd76ec4126a7ce4e0ef111c290a8ed58178f64c6bfa",
+          "size": 46181,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -12662,8 +12662,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "f7e013c574f6bf325f894fefd8d1ab121d67f2b6fa3cf0a59a82bff4fb1f6d5b",
-          "size": 45179,
+          "sha256": "b7d76335d65f3ec36c8ce052c01a0eb1de84299cd0b7ce5b5108b1a80c41e286",
+          "size": 46497,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -13727,8 +13727,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -14113,8 +14113,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9f7931be8c386f8bbf4c58299810f5c7a20e4e848c280e70d85f66fb39592490",
-          "size": 43456,
+          "sha256": "5361643211973361a04cd6ca728da077fce09f5a8c276c82ce41e8cc9d47f6b8",
+          "size": 44774,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -14347,8 +14347,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -14703,8 +14703,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "8c260bae4da6a791eac9899db40d1eeef13a7fce917af2ab5a2cc114cf7aa976",
-          "size": 43480,
+          "sha256": "7a42f8b684ad348874d3271a8efdd13c2e3c4c3f865587e0506164046d71f91e",
+          "size": 44798,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -14975,8 +14975,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "d30d732453b036393d2c5bdfc55e077a6f88b001397562bfeddd9aee83f63785",
-          "size": 43413,
+          "sha256": "0b1855c8de36a53a692b1d98b8099160dec24a9c1f62985e72d50fceddc4f7c7",
+          "size": 44731,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -15465,8 +15465,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "dae17de3e3e4faf507101bd8b1c2d0bc44774bf543cf6b86018f956feb58d28c",
-          "size": 43735,
+          "sha256": "a5c6f2577db80aa9a4c0ffe84fef5d1d67b1309175d82226c0234f8e03db6908",
+          "size": 45053,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -16441,8 +16441,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -16827,8 +16827,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "d386f0e56d16f39630592aafb60a9894239bcc210835eaaa3d7fa43f4d12f38e",
-          "size": 42579,
+          "sha256": "2f47369072695d4439acc729b5274cc330dbbb4d39e0351b54a6b33b5096ea88",
+          "size": 43897,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -17061,8 +17061,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -17417,8 +17417,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "0e83ce6d0f8b86acb12e2ddb2203e56ea03b0f612865818fac55faa09c863490",
-          "size": 42603,
+          "sha256": "aa4c5c1292b2037b57eb8016c2c12a6db3ec0eec51ad385421522bc147234943",
+          "size": 43921,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -17689,8 +17689,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "b46c6e81c2201d8c9f11b3e26c7a837adc76220d4ebffed6ea5690c8395faaea",
-          "size": 42536,
+          "sha256": "e1b6ae7d6c51c13bb56e313a184239a74e576b147fcfefb371e5b0ba28a41d8f",
+          "size": 43854,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -18179,8 +18179,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "7b1b59deac440254a75ac1d3803a205189339ba53fa40ac6f7e3e900bd1124f7",
-          "size": 42858,
+          "sha256": "a6919ba8727f2494c5c24b717a028ce02b908875a7a3bf9c2a7a5e40e94c856c",
+          "size": 44176,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -21200,8 +21200,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -21596,8 +21596,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -21884,8 +21884,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -22244,8 +22244,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -22564,8 +22564,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -23132,8 +23132,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -24255,8 +24255,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -24635,8 +24635,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -24905,8 +24905,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -25255,8 +25255,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -25557,8 +25557,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -26107,8 +26107,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -27189,8 +27189,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -27569,8 +27569,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -27845,8 +27845,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -28195,8 +28195,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -28503,8 +28503,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -29059,8 +29059,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -30141,8 +30141,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -30537,8 +30537,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -30831,8 +30831,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -31191,8 +31191,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -31517,8 +31517,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -32091,8 +32091,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -35183,8 +35183,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -35563,8 +35563,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "b30a3ceadf60b3bcd619ecb83d0f7c76fea00c066fb607926b8e543468e7d518",
-          "size": 39316,
+          "sha256": "8caf0da51505698cd95bdb09ccb36c60057833f9b04f11d1815a615705594500",
+          "size": 40634,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -35839,8 +35839,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -36189,8 +36189,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "3603db525172e1672cfe11e6bbe115ddac4704e50588dc86e7478d59d70d361e",
-          "size": 39320,
+          "sha256": "e25954d6ba086a2ba84091100c1f80b6b398f5ac90d41af3669350f56c57f05c",
+          "size": 40638,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -36497,8 +36497,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "bbd332316e91ec30edd2075802db591883c0289a39ef75b823e2b52fe2b48f74",
-          "size": 39292,
+          "sha256": "fda2d48c1855fd2c1f1f71bee8ab173bfbe1c5dfd5703681a6bd5f56cd6f93d5",
+          "size": 40610,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -37059,8 +37059,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "27d1a9631f2b672d4dac1feb11d49c3658dc9fe61dd65226f75ac73390f50230",
-          "size": 39608,
+          "sha256": "14a430d87a91c79bf657c38a5ae8b83a2a26ea7625b2d1c353dbbdcce4516dc9",
+          "size": 40926,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -46289,8 +46289,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -46685,8 +46685,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "79cc0032d6be0d2e7ed3df934ed5a953f626f3e5b61ebc72acd909d16443d777",
-          "size": 37885,
+          "sha256": "97cb5b9c0964150ed1cbfa7bdee57496e0618d8169ae2ebe0c8c6213a005d741",
+          "size": 39203,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -46973,8 +46973,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -47333,8 +47333,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "f7fa8d82041ab1a2800212b3e48344a164ec513869a11b048defe1c0e4a8f7b2",
-          "size": 37910,
+          "sha256": "286a148475578c4922e7198b67b241051da50f0be27bbc6a01091311dff3f289",
+          "size": 39228,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -47653,8 +47653,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "90a2fe99c4f6dd3bd2c1c8d140288f6fd0c9754a09fd613c430ee62c5d9e0ee5",
-          "size": 37842,
+          "sha256": "1b1bf79260065288cd35ea821184b21acb15766e3dbe896e339ad6dd6b517d14",
+          "size": 39160,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -48221,8 +48221,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "d5c39b59b980af3d603feba9dc509b595a717d230e048ca86e51b5f7dda41b33",
-          "size": 38164,
+          "sha256": "7dee8b7c44b97038b9b9eeba4ce2646b507e489d00424ba13f6422756b74030e",
+          "size": 39482,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -50451,8 +50451,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -50949,8 +50949,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -52431,8 +52431,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -52929,8 +52929,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -54409,8 +54409,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -54891,8 +54891,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -60735,8 +60735,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -61115,8 +61115,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "9fa430d989402b0004556c7046e14877dbba823437ba7a65dfc5f3e17408df3e",
-          "size": 37008,
+          "sha256": "915cd93786c13d106d635896e52d38f6eee27f0cf55c9f03d5a147bd8e97839e",
+          "size": 38326,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -61385,8 +61385,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -61735,8 +61735,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b1ba23212df54515d2f6039a387010fd75aa2d0999cfeb4c5d84a326e2c183a4",
-          "size": 37033,
+          "sha256": "1d4f2647bdbe1737afdbb1de138cc81286c24472e79a8e67f04ff57d2adc5e51",
+          "size": 38351,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -62037,8 +62037,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e75342e347f908c9bc495da62b8bf053fbe8f6fec876748af342603436770cce",
-          "size": 36965,
+          "sha256": "22fe3d0d8ad62a7f1de298a2c87881a5f9225bd6642a1ed0aca841c374dbdcb6",
+          "size": 38283,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -62587,8 +62587,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "149f5011edec1dfb77b3afb6ec354dd44ff645df06a268988cdf60d86af8b458",
-          "size": 37287,
+          "sha256": "a1b5772a292a3665d9d26f2734a0bafe3206177d6f49c672de0cfd6928950c31",
+          "size": 38605,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -80101,8 +80101,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -80497,8 +80497,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "33c2915e4b32212e15661a04108eb246c93dc64d38e6a08549f0304fc38f2729",
-          "size": 38268,
+          "sha256": "bcee2cfa034179d35c46ecb9f41bdf8bfbe566acad4cbe7b1bf6bcaa7278425e",
+          "size": 39586,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -80785,8 +80785,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -81145,8 +81145,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "1ec74c157ddafcca002ce15c116acb2e3933b8eb278b6c482a61277f3f3464da",
-          "size": 38368,
+          "sha256": "5c155c4d06c4d17d0e001e605420ee22f0f999a7451dceb3adccb69e70a08d4e",
+          "size": 39686,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -81465,8 +81465,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8e98457ae34a966daec0f2f5e5121b97c555ee5b884c165e14a69916cef1b3c6",
-          "size": 38300,
+          "sha256": "a5a3b253d531834183595f8234f0ca98837b34ed879005f4b97248eb78890cf0",
+          "size": 39618,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -82033,8 +82033,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "fb7e0b7f934a155a72dadc11be4b9c0b84a982a249ae62dee2a66aa3741d580c",
-          "size": 38502,
+          "sha256": "00bf15b1562895f60bf62a1ebd619c073eaf5896c4f5415d8c71bec996a86d9f",
+          "size": 39820,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -83156,8 +83156,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -83536,8 +83536,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "33c2915e4b32212e15661a04108eb246c93dc64d38e6a08549f0304fc38f2729",
-          "size": 38268,
+          "sha256": "bcee2cfa034179d35c46ecb9f41bdf8bfbe566acad4cbe7b1bf6bcaa7278425e",
+          "size": 39586,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -83806,8 +83806,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -84156,8 +84156,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "1ec74c157ddafcca002ce15c116acb2e3933b8eb278b6c482a61277f3f3464da",
-          "size": 38368,
+          "sha256": "5c155c4d06c4d17d0e001e605420ee22f0f999a7451dceb3adccb69e70a08d4e",
+          "size": 39686,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -84458,8 +84458,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8e98457ae34a966daec0f2f5e5121b97c555ee5b884c165e14a69916cef1b3c6",
-          "size": 38300,
+          "sha256": "a5a3b253d531834183595f8234f0ca98837b34ed879005f4b97248eb78890cf0",
+          "size": 39618,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -85008,8 +85008,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "fb7e0b7f934a155a72dadc11be4b9c0b84a982a249ae62dee2a66aa3741d580c",
-          "size": 38502,
+          "sha256": "00bf15b1562895f60bf62a1ebd619c073eaf5896c4f5415d8c71bec996a86d9f",
+          "size": 39820,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -87276,8 +87276,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -87774,8 +87774,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {
@@ -89254,8 +89254,8 @@
         },
         ".agents/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9979b35e6bb3b00aa748dc6d3bc1e3042c4a9108d2c5ad0783b094bf7b0f44f0",
-          "size": 9982,
+          "sha256": "b05d2847574675effd72ec0004bfd0052006aa06df8c9389bf4b4fcf18cb85ad",
+          "size": 10805,
           "type": "file"
         },
         ".agents/skills/call-reports": {
@@ -89736,8 +89736,8 @@
         },
         ".claude/skills/bls-census/SKILL.md": {
           "mode": "0644",
-          "sha256": "9ba16c6b604bb593fd23c674ee95c8ffb4206228e7d19b87c8227aea6f0f322c",
-          "size": 10101,
+          "sha256": "44cc2b1f6d9c02d0582c19eca7da8f7e08557f97e7afc6d8c45dafd19bd6d9dd",
+          "size": 10924,
           "type": "file"
         },
         ".claude/skills/call-reports": {

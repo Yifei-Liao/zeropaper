@@ -164,6 +164,18 @@ hatch; its caller-defined schema does not receive the official default
 table's validation or provenance attributes. The full refresh procedure is
 in `code/utils/ssa_oact/README.md`.
 
+## BLS web pages (news releases, archives, schedules)
+
+The API above serves series values only. Release documents — `www.bls.gov/news.release/archives/{rel}_{MMDDYYYY}.htm|.pdf`, `news.release/{rel}.nr0.htm`, release schedules — are plain web pages. bls.gov returns **403** to anonymous or browser-imitating User-Agents and **200** to one that identifies the requester with a contact (verified Sep 2026):
+
+```python
+import os, requests
+UA = {"User-Agent": f"academic-research ({os.environ['EMAIL']})"}
+r = requests.get("https://www.bls.gov/news.release/archives/cpi_07132022.htm", headers=UA, timeout=60)
+```
+
+Pace ~1 request/s. Fetch archive pages from bls.gov directly; use the Wayback Machine only for a vintage bls.gov no longer serves (e.g. what `cpi.nr0.htm` showed on a past date), one capture per needed date.
+
 ## Standard operations
 
 - **Bartik shifter from demographics:** `acs_county` for the base-period
