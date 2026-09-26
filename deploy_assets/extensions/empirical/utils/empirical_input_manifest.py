@@ -761,7 +761,11 @@ def _results_inventory(project_root: Path) -> list[dict[str, Any]]:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            timeout=60,
+            # The inspection re-validates every registered receipt's snapshot
+            # records, so its cost grows with retained attempts (10 receipts
+            # and ~860k banked-file records took 60-77 s). A timeout here is a
+            # performance budget, not a check; match the finalization budget.
+            timeout=600,
             check=False,
         )
     except (OSError, subprocess.SubprocessError) as exc:
