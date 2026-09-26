@@ -4383,8 +4383,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -4685,8 +4685,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -7440,8 +7440,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -7742,8 +7742,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -10247,8 +10247,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -10549,8 +10549,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a6dc5b44650803a9f98b329ba3ed0fb85c76ddd01cf20bc866824d1a25f22a70",
-          "size": 106822,
+          "sha256": "294bc245a87c0a047f37b769f2d50c57f6ff0d3ed64b7d6f43dec1384e286361",
+          "size": 107203,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -13060,8 +13060,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -13362,8 +13362,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a6dc5b44650803a9f98b329ba3ed0fb85c76ddd01cf20bc866824d1a25f22a70",
-          "size": 106822,
+          "sha256": "294bc245a87c0a047f37b769f2d50c57f6ff0d3ed64b7d6f43dec1384e286361",
+          "size": 107203,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -15857,8 +15857,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -16153,8 +16153,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a6dc5b44650803a9f98b329ba3ed0fb85c76ddd01cf20bc866824d1a25f22a70",
-          "size": 106822,
+          "sha256": "294bc245a87c0a047f37b769f2d50c57f6ff0d3ed64b7d6f43dec1384e286361",
+          "size": 107203,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -18571,8 +18571,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -18873,8 +18873,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a6dc5b44650803a9f98b329ba3ed0fb85c76ddd01cf20bc866824d1a25f22a70",
-          "size": 106822,
+          "sha256": "294bc245a87c0a047f37b769f2d50c57f6ff0d3ed64b7d6f43dec1384e286361",
+          "size": 107203,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -23578,8 +23578,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -23880,8 +23880,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -26535,8 +26535,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -26837,8 +26837,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -29493,8 +29493,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -29795,8 +29795,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "9668b70ed99b85c3e7d4f7d4de75dc0197e8cbd69c28eca3b9bcaec2b2c29e05",
-          "size": 77108,
+          "sha256": "5b2c85eff55ac9f1a2374aa0bd9c8e1e250f4776d8458569786492373757c345",
+          "size": 77489,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -32543,8 +32543,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -32845,8 +32845,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "9668b70ed99b85c3e7d4f7d4de75dc0197e8cbd69c28eca3b9bcaec2b2c29e05",
-          "size": 77108,
+          "sha256": "5b2c85eff55ac9f1a2374aa0bd9c8e1e250f4776d8458569786492373757c345",
+          "size": 77489,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -37493,8 +37493,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -37795,8 +37795,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "421f1ce186d9196827f6c7bffb9177bc0a23e2a568fd105fe4bb740f658b43d4",
-          "size": 75361,
+          "sha256": "9469cd3d6de5c029c1948afab859e26a0577850105637633cf2760485322affc",
+          "size": 75742,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -48667,8 +48667,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -48963,8 +48963,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -51953,8 +51953,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -53933,8 +53933,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -55885,8 +55885,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -63015,8 +63015,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -63317,8 +63317,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -82479,8 +82479,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -82781,8 +82781,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -85436,8 +85436,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -85738,8 +85738,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2ac9392d8d175ce1c295ef7f28362b4d874790daad82e2455085d66396a08c1d",
-          "size": 74395,
+          "sha256": "2bbda9a6a2ec9b3420e554f42300ecc0045407bcb669664dfcd4ccacac508e24",
+          "size": 74776,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -88778,8 +88778,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {
@@ -90730,8 +90730,8 @@
         },
         "code/utils/empirical_input_manifest.py": {
           "mode": "0644",
-          "sha256": "ba2ad043df908fc3549c486fdb04959020998824f09393d0c264fd2115a2b51f",
-          "size": 52651,
+          "sha256": "662f6bb6cdf6d8a31f4ce314eb5686506b9247b5588726c5fcebc9c269e5de4d",
+          "size": 54305,
           "type": "file"
         },
         "code/utils/form_5500_utils.py": {

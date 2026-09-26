@@ -1421,6 +1421,73 @@ class EmpiricalInputManifestTests(unittest.TestCase):
         self.assertEqual(inventory["status"], "CHANGED")
         self.assertEqual(inventory["artifact_errors"][0]["path"], "output/stage3a")
 
+    def test_check_all_accepts_receipt_owned_directory_sharing_analysis_stem(self) -> None:
+        # Regression: a producer kept each attempt's detail artifacts under
+        # output/stage3a/empirical_analysis_v5_aK_artifacts/ (eventcal seed 1,
+        # halted_replication_artifact_collision after a headline PASS). The
+        # directory only shares the stem, so its members are ordinary receipt
+        # artifacts rather than reserved-namespace objects.
+        analysis = "output/stage3a/empirical_analysis_v5_a4.md"
+        (self.project / analysis).write_text(self.report.read_text())
+        paths = self.run_tool("paths", "--analysis", analysis)
+        (self.project / str(paths["verify_script"])).write_text("print('main', 1.0)\n")
+        manifest = self.run_tool("snapshot", "--analysis", analysis)
+        self.write_pass_result(self.project / str(paths["verify_result"]), manifest)
+        detail = "output/stage3a/empirical_analysis_v5_a4_artifacts/aggregates/scorecard.csv"
+        (self.project / detail).parent.mkdir(parents=True)
+        (self.project / detail).write_text("item,value\nmain,1.0\n")
+        self.register_analysis(analysis, "pending", artifacts=[analysis, detail])
+        inventory = self.run_tool("check-all")
+        self.assertEqual(inventory["artifact_errors"], [])
+        self.assertEqual(inventory["status"], "UNCHANGED")
+        entries = {item["analysis"]: item for item in inventory["analyses"]}
+        self.assertEqual(entries[analysis]["status"], "UNCHANGED")
+
+    def test_check_all_tolerates_retired_receipt_directory_sharing_analysis_stem(self) -> None:
+        analysis = "output/stage3a/empirical_analysis_v5_a1.md"
+        (self.project / analysis).write_text(self.report.read_text())
+        detail = "output/stage3a/empirical_analysis_v5_a1_artifacts/analysis_layer/log.csv"
+        (self.project / detail).parent.mkdir(parents=True)
+        (self.project / detail).write_text("log_id\n")
+        self.register_analysis(analysis, "retired", artifacts=[analysis, detail])
+        inventory = self.run_tool("check-all")
+        self.assertEqual(inventory["artifact_errors"], [])
+        self.assertEqual(inventory["status"], "UNCHANGED")
+        entries = {item["analysis"]: item for item in inventory["analyses"]}
+        self.assertEqual(entries[analysis]["status"], "EXCLUDED_RETIRED")
+
+    def test_check_all_rejects_undeclared_directory_sharing_analysis_stem(self) -> None:
+        orphan = self.project / "output/stage3a/empirical_analysis_vstray_artifacts"
+        orphan.mkdir()
+        (orphan / "note.csv").write_text("x\n")
+        inventory = self.run_tool("check-all")
+        self.assertEqual(inventory["status"], "CHANGED")
+        self.assertIn(
+            orphan.relative_to(self.project).as_posix(),
+            {item["path"] for item in inventory["artifact_errors"]},
+        )
+
+    def test_check_all_rejects_receipt_directory_named_like_analysis(self) -> None:
+        # A directory whose name would denote the report itself stays reserved
+        # even when a receipt declares members under it.
+        analysis = "output/stage3a/empirical_analysis_v5_a2.md"
+        (self.project / analysis).write_text(self.report.read_text())
+        planted = "output/stage3a/empirical_analysis_v5_a2_results.json/inner.csv"
+        (self.project / planted).parent.mkdir(parents=True)
+        (self.project / planted).write_text("x\n")
+        self.register_analysis(
+            analysis,
+            "retired",
+            bundle="output/stage3a/custom_a2_results.json",
+            artifacts=[analysis, planted],
+        )
+        inventory = self.run_tool("check-all")
+        self.assertEqual(inventory["status"], "CHANGED")
+        self.assertEqual(
+            inventory["artifact_errors"][0]["path"], "process_log/results_registry.json"
+        )
+        self.assertIn("reserved analysis namespace", inventory["artifact_errors"][0]["error"])
+
     def test_any_project_code_change_is_detected(self) -> None:
         (self.project / "code" / "unrelated.py").write_text("VALUE = 2\n")
         comparison = self.compare()

@@ -144,6 +144,32 @@ def _is_analysis_execution_sibling(name: str) -> bool:
     return ANALYSIS_NAME.fullmatch(f"{stem}.md") is not None
 
 
+def _is_shared_stem_directory_name(name: str) -> bool:
+    """A directory name that merely starts with the analysis stem.
+
+    A producer may keep an attempt's detail artifacts under a directory such
+    as ``output/stage3a/empirical_analysis_v5_a4_artifacts/``. Such a name is
+    not an analysis, a results sibling, or an execution summary, so nothing in
+    the lifecycle can be confused with it; its members are ordinary receipt
+    artifacts. A name that would denote one of those reserved files stays
+    reserved even when the object on disk is a directory.
+    """
+    return (
+        name.startswith("empirical_analysis")
+        and ANALYSIS_NAME.fullmatch(name) is None
+        and not _is_analysis_results_sibling(name)
+        and not _is_analysis_execution_sibling(name)
+    )
+
+
+def _is_shared_stem_directory_member(candidate: PurePosixPath) -> bool:
+    return (
+        candidate.parts[:2] == ("output", "stage3a")
+        and len(candidate.parts) >= 4
+        and _is_shared_stem_directory_name(candidate.parts[2])
+    )
+
+
 def artifact_paths(analysis_path: Path) -> dict[str, str]:
     analysis_path = _validated_analysis_path(analysis_path)
     stem = analysis_path.stem
@@ -819,7 +845,9 @@ def _analysis_lifecycle(
                     empirical_execution_artifacts.append(
                         (Path(*candidate.parts), artifact_entry)
                     )
-                elif raw_path.startswith("output/stage3a/empirical_analysis"):
+                elif raw_path.startswith(
+                    "output/stage3a/empirical_analysis"
+                ) and not _is_shared_stem_directory_member(candidate):
                     raise ManifestError(
                         f"receipt artifact occupies the reserved analysis namespace: {raw_path}"
                     )
@@ -1005,6 +1033,17 @@ def _check_all_locked(project_root: Path) -> dict[str, Any]:
         relative = candidate.relative_to(project_root)
         try:
             metadata = candidate.lstat()
+            if (
+                stat.S_ISDIR(metadata.st_mode)
+                and _is_shared_stem_directory_name(candidate.name)
+                and any(
+                    path.startswith(f"{relative.as_posix()}/") for path in receipt_paths
+                )
+            ):
+                # A real directory that only shares the stem and holds
+                # artifacts a registered receipt declares: evidence, not
+                # namespace pollution. An undeclared one still fails below.
+                continue
             validated = _validated_analysis_path(relative)
             if stat.S_ISLNK(metadata.st_mode) or not stat.S_ISREG(metadata.st_mode):
                 raise ManifestError("analysis artifact is not a real regular file")
