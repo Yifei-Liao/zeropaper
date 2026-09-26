@@ -294,6 +294,16 @@ else
     echo "WARNING: no .venv in this project — python deps may be missing (create with: uv venv .venv)" >&2
 fi
 
+# Every regular file under code/ — bytecode caches included — is bound by the
+# headline-replication manifest (empirical_input_manifest.py), so an auditor
+# that merely imports a module after a source edit rewrites a stale
+# __pycache__/*.pyc header and turns a passed attempt into CHANGED (field
+# evidence: a fully passed five-auditor batch redone for one rewritten pyc).
+# Agents never need to write bytecode; forbid it for every runtime's
+# descendants (the OpenCode sandbox exec and the trusted results runner already
+# do this for theirs). Reading and hashing existing caches is unchanged.
+export PYTHONDONTWRITEBYTECODE=1
+
 # Validate permission-profile support before any empirical service may spend a
 # login. The CLI SessionFlags layer below has higher precedence than legacy
 # sandbox keys in project/user config, including for the interactive TUI.

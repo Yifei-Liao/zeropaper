@@ -1758,8 +1758,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -4757,8 +4757,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -7814,8 +7814,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -10615,8 +10615,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -13428,8 +13428,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -16219,8 +16219,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -18939,8 +18939,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -20950,8 +20950,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -23952,8 +23952,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -26903,8 +26903,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -29861,8 +29861,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -32917,8 +32917,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -34935,8 +34935,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -37861,8 +37861,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -39886,8 +39886,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -41962,8 +41962,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -44055,8 +44055,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -46041,8 +46041,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -49035,8 +49035,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -50283,8 +50283,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -52221,8 +52221,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -54201,8 +54201,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -56153,8 +56153,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -57369,8 +57369,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -58583,8 +58583,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -60480,8 +60480,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -63383,8 +63383,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -65501,8 +65501,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -67528,8 +67528,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -69584,8 +69584,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -71627,8 +71627,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -73647,8 +73647,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -75609,8 +75609,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -76814,8 +76814,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -77960,8 +77960,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -79854,8 +79854,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -82853,8 +82853,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -85804,8 +85804,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -87108,8 +87108,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -89046,8 +89046,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -90998,8 +90998,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "opencode.json": {
@@ -92245,8 +92245,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
@@ -94251,8 +94251,8 @@
         },
         "launch.sh": {
           "mode": "0755",
-          "sha256": "dfd5037a8928c45b7e95722632af3df99155efe0a5fc8fdea0725c500f565c53",
-          "size": 161286,
+          "sha256": "e346f77cd1dd0ff9b6371b7f737a262cfbab0d4c22cbafa8823c3acc8294bf85",
+          "size": 161920,
           "type": "file"
         },
         "llm_client.py": {
