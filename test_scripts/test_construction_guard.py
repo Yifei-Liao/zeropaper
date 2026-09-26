@@ -376,6 +376,48 @@ class RoundTwoRegressionTest(GuardFixture):
         self.assertEqual(finding["binding"], "set-membership")
         self.assertEqual(finding["rows_bound_to_their_own_source"], 0)
 
+    def test_year_column_colliding_with_numeric_input_basenames_is_not_a_reference(self) -> None:
+        # Directory captures of URL paths yield files whose basenames are bare
+        # years (archives.gov/electoral-college/1992). A plain year column in an
+        # aggregate table must not self-select as a source reference on those
+        # coincidences and then fail every year that has no such capture.
+        pages = self.root / "data" / "electoral-college"
+        pages.mkdir(parents=True)
+        entries = []
+        for year in range(1976, 2028, 4):
+            payload = f"<html>electoral college {year}</html>".encode()
+            (pages / str(year)).write_bytes(payload)
+            entries.append({"path": str(year), "kind": "file",
+                            "sha256": f"sha256:{digest_of(payload)}"})
+        rows = [{"table": "item12", "year": str(year), "kind": "midterm" if year % 4 else "presidential"}
+                for year in range(1978, 2026, 2)]
+        ledger = self.write_ledger("aggregate.csv", rows)
+        receipt_path = self.receipt(ledger)
+        receipt = json.loads(receipt_path.read_text())
+        receipt["producer_run"]["inputs"].append({
+            "path": "data/electoral-college", "kind": "directory",
+            "sha256": f"sha256:{digest_of(b'pages')}", "entries": entries,
+        })
+        receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
+        code, report = self.run_guard(receipt_path)
+        self.assertEqual(code, 0, report["findings"])
+        self.assertEqual(self.statuses(report, "source-reference-resolution"), [])
+
+    def test_bare_numeric_basename_still_binds_inside_a_real_reference_column(self) -> None:
+        # The fix narrows selection only: a column that cites files by name and
+        # includes a numeric basename among them still resolves and binds it.
+        payload = b"<html>electoral college 1992</html>"
+        (self.corpus / "1992").write_bytes(payload)
+        self.documents["1992"] = payload
+        rows = self.honest_rows()
+        ledger = self.write_ledger("ledger.csv", rows)
+        code, report = self.run_guard(self.receipt(ledger))
+        self.assertEqual(code, 0, report["findings"])
+        self.assertEqual(self.statuses(report, "source-reference-resolution"), ["PASS"])
+        finding = next(f for f in report["findings"] if f["check"] == "claimed-digest-provenance")
+        self.assertEqual(finding["binding"], "row-scoped")
+        self.assertEqual(finding["rows_bound_to_their_own_source"], 11)
+
     def test_basename_shared_by_two_input_directories_does_not_bind(self) -> None:
         second = self.root / "data" / "other"
         second.mkdir(parents=True)

@@ -89,6 +89,11 @@ DEFAULT_MAX_BYTES = 512 * 1024 * 1024
 
 DIGEST_CELL = re.compile(r"(?:sha256:)?([0-9a-f]{64})\Z")
 RECORDED_DIGEST = re.compile(r"sha256:([0-9a-f]{64})\Z")
+# A bare integer is a value, not a name. Directory captures of URL paths give
+# files basenames like `electoral-college/1992`, and a plain year column then
+# collides with them; a column must earn selection with at least one resolved
+# value that could only be a file name.
+BARE_INTEGER = re.compile(r"\d+\Z")
 LOCATOR_TOKENS = {"locator", "locators"}
 CAMEL_BOUNDARY = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 NAME_SEPARATOR = re.compile(r"[^A-Za-z0-9]+")
@@ -450,7 +455,9 @@ def _reference_columns(columns: dict[str, list[str]], evidence: dict[str, Any]
             continue
         distinct = set(present)
         resolved = distinct & known
-        if resolved and len(resolved) >= PATH_COLUMN_SHARE * len(distinct):
+        if not any(not BARE_INTEGER.fullmatch(value) for value in resolved):
+            continue
+        if len(resolved) >= PATH_COLUMN_SHARE * len(distinct):
             selected[name] = values
     return selected
 
