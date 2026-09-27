@@ -993,5 +993,35 @@ class RealReceiptIntegrationTest(unittest.TestCase):
         self.assertIn("degenerate-locator", failed)
 
 
+class PrecheckTest(GuardFixture):
+    """The advisory smoke-run precheck applies the same checks as the live run."""
+
+    def run_precheck(self, ledger: Path, *extra: str) -> tuple[int, dict]:
+        completed = subprocess.run(
+            [sys.executable, "-I", "-S", str(GUARD), "--project-root", str(self.root),
+             "precheck", "--input", "data/corpus",
+             "--artifact", f"output/stage3a/{ledger.name}",
+             "--report", str(self.root / "output" / "stage3a" / "precheck.json"), *extra],
+            capture_output=True, text=True, check=False,
+        )
+        self.assertNotEqual(completed.returncode, 2, completed.stderr)
+        return completed.returncode, json.loads(completed.stdout)
+
+    def test_honest_smoke_ledger_passes_and_is_marked_advisory(self) -> None:
+        code, report = self.run_precheck(self.write_ledger("ledger.csv", self.honest_rows()))
+        self.assertEqual(code, 0, report)
+        self.assertIn("advisory", report)
+
+    def test_precheck_fails_where_the_live_check_fails(self) -> None:
+        rows = self.honest_rows()
+        for index, row in enumerate(rows):
+            row["payload_sha256"] = digest_of(f"invented {index}".encode())
+        ledger = self.write_ledger("ledger.csv", rows)
+        live, _ = self.run_guard(self.receipt(ledger))
+        code, report = self.run_precheck(ledger)
+        self.assertEqual((live, code), (1, 1))
+        self.assertIn("FAIL", self.statuses(report, "claimed-digest-provenance"))
+
+
 if __name__ == "__main__":
     unittest.main()

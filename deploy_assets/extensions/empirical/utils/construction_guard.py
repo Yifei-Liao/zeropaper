@@ -812,11 +812,49 @@ def check_forbidden_tokens(
     return findings
 
 
+def _path_record(root: Path, relative: str) -> dict[str, Any]:
+    """Fingerprint one project path the way the trusted runner records it."""
+    absolute = _project_file(root, relative)
+    if absolute.is_file():
+        return {"path": relative, "kind": "file",
+                "sha256": "sha256:" + _sha256_file(absolute)}
+    if not absolute.is_dir():
+        raise GuardError(f"precheck path is not a file or directory: {relative}")
+    entries = []
+    for child in sorted(absolute.rglob("*")):
+        if child.is_file() and not child.is_symlink():
+            entries.append({"path": child.relative_to(absolute).as_posix(), "kind": "file",
+                            "sha256": "sha256:" + _sha256_file(child)})
+    manifest = hashlib.sha256("".join(
+        f"{entry['path']}\0{entry['sha256']}\n" for entry in entries).encode()).hexdigest()
+    return {"path": relative, "kind": "directory", "sha256": "sha256:" + manifest,
+            "entries": entries}
+
+
+def precheck_receipt(root: Path, inputs: list[str], artifacts: list[str],
+                     code: list[str]) -> dict[str, Any]:
+    """A receipt-shaped record built from smoke-run paths, for an advisory run.
+
+    The live guard reads the receipt the trusted runner writes after the live
+    run, so a construction failure otherwise surfaces only after a full build.
+    Fingerprinting the same declared inputs and the smoke outputs here lets the
+    producer find a copied digest or an ambiguous bare file name in seconds,
+    before that spend. It proves nothing: the paths are the caller's claim, and
+    the live check on the trusted receipt still decides.
+    """
+    return {"producer_run": {
+        "inputs": [_path_record(root, path) for path in inputs],
+        "artifacts": [_path_record(root, path) for path in artifacts],
+        "code": [_path_record(root, path) for path in code],
+    }}
+
+
 def run_checks(
     root: Path, receipt_path: Path, *, derived_scopes: set[str], forbid_tokens: list[str],
-    max_bytes: int,
+    max_bytes: int, receipt: Any = None,
 ) -> dict[str, Any]:
-    receipt = _load_json(receipt_path)
+    if receipt is None:
+        receipt = _load_json(receipt_path)
     producer = _producer_run(receipt)
     evidence = receipt_evidence(receipt)
     findings: list[dict[str, Any]] = []
@@ -954,6 +992,24 @@ def _parser() -> argparse.ArgumentParser:
         help="a construction the binding contract bans from the producer surface",
     )
     check.add_argument("--max-bytes", type=int, default=DEFAULT_MAX_BYTES)
+    precheck = subparsers.add_parser(
+        "precheck",
+        help="advisory run on smoke outputs before the live run: fingerprint the "
+             "declared inputs and smoke artifacts named here and apply every check",
+    )
+    precheck.add_argument("--input", action="append", default=[], metavar="PATH",
+                          help="a declared producer input (file or directory), "
+                               "project-relative, exactly as the live plan declares it")
+    precheck.add_argument("--artifact", action="append", default=[], metavar="PATH",
+                          help="a smoke output to scan (file or directory), project-relative")
+    precheck.add_argument("--code", action="append", default=[], metavar="PATH",
+                          help="producer code, for --forbid-token")
+    precheck.add_argument("--report", type=Path, required=True,
+                          help="where to write the JSON report (keep it in smoke scratch)")
+    precheck.add_argument("--digest-scope", action="append", default=[],
+                          metavar="[ARTIFACT:]COLUMN=derived")
+    precheck.add_argument("--forbid-token", action="append", default=[], metavar="TOKEN")
+    precheck.add_argument("--max-bytes", type=int, default=DEFAULT_MAX_BYTES)
     return parser
 
 
@@ -961,12 +1017,27 @@ def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
         root = args.project_root.resolve()
-        report = run_checks(
-            root, args.receipt,
-            derived_scopes=_parse_scope(args.digest_scope),
-            forbid_tokens=list(args.forbid_token),
-            max_bytes=args.max_bytes,
-        )
+        if args.command == "precheck":
+            if not args.input or not args.artifact:
+                raise GuardError("precheck needs at least one --input and one --artifact")
+            receipt_path = args.report.with_suffix(".synthetic-receipt")
+            report = run_checks(
+                root, receipt_path,
+                derived_scopes=_parse_scope(args.digest_scope),
+                forbid_tokens=list(args.forbid_token),
+                max_bytes=args.max_bytes,
+                receipt=precheck_receipt(root, args.input, args.artifact, args.code),
+            )
+            report["advisory"] = (
+                "precheck on caller-named smoke paths; not a verdict. The live "
+                "check on the trusted receipt still decides.")
+        else:
+            report = run_checks(
+                root, args.receipt,
+                derived_scopes=_parse_scope(args.digest_scope),
+                forbid_tokens=list(args.forbid_token),
+                max_bytes=args.max_bytes,
+            )
         destination = args.report or _default_report(args.receipt)
         report["report_path"] = destination.as_posix()
         destination.parent.mkdir(parents=True, exist_ok=True)
