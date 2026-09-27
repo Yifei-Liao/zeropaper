@@ -1434,20 +1434,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "119f7d2db21eeede07311188cb045af0fe2f77cac88376ac514b25044fbeb0f1",
-          "size": 77301,
+          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
+          "size": 77901,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "6b8599e481aa8421e33ea41426c985dc3fa738fe02dcae8e9bb098381baab54a",
-          "size": 66951,
+          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
+          "size": 67551,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f319d9c30d00eb1354830fe7de5b15cbe22ff6365d37eb60690fdffe5b0418eb",
-          "size": 72123,
+          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
+          "size": 72723,
           "type": "file"
         },
         "code": {
@@ -4231,20 +4231,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "fcbf78fe558d7f71f071a1db41f856c6cd922aae10d6e27e462261ea6815072d",
-          "size": 91633,
+          "sha256": "afdaa696e301e8576b4e5dc189717a7673be70acf072c864c8b9ff53c656465d",
+          "size": 92233,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "75265970343f9861dcbd87d7c5647ad05be0529262f02bf8a82b4cad7266db64",
-          "size": 81283,
+          "sha256": "fc247e9c017abe601625134f03d46b552275aec678a1199f0ad7ff4e2c4418c5",
+          "size": 81883,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "768b268e8d3680329cca973b8d03e6fd2c3a52e31a647437bc7affb0cb82232f",
-          "size": 86455,
+          "sha256": "452c41e712db00ec2a54d26e2b462b9a5730ecff7057bac2f08ecbdd30ac0af1",
+          "size": 87055,
           "type": "file"
         },
         "code": {
@@ -7288,20 +7288,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "9072e70690ce7b730a38fe7d6365dd736698f7d845cc3539313bbd9a070dd5cb",
-          "size": 91633,
+          "sha256": "f15c33f4edf096807b679756638bdef4ba2ba0080ae3cee8469710f2667fd4d8",
+          "size": 92233,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "60297f39b4aca50d847ead18d9fd14920dfc416adcdbbc5e5bebe765be2b76f7",
-          "size": 81283,
+          "sha256": "9c2160250e027342cf62a782a2ede0a7d06495b56865435bc2fbb24a1b6a3f8c",
+          "size": 81883,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c8656de723b7f284bb00fca0bc2742a91f5290185e9047196d041d07d2848651",
-          "size": 86455,
+          "sha256": "f202372899e13066b30921121f5bd897430a5ef7aa474ebbd3c79c3b8d095e34",
+          "size": 87055,
           "type": "file"
         },
         "code": {
@@ -10095,20 +10095,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "188e136e3761d84b487a5d8d13670ff01501935081f866204ed6667ca8578ab3",
-          "size": 94894,
+          "sha256": "3dbcd81366b30826cfb959b63c002a8ce9323b2166beb25b6db523319036d0ff",
+          "size": 95494,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "e7114da5b80c87dfc71aea7a749c67af86113d6ba98cb5e7af88ee63e968b621",
-          "size": 84544,
+          "sha256": "18f95e1805734416bf40f7da7f2caf3d76aa3f0dabe2792b3edb7d4ac0ea156d",
+          "size": 85144,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "921bffa7ff72f6d78b67bd318bb98c30f65b4039e1190dae9f5619f5f169ff18",
-          "size": 89716,
+          "sha256": "4ca54476dc7c0c2f7c8f15f7b1d082bec2b77687f5f79352256712748a0fef15",
+          "size": 90316,
           "type": "file"
         },
         "code": {
@@ -12908,20 +12908,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "cba62a05de49b8cd66720109d2182d6b515c70cf25e3db8ff4157f9cb667015e",
-          "size": 118831,
+          "sha256": "e4ad465423812c79b208d25b26732baff4eac7638c8504aa9e2e21e43f295794",
+          "size": 119431,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "9c468033337b8818db2d072df22f9de2c3563864c94af95df56f6caec3b8e942",
-          "size": 108481,
+          "sha256": "37a587fbb972f1254e3898fc6b72cfcec81b05239950109a3bb5f0a06d77fd92",
+          "size": 109081,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "b55f5d1b6942ab3a67bf9fca3c5c6d5ff23ca4e1acb74da0b8c0465aef95687e",
-          "size": 113653,
+          "sha256": "1c9e0f87503c7e793a038397f465e1f49687c9b320b5bf35f3f3f59271e70697",
+          "size": 114253,
           "type": "file"
         },
         "code": {
@@ -18419,20 +18419,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "86038b0471efef559300389e40420227fd1722aa80003820936d7273913429bd",
-          "size": 101019,
+          "sha256": "36274d475202ceceed0295dfabcff3890c79c092b29502de9cf616d3cb88f2a8",
+          "size": 101619,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "224580b7202aa601e186a8a45e6bc96670552de8558cb690552b21f82e112048",
-          "size": 90669,
+          "sha256": "336ec05b8bf0924f72d0d679782c34af7d141f2536c77022b3a8b9a72bae879f",
+          "size": 91269,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "663d3abc7fe4c99306c218b608be179af36e10ee87c6ac1563a3e19d9c8e6353",
-          "size": 95841,
+          "sha256": "6cbf617b6db8a1ce3192e3bddc3fc73fae9b4114b9d4a2bb522f64d6fd966e58",
+          "size": 96441,
           "type": "file"
         },
         "code": {
@@ -20626,20 +20626,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "119f7d2db21eeede07311188cb045af0fe2f77cac88376ac514b25044fbeb0f1",
-          "size": 77301,
+          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
+          "size": 77901,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "6b8599e481aa8421e33ea41426c985dc3fa738fe02dcae8e9bb098381baab54a",
-          "size": 66951,
+          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
+          "size": 67551,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f319d9c30d00eb1354830fe7de5b15cbe22ff6365d37eb60690fdffe5b0418eb",
-          "size": 72123,
+          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
+          "size": 72723,
           "type": "file"
         },
         "code": {
@@ -23426,20 +23426,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "fcbf78fe558d7f71f071a1db41f856c6cd922aae10d6e27e462261ea6815072d",
-          "size": 91633,
+          "sha256": "afdaa696e301e8576b4e5dc189717a7673be70acf072c864c8b9ff53c656465d",
+          "size": 92233,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "75265970343f9861dcbd87d7c5647ad05be0529262f02bf8a82b4cad7266db64",
-          "size": 81283,
+          "sha256": "fc247e9c017abe601625134f03d46b552275aec678a1199f0ad7ff4e2c4418c5",
+          "size": 81883,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "768b268e8d3680329cca973b8d03e6fd2c3a52e31a647437bc7affb0cb82232f",
-          "size": 86455,
+          "sha256": "452c41e712db00ec2a54d26e2b462b9a5730ecff7057bac2f08ecbdd30ac0af1",
+          "size": 87055,
           "type": "file"
         },
         "code": {
@@ -26383,20 +26383,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "6a3a11e8a1c79bded0d9104be6211765a9082d99cedf465a52a43ec5578f4b40",
-          "size": 90395,
+          "sha256": "ca7585271f1d881c9a3e7ae218f77d32283da9022007f27965486eec8f92796a",
+          "size": 90995,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "2c83b3698c16872f3859e5b95be43121b7b20fc1634b3727afa24f681a054b18",
-          "size": 80045,
+          "sha256": "33a84da023823627c409575cc5f12a1862496d8de2c65e8fcd993a76e6d143cd",
+          "size": 80645,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "69049de07a765770ffbf43f1d22975c64e9008f73ab6762f4a1f1b7f7bf5109a",
-          "size": 85217,
+          "sha256": "c21a94b166e58af4c8d82f82ad74000a9be96da0da9857fbf961a2a20459ba05",
+          "size": 85817,
           "type": "file"
         },
         "code": {
@@ -29341,20 +29341,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "f5565c4122116c13375f9ab605d7fe69c10cc8a5a739b77d11b31c1eb68e9651",
-          "size": 93754,
+          "sha256": "c7be1f431fa4dfadb51f0d420acf94709ae4eb2bcd615caeed2fe8e0d910953a",
+          "size": 94354,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "dfe7ec8e811f9aa890bf5981c1757461d609c6907c289b54e42b11f168f3a328",
-          "size": 83404,
+          "sha256": "ca02bb027b9de26187194585feb11262172dc3a7d61729b8effe4600e46e4014",
+          "size": 84004,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "46d91cae909dd02bfa7e6005cad25e3828d31b87e4c43ee9fcb77aa7524ebcf4",
-          "size": 88576,
+          "sha256": "3834f20b5910b4371154b27b58655a8634d5f25cf18ebbd0cff2dbf1bcf84fcb",
+          "size": 89176,
           "type": "file"
         },
         "code": {
@@ -32391,20 +32391,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "4175b7ed82152da9c81a5ecaee95719c8624cade66c3d4760d419741f46321da",
-          "size": 94992,
+          "sha256": "ed5141a1d166164f27a37387f1ce9b7168c7c9a70f60afc91136941cba420da8",
+          "size": 95592,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "bd84f711b2cb11e9eb3efb6b1fc72a46849bda98ba874a6177b5cf4e94e6bfec",
-          "size": 84642,
+          "sha256": "53551aa3457fb0448d68267fdc5e64e6b368e37e934c392dac8e20f9753634ee",
+          "size": 85242,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "23d2cdb8648d51947ae08653f5121a7dccb915b1240507446a1eb0a7fbbe463b",
-          "size": 89814,
+          "sha256": "7e7046a40fcfad963f14dc43fee78cbe0bc58eeb38931fa194762470affbfac9",
+          "size": 90414,
           "type": "file"
         },
         "code": {
@@ -34611,20 +34611,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "119f7d2db21eeede07311188cb045af0fe2f77cac88376ac514b25044fbeb0f1",
-          "size": 77301,
+          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
+          "size": 77901,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "6b8599e481aa8421e33ea41426c985dc3fa738fe02dcae8e9bb098381baab54a",
-          "size": 66951,
+          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
+          "size": 67551,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f319d9c30d00eb1354830fe7de5b15cbe22ff6365d37eb60690fdffe5b0418eb",
-          "size": 72123,
+          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
+          "size": 72723,
           "type": "file"
         },
         "code": {
@@ -37341,20 +37341,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "7d0b92a3d98f7f1288b782c05d2757b7da84b9f999fb3e02dc98634935b1b5c0",
-          "size": 114418,
+          "sha256": "a4b633a41d609312b8634408e81b4f556b7087545fbf4196707b00639ecd1601",
+          "size": 115018,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "68917ad18904705e25764d46f8c2e9523ff8afe78a8faf178d93dc661b9e2192",
-          "size": 104068,
+          "sha256": "29c79fdd4985d7704a0c246f6e5c2c224877f1d8efaee757bc18dd98e56de0c3",
+          "size": 104668,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "604b0a153d8af075a0ada02a2ca445a35048d10804da6441d02f17c7a07d4f5e",
-          "size": 109240,
+          "sha256": "141b18c2346a3dee49d0c9cef16696a5354e708eb5f6afe6621a7653c70767e6",
+          "size": 109840,
           "type": "file"
         },
         "code": {
@@ -39562,20 +39562,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "8befaa9cbbfbd49e53e1d7264c7c43e0b994074febfa8565dfffecab1ba180a1",
-          "size": 77837,
+          "sha256": "5845014ba61c26c96f51519b6f96930a2171dad496c446eb8cce05ea10755ab7",
+          "size": 78437,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "f36fec12bd11fe1204f5405f89a89b68b47e86dab0138ec534692b15fa518d69",
-          "size": 67487,
+          "sha256": "a4bc25c1ee02ce8ef0ac361770b380e2bd5023ca18921f5f1ea18aa99cd83779",
+          "size": 68087,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c7521aa41132323e16271c037653688cf18fb65bf694f4b86c41bfbdd6ff7703",
-          "size": 72659,
+          "sha256": "383f52489ae7db69597766ba031367e0d29c9c342984d6bbc61ccfb03869a2bb",
+          "size": 73259,
           "type": "file"
         },
         "code": {
@@ -41632,20 +41632,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "2f31ba901291eb30bc2b813288e7569f76816b21bec99b8bd6cf7db053eacad4",
-          "size": 78539,
+          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
+          "size": 79139,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "0ef31f256b8fcd0fe39a641c073405ab4ff5e181c68d23c3f64b8689b3bb6c3c",
-          "size": 68189,
+          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
+          "size": 68789,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "8f533c97723ab97b0d404f37d3a5e1d924a65a1b117cd936d9f585c8825d2f68",
-          "size": 73361,
+          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
+          "size": 73961,
           "type": "file"
         },
         "code": {
@@ -43725,20 +43725,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "2f31ba901291eb30bc2b813288e7569f76816b21bec99b8bd6cf7db053eacad4",
-          "size": 78539,
+          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
+          "size": 79139,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "0ef31f256b8fcd0fe39a641c073405ab4ff5e181c68d23c3f64b8689b3bb6c3c",
-          "size": 68189,
+          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
+          "size": 68789,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "8f533c97723ab97b0d404f37d3a5e1d924a65a1b117cd936d9f585c8825d2f68",
-          "size": 73361,
+          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
+          "size": 73961,
           "type": "file"
         },
         "code": {
@@ -45717,20 +45717,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "119f7d2db21eeede07311188cb045af0fe2f77cac88376ac514b25044fbeb0f1",
-          "size": 77301,
+          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
+          "size": 77901,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "6b8599e481aa8421e33ea41426c985dc3fa738fe02dcae8e9bb098381baab54a",
-          "size": 66951,
+          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
+          "size": 67551,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f319d9c30d00eb1354830fe7de5b15cbe22ff6365d37eb60690fdffe5b0418eb",
-          "size": 72123,
+          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
+          "size": 72723,
           "type": "file"
         },
         "code": {
@@ -60156,20 +60156,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "4032e8ddff32daaab3cfb161bf47c89f706bdb51f5b97d11cf05190db56956e7",
-          "size": 83512,
+          "sha256": "cc01211d63c473d68fab84ec858e1e3a57ce0b45bdc7ba7961fce0cb811342b2",
+          "size": 84112,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "bbf80449e5ef42d77075f2fcaf406f6cc177cdb94f1d355b42e0327e2cab5629",
-          "size": 73162,
+          "sha256": "5ca51d1adbd948174d2f65f0c3cca0ceebab25199c1b880a3ef7068546d744e6",
+          "size": 73762,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "a4b69e3ad552b67121b89137a52a9f669b9aa02e4cccba54ae83f405b0d58ef3",
-          "size": 78334,
+          "sha256": "2e6fbb0c3fcd923d2e18bee98012a2fa39233511da36d00f1433114e4b3b2f51",
+          "size": 78934,
           "type": "file"
         },
         "code": {
@@ -62863,20 +62863,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "6a3a11e8a1c79bded0d9104be6211765a9082d99cedf465a52a43ec5578f4b40",
-          "size": 90395,
+          "sha256": "ca7585271f1d881c9a3e7ae218f77d32283da9022007f27965486eec8f92796a",
+          "size": 90995,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "2c83b3698c16872f3859e5b95be43121b7b20fc1634b3727afa24f681a054b18",
-          "size": 80045,
+          "sha256": "33a84da023823627c409575cc5f12a1862496d8de2c65e8fcd993a76e6d143cd",
+          "size": 80645,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "69049de07a765770ffbf43f1d22975c64e9008f73ab6762f4a1f1b7f7bf5109a",
-          "size": 85217,
+          "sha256": "c21a94b166e58af4c8d82f82ad74000a9be96da0da9857fbf961a2a20459ba05",
+          "size": 85817,
           "type": "file"
         },
         "code": {
@@ -65171,20 +65171,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "2f31ba901291eb30bc2b813288e7569f76816b21bec99b8bd6cf7db053eacad4",
-          "size": 78539,
+          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
+          "size": 79139,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "0ef31f256b8fcd0fe39a641c073405ab4ff5e181c68d23c3f64b8689b3bb6c3c",
-          "size": 68189,
+          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
+          "size": 68789,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "8f533c97723ab97b0d404f37d3a5e1d924a65a1b117cd936d9f585c8825d2f68",
-          "size": 73361,
+          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
+          "size": 73961,
           "type": "file"
         },
         "code": {
@@ -67224,20 +67224,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "1dcc992ee13ef6e78fe21064a9591311edee27f770b40e816f7da3a0e3221adc",
-          "size": 78908,
+          "sha256": "2ee6179ec371c35d79ad7ea00a7ebfe7aba4f3938d93546f07e8d2e92cc1d485",
+          "size": 79508,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "82d4114b2319cbc66f619d74fc212df281d37df11b86e32d69804f1abdda398a",
-          "size": 68558,
+          "sha256": "48f31d00ada9d6fc290e649cd480488b77c59bd3f123ac0edad0b37e26f01182",
+          "size": 69158,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c5f4ce11c9d07c750989e22509398064bbc55fe44e8089381e94102de99b8d07",
-          "size": 73730,
+          "sha256": "bcdd6af5f68184fb9f9f3ff05ac16cff7d9d51083eed1ec7be434ee8e3b8df03",
+          "size": 74330,
           "type": "file"
         },
         "code": {
@@ -69280,20 +69280,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "10b8e34487095d876a5956441c56710f3bb08704b6bed451d17bdff858d9f826",
-          "size": 102395,
+          "sha256": "6272b2dbef7173ac118bc12e3e4612436097f4c0a632051db0152965ca5ac1ce",
+          "size": 102995,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "02c0cc614d0a42d941ef141011010b0de51bf5a0ba688a2911e01507cf3fcfe5",
-          "size": 92045,
+          "sha256": "dcdacbf3257799ad46463678dced55ca0de305f88d56df13e1c81eaab2f799d9",
+          "size": 92645,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "a126694ee272dcb561fa1bb059e6ac680950e1daeb977d62a667a402fdad52df",
-          "size": 97217,
+          "sha256": "c139a94b56207f89938a2dc667f9787ada1c49816ebb3aa87e67777f7680918d",
+          "size": 97817,
           "type": "file"
         },
         "code": {
@@ -71323,20 +71323,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "20c3e4c589b5582fa041cd4e275f6b3f9caae70e9f6baaf49f904c0725ea6173",
-          "size": 79444,
+          "sha256": "3c540abf5228302b540776c9726bf5c61c8ce25be14b66cfd1318aad0732a72c",
+          "size": 80044,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "5d05bf268a04e6ea12ede17b13835fc6d49a5a31d3c9acfe8973582cba4e58cf",
-          "size": 69094,
+          "sha256": "b6e49156f1072ea0abe0c3524051c806b74af217f2f65b9645a700cfc02de204",
+          "size": 69694,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "01f210e482f0ab17d99479235cd7a35f91b5ebfcb5b6a4da2b5573611310ce44",
-          "size": 74266,
+          "sha256": "768e672c9e9c9ff00b2d4e97b1d2f08aef35ded4e52cc5d388039cb410f6a167",
+          "size": 74866,
           "type": "file"
         },
         "code": {
@@ -75305,20 +75305,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "6c83b70e7e49f306c4f6e4c4734c25274529f84ad69c321b3979d6ff0ff1499f",
-          "size": 80715,
+          "sha256": "957e9d6a70f6503ffb21d19965c8b3c429f3386e5b9eb4b9c68fc06bc9c6138a",
+          "size": 81315,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "cf47ee1be719be53731062e4d9181db555959181164da1f0ad0c2dd7d1665c5f",
-          "size": 70365,
+          "sha256": "8ca99e639118934374254360ba70c2c5899846fa72cb52519e3ad8fd6b37a3af",
+          "size": 70965,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "946eae41aacb9d7fe0323c5663e445a6a0f31a0851a8a5ab33fefe38303a234e",
-          "size": 75537,
+          "sha256": "5bd4fa75bda7c14c6eb26786d07a3efc6586c447c23c2a33bf8f8217af76b19a",
+          "size": 76137,
           "type": "file"
         },
         "code": {
@@ -79530,20 +79530,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "bc807e7ed92d74c15160f26db0abf9cdf30e18ba1fc4e286781b6c66ab084b2c",
-          "size": 77330,
+          "sha256": "21ee4de2965161bfe87c00c26594b4956b014f27492c6e61b540b930b1297fb4",
+          "size": 77930,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "bd37f4f0cd6409bbb80a18ec102eb172e021ab87899a2a0744d0b6d3eee827f0",
-          "size": 66980,
+          "sha256": "092ec2fd86ab152ef25b591f84d19ec3073f9e6935c75a00d8c43bf5b418dfdd",
+          "size": 67580,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "03071fdb8b05700633c39565649e49f7ff1e39409ce5a7f2a07520809e579f41",
-          "size": 72152,
+          "sha256": "a39641bf97206fd42a7bb51e7c5d6c7791975a12d2a62a6bc5ed9eff0cd03e6c",
+          "size": 72752,
           "type": "file"
         },
         "code": {
@@ -82327,20 +82327,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "057da9d2488c67b8ee9f7847ff6cfbd567e1f51b80919f6b386470b4b2a8a7b0",
-          "size": 91662,
+          "sha256": "2d3d0f7b178c101de12ddd74de441591aac5ece744b3ac0d3f219377be66900a",
+          "size": 92262,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "b6b120f2a24b187b17bf09154032164c911d257bde47cf3f31abd6e91b6c8d07",
-          "size": 81312,
+          "sha256": "4c0a2f4200488da4a38280269fd5348900a3d17fb245d10f6c92288eb8f5d19f",
+          "size": 81912,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "75f65f0fc1e2e8e54805776734fdfa41d1ace0f00c39e7d58b9e8789c22139cc",
-          "size": 86484,
+          "sha256": "f14a920e647c9380cf1bb99d7d01d25236600497b09ef4277090c80baf44bc62",
+          "size": 87084,
           "type": "file"
         },
         "code": {
@@ -85284,20 +85284,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "4f652a1b7ad9a878736228a3e69dd6f8b8c6c45b8258ac722d9527c36141bbc9",
-          "size": 90424,
+          "sha256": "4b56e75419966650b941f9456918743674c710fc7dea8caa98ac35b4d59faddc",
+          "size": 91024,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "d4d74646d729f4617936e3540e60d0d79dbd3b81d24386e88d21dcdeab5be401",
-          "size": 80074,
+          "sha256": "8404ec3db68825c67c2f1a68bd31584fd35a938f1681252202fc339d5f284363",
+          "size": 80674,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "68a84e52cc3f6c484d7c0a77d4082a8204710ddcaa146932d4f15c3ae6934c4f",
-          "size": 85246,
+          "sha256": "a3ba2e9b84324ac0085dd87f13ee19de6d02a566086b9a259dcf8c7f9caf85c8",
+          "size": 85846,
           "type": "file"
         },
         "code": {
@@ -93921,20 +93921,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "4eb36de7c2c66f510460a35217662c0569d4142a452a8f49cf8798fe105dab27",
-          "size": 78568,
+          "sha256": "42d072dba62aff085f337c91a8a2026f86c306325dcc3c2a136b9884e51d9b30",
+          "size": 79168,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "07dc50d7a4025c5dca29b404a2171c9d28ed3dbd96aec819eadf971dbda84873",
-          "size": 68218,
+          "sha256": "b6fef5b9eeb6064e75c61f4c27e0434f223e9453dc1d381e07fb1269921156af",
+          "size": 68818,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "1b82242778847708d62561411d3bb7f9965daa6abeaf46fd0e0f385f2ea403e4",
-          "size": 73390,
+          "sha256": "ff87bf8c3421dfb93309d4b97a927a68e34e02d77c27718f7abe63c571a53872",
+          "size": 73990,
           "type": "file"
         },
         "code": {

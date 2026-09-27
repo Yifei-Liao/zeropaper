@@ -72,6 +72,10 @@ We are scientists, not marketers. A precisely-bounded result is a stronger contr
 
 Rubric calibrations, polish checklists, and parsimony rules filter weak work — they are not absolute. When a result is genuinely exceptional but violates a guideline *by necessity of its content* (e.g., MM-style irrelevance has no "decision change"; a calibration paper has no NOVEL-tagged implications; an existence theorem has no comparative statics), `scorer{,-freeform}` and `referee{,-freeform,-mechanism}` may relax the guideline — naming it, explaining in one sentence why content earns relaxation, and stating the alternative check. Math-audit FAIL is never waived. Novelty KNOWN is never waived in unseeded quality routing; seeded runs record it honestly under their explicit overrides instead of changing direction. The bar is exceptional content the rubric wasn't built to score; use sparingly.
 
+## Background jobs end with the step that started them
+
+An agent that starts background jobs (downloads, re-OCR checks, reruns) stops or awaits every one of them before it writes its verdict or returns, and the orchestrator confirms no job from a finished step is still running before it commits that step's artifacts. A job that outlives its step keeps spending compute and can rewrite files after they are committed or certified (observed: a census download loop kept rewriting its committed scratch after the certificate was accepted, and an auditor's re-OCR check ran on after its PASS report).
+
 ## Core principle: tool failure is not substantive failure
 
 When a **computational or retrieval tool** fails — a numerical solver that doesn't converge, a regression that returns empty, a literature search that finds nothing, a data query that times out, a compiler that errors — the first hypothesis is that the tool was misfit to the case, not that the claim is false. Launch the `debugger` agent on the failure report. Debugger diagnoses tool-fit vs substantive failure and proposes a concrete fix. Only after debugger returns `SUBSTANTIVE-FAILURE` is the failure a signal about the claim. Do not rescope, reinterpret, or weaken a claim on the strength of a failed tool alone.
