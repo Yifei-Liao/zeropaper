@@ -2401,8 +2401,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -3049,8 +3049,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -3369,8 +3369,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -3937,8 +3937,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -5458,8 +5458,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -6106,8 +6106,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -6426,8 +6426,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -6994,8 +6994,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -8503,8 +8503,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "84bcc951d64f0985ff97f624a1acacf19d664f8a9b61fc96f25a7a01797a7ef6",
-          "size": 47807,
+          "sha256": "eecb3223e52d616ff114d567f58073be2b008fdfcae2bb63c5301151db778963",
+          "size": 48614,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -9093,8 +9093,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "2311a71828d753adb0338fa411a965a56c793476acf0ec453af0ba18e857664a",
-          "size": 47831,
+          "sha256": "e05bebc7e7eeafd9f50ef068092b41c0b8a626e53672fd8831dc47d87267172a",
+          "size": 48638,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -9365,8 +9365,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "7d62341c8f91f201958b1e141df622ba6e301755b556f633c4d635bdf61ddb71",
-          "size": 47764,
+          "sha256": "d615fad6b204d56a16b6ccd8024e57e65ee91d22b954e5ca90da0ecd2fa415a3",
+          "size": 48571,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -9855,8 +9855,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "2ec45898173f9fe1303ff4dc8b7ba1f570474dbf98d42afa71bc45f5fcc36be4",
-          "size": 48086,
+          "sha256": "d78720fcf13b28b9a5e008db7648107bdaaae721fd91de7342faa8062c3d6653",
+          "size": 48893,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -11286,8 +11286,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8de27e54c78222c4fd730d97d2ced31b0d4ce6c5d600a669edb06282f67a0e66",
-          "size": 50115,
+          "sha256": "082da3841d140bc5f330a06ae16ddd73c044c75f20b87c990b54a8200ee93c1e",
+          "size": 50922,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -11882,8 +11882,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "c296f45b2398d337a55def1324625620ab41abc6d044ad465d9fd29dc2a4ff7a",
-          "size": 50118,
+          "sha256": "b9e59646d98628314ca8f912019f1b3426f6522d3a9827595f9316da75d8b582",
+          "size": 50925,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -12160,8 +12160,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "4bea02f52322d0cc084f6071df7502b8c89f778ccb4330013b8111d749250875",
-          "size": 50091,
+          "sha256": "d59d44a9630b79ffafe1555d8f4b358656eebc1c30f8a048c63ef5fd3412b3ca",
+          "size": 50898,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -12662,8 +12662,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e1162ca7e8b0172f9a1a099b4e833f5b19aa1c288c12e9e659436ad4f4557388",
-          "size": 50407,
+          "sha256": "2101158e41d23d7efc6f5c5e2b9eb5c107703ef47b4eb976be8803113fff7076",
+          "size": 51214,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -14113,8 +14113,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "c1a39f5a7f12ae9a9d01065f906a9e3d7e5b5f89349f69737ae3f16c221b9e99",
-          "size": 48684,
+          "sha256": "3c2ed6ccc96b441ba0533b98a2555fe87e87dbed34f7a2e969a2049cd95d254a",
+          "size": 49491,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -14703,8 +14703,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "3da6e29a4449b50d99e1c72287de2a0adcdc20f0a923d23cb08ee2af989f78fa",
-          "size": 48708,
+          "sha256": "89774ecaecddc69d8de533d96afa9dac4a63968c39b79323ff905d24d1b3571d",
+          "size": 49515,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -14975,8 +14975,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "e38dff904319dfc888ab6b75fa29b04a8f4f09263dca10671acc7cecb9ab5007",
-          "size": 48641,
+          "sha256": "f60fd0f33d0bf49c2ad4a2dbc5ad7bc68e64349516d751300bcb0604d62fc771",
+          "size": 49448,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -15465,8 +15465,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "04bf2b030c7d58774ad56296ea5ac13c2c1d0f5ad66c0896b0a1a41575f833b7",
-          "size": 48963,
+          "sha256": "0dd190fc24a0858014fdd456b9bae33b24549ac1847951ade41c4d8d3917cad4",
+          "size": 49770,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -16827,8 +16827,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "84bcc951d64f0985ff97f624a1acacf19d664f8a9b61fc96f25a7a01797a7ef6",
-          "size": 47807,
+          "sha256": "eecb3223e52d616ff114d567f58073be2b008fdfcae2bb63c5301151db778963",
+          "size": 48614,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -17417,8 +17417,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "2311a71828d753adb0338fa411a965a56c793476acf0ec453af0ba18e857664a",
-          "size": 47831,
+          "sha256": "e05bebc7e7eeafd9f50ef068092b41c0b8a626e53672fd8831dc47d87267172a",
+          "size": 48638,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -17689,8 +17689,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "7d62341c8f91f201958b1e141df622ba6e301755b556f633c4d635bdf61ddb71",
-          "size": 47764,
+          "sha256": "d615fad6b204d56a16b6ccd8024e57e65ee91d22b954e5ca90da0ecd2fa415a3",
+          "size": 48571,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -18179,8 +18179,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "2ec45898173f9fe1303ff4dc8b7ba1f570474dbf98d42afa71bc45f5fcc36be4",
-          "size": 48086,
+          "sha256": "d78720fcf13b28b9a5e008db7648107bdaaae721fd91de7342faa8062c3d6653",
+          "size": 48893,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -21596,8 +21596,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -22244,8 +22244,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -22564,8 +22564,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -23132,8 +23132,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -24635,8 +24635,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -25255,8 +25255,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -25557,8 +25557,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -26107,8 +26107,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -27569,8 +27569,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -28195,8 +28195,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -28503,8 +28503,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -29059,8 +29059,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -30537,8 +30537,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -31191,8 +31191,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -31517,8 +31517,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -32091,8 +32091,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -35563,8 +35563,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "ed7a2aa3dde1fae0d8bad1133198f52e5181aceee4bbe2f91c7fe51d9347b40e",
-          "size": 44544,
+          "sha256": "f7b2b3048bd5beee456fae912f3d792c01c283235e33bcb11b985cc2a8469c2a",
+          "size": 45351,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -36189,8 +36189,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "b988431bc85051b9ca4a517492156f29d8062fca7ad0d77ff27589d164a8d0c0",
-          "size": 44548,
+          "sha256": "dc7bdcc2a6618f589bd70bc4908eff19061b6f45c808b17790d97cbaa4c24b9a",
+          "size": 45355,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -36497,8 +36497,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "27e71a81580aa5595b17db45f931ddd26058e8a2a03efc385ac8538f76613d58",
-          "size": 44520,
+          "sha256": "affb630374bd335f751751964a3bea9a95c6a414fd220d149683599020972836",
+          "size": 45327,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -37059,8 +37059,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "eb27f448899f3adf57036a552b89651f62cd2a006871a81b9ba567c593567719",
-          "size": 44836,
+          "sha256": "6e9e30551755a305c763f7d247aaa4f97c0511957f17ab55ebc3c6a517fb3f3b",
+          "size": 45643,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -46685,8 +46685,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "3d9961c87fddf7f61d839a422b4b60210934f2f787028b3c9c4b0c1e889a1aa4",
-          "size": 43113,
+          "sha256": "61746dad5918c354287e544f1036216d725ca52a1d7874c05ed62465d1a96160",
+          "size": 43920,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -47333,8 +47333,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "153bd8eaca663113afcb749ab1806ff16769f63b0214db111c384766a1b38fd5",
-          "size": 43138,
+          "sha256": "2086e52efbe0966909255d25a7d2a82cf00b012d19d9e37162e932b9b27af3f1",
+          "size": 43945,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -47653,8 +47653,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "4bd95608ce8e96f3396df84892e2a889502ba4b7a34edfbc8b4137bc46e11d67",
-          "size": 43070,
+          "sha256": "681568a52e8d52f0f892dfd4d3feb9d6b9b6bc40633945c076205007bdd876ea",
+          "size": 43877,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -48221,8 +48221,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "ddf49a74d70ced0026665d9cc55b2082767774c9ad72b68c40af13628b7ce238",
-          "size": 43392,
+          "sha256": "1cd2b6231d20a6ac27bc5086438187f1788df7117de5be98f12d7b8e6b035c8f",
+          "size": 44199,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -61115,8 +61115,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "333be33bd8da5e2f8e6b91e69168d6a62eb3e948e108e8cef360889646652e59",
-          "size": 42236,
+          "sha256": "2a1a8f329cd74ad80f6b75a61f23d4403461f58c34f031d8724916ba7a3a03fe",
+          "size": 43043,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -61735,8 +61735,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d5aff3085b01d84900425f253cb8fab1f68b4e1f7d81bdea76c031fb880848f5",
-          "size": 42261,
+          "sha256": "ef010212707fdd590f3e69058707fe24647d37800a8fe047a7131f7aec30d81a",
+          "size": 43068,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -62037,8 +62037,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "22947a877c04cf38d2f8f879a15c9449e4c30f132c2ac4cc268820d8b6d34445",
-          "size": 42193,
+          "sha256": "f854acb86ed795edce5aba4c51470630ec344222e818d9a62485e345d6e2e4e4",
+          "size": 43000,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -62587,8 +62587,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "8662dd86b6a4a3340a3f97de0f5fb7f8c793cabfa9943d5c52d55237caa6edf2",
-          "size": 42515,
+          "sha256": "a10d91efb810ebcbf19dcf2418bd968325975cd25601bade511ac7f86d043877",
+          "size": 43322,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -80497,8 +80497,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "aeafa3e6e0f160576434af455b79c545f9eaa0d48320ddec30d938374972fca7",
-          "size": 43496,
+          "sha256": "cb666904288dd2593f0dadfae2e825fd2626b43556cf94bb0737aeeb3b5c96d8",
+          "size": 44303,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -81145,8 +81145,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d8c769eae00455b3d6f4acbe015a6409cb329183c920945dda5268ea240d1c2c",
-          "size": 43596,
+          "sha256": "7856e3c8e2ddf6c72301c877565e5cdaa8a6402939a565b7911352e50666b2e1",
+          "size": 44403,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -81465,8 +81465,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "b21717eb26342ea2f4e8182cf0c1ba1d09ebd035859c3e97904fb736f8db583c",
-          "size": 43528,
+          "sha256": "d7d86d093ecee318580446d030353e94ca734d60652554efef45d2753530b881",
+          "size": 44335,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -82033,8 +82033,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "f3abf4d259bb7a8c75692e13402ea53490bc92461abfc537ea38e39f9463142f",
-          "size": 43730,
+          "sha256": "c6b85c47c820815f369b76a9866742af46d60b434fdf38c894396714d6a6cf20",
+          "size": 44537,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
@@ -83536,8 +83536,8 @@
         },
         ".claude/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "aeafa3e6e0f160576434af455b79c545f9eaa0d48320ddec30d938374972fca7",
-          "size": 43496,
+          "sha256": "cb666904288dd2593f0dadfae2e825fd2626b43556cf94bb0737aeeb3b5c96d8",
+          "size": 44303,
           "type": "file"
         },
         ".claude/agents/empirics-auditor.md": {
@@ -84156,8 +84156,8 @@
         },
         ".codex/agents/empiricist.toml": {
           "mode": "0644",
-          "sha256": "d8c769eae00455b3d6f4acbe015a6409cb329183c920945dda5268ea240d1c2c",
-          "size": 43596,
+          "sha256": "7856e3c8e2ddf6c72301c877565e5cdaa8a6402939a565b7911352e50666b2e1",
+          "size": 44403,
           "type": "file"
         },
         ".codex/agents/empirics-auditor.toml": {
@@ -84458,8 +84458,8 @@
         },
         ".gemini/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "b21717eb26342ea2f4e8182cf0c1ba1d09ebd035859c3e97904fb736f8db583c",
-          "size": 43528,
+          "sha256": "d7d86d093ecee318580446d030353e94ca734d60652554efef45d2753530b881",
+          "size": 44335,
           "type": "file"
         },
         ".gemini/agents/empirics-auditor.md": {
@@ -85008,8 +85008,8 @@
         },
         ".opencode/agents/empiricist.md": {
           "mode": "0644",
-          "sha256": "f3abf4d259bb7a8c75692e13402ea53490bc92461abfc537ea38e39f9463142f",
-          "size": 43730,
+          "sha256": "c6b85c47c820815f369b76a9866742af46d60b434fdf38c894396714d6a6cf20",
+          "size": 44537,
           "type": "file"
         },
         ".opencode/agents/empirics-auditor.md": {
