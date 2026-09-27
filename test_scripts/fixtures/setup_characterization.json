@@ -8473,8 +8473,8 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "bd792d61a11e602b224f35d16fac2854663b67ff82ceb5eb747d594ca79eedd6",
-          "size": 26446,
+          "sha256": "617db083193c041b60ba049489be9cd12a0eb3e1dfda978a2a860eb569d69c88",
+          "size": 27252,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
@@ -9063,8 +9063,8 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "a24e3489f4a78fbb84f632ff0dfbe34b0bbdcb62260d4e2a566ef3670dbbcce0",
-          "size": 26566,
+          "sha256": "80348cba2af4243e2ef9fad0d262ac731369198c7e3b8b2e3fbad5c65575ba93",
+          "size": 27372,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
@@ -9335,8 +9335,8 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "56d74d5e6cfdce833001d630948bfeec50e3f634fcf1fd6502f0708c039eef3f",
-          "size": 26522,
+          "sha256": "2887dfb2edf602815ae2a7344e2064ccc493b92c7a3ac7a6789cbf9a542cc20a",
+          "size": 27328,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
@@ -9825,8 +9825,8 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "cb75144b3c35ff7d5d393121e62482fc441f91ff99983724fc7076882f2ad72f",
-          "size": 26627,
+          "sha256": "66602059626898487d05fd8cadc278ecafd15fccc879c5db823d5349fb8dd52d",
+          "size": 27433,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
@@ -11256,8 +11256,8 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "bd792d61a11e602b224f35d16fac2854663b67ff82ceb5eb747d594ca79eedd6",
-          "size": 26446,
+          "sha256": "617db083193c041b60ba049489be9cd12a0eb3e1dfda978a2a860eb569d69c88",
+          "size": 27252,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
@@ -11852,8 +11852,8 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "ec2b200f88a61cf777d98653c82073d351f8b8b6118838410edc2b833143bdbf",
-          "size": 26532,
+          "sha256": "308fc3bcbca0adf6cc70a2962c419337f4ebdb114e32873ef8e084a68802dad2",
+          "size": 27338,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
@@ -12130,8 +12130,8 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "96d8fce02e1aa7873f037cbcb586e7efbcfcbbf8a5f6216864636f5ad6932672",
-          "size": 26528,
+          "sha256": "c5d761c8b7c21ebb566d4aec6d805d45c6f509205bef8efd0f9af3ccbdeb1098",
+          "size": 27334,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
@@ -12632,8 +12632,8 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "cb75144b3c35ff7d5d393121e62482fc441f91ff99983724fc7076882f2ad72f",
-          "size": 26627,
+          "sha256": "66602059626898487d05fd8cadc278ecafd15fccc879c5db823d5349fb8dd52d",
+          "size": 27433,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
@@ -14083,8 +14083,8 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "aec7bd7f64495325805ce6095ad3c9af5f78bb680da21973ae31ebe5b4b1f6dc",
-          "size": 27194,
+          "sha256": "26904ccec08fd0321851f9b105c59ab5c9dbbccc9de2388b5d56d665ed6b9c35",
+          "size": 28000,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
@@ -14673,8 +14673,8 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "4568156debccffe73b28251621770562addab64f9356c7416df936ea16d89be7",
-          "size": 27314,
+          "sha256": "d06b3ce421d49b332ee63376c74a5f5bfba87a0fe9d38a68351ee262a6c1a1f2",
+          "size": 28120,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
@@ -14945,8 +14945,8 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "f1d7c0ecab3925f460add990b89201bebf53126271aa5daf6c3da9e9054f6346",
-          "size": 27270,
+          "sha256": "972c3fda7b6dc139701b9d3624fe26ad9a396897a7f3dba3648f2d877d95d6bd",
+          "size": 28076,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
@@ -15435,8 +15435,8 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "da09ab2fef89d81480bcb5cd07ef20500d9c0c7d66c7c96219043757fb242163",
-          "size": 27375,
+          "sha256": "85f3d7a5bbd5a87dde7ae7d0679628834b8a357572c4056847c31826a2c6c36e",
+          "size": 28181,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
@@ -16797,8 +16797,8 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "bd792d61a11e602b224f35d16fac2854663b67ff82ceb5eb747d594ca79eedd6",
-          "size": 26446,
+          "sha256": "617db083193c041b60ba049489be9cd12a0eb3e1dfda978a2a860eb569d69c88",
+          "size": 27252,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
@@ -17387,8 +17387,8 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "a24e3489f4a78fbb84f632ff0dfbe34b0bbdcb62260d4e2a566ef3670dbbcce0",
-          "size": 26566,
+          "sha256": "80348cba2af4243e2ef9fad0d262ac731369198c7e3b8b2e3fbad5c65575ba93",
+          "size": 27372,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
@@ -17659,8 +17659,8 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "56d74d5e6cfdce833001d630948bfeec50e3f634fcf1fd6502f0708c039eef3f",
-          "size": 26522,
+          "sha256": "2887dfb2edf602815ae2a7344e2064ccc493b92c7a3ac7a6789cbf9a542cc20a",
+          "size": 27328,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
@@ -18149,8 +18149,8 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "cb75144b3c35ff7d5d393121e62482fc441f91ff99983724fc7076882f2ad72f",
-          "size": 26627,
+          "sha256": "66602059626898487d05fd8cadc278ecafd15fccc879c5db823d5349fb8dd52d",
+          "size": 27433,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
