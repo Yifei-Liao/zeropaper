@@ -42,6 +42,8 @@ Each finding gets a **severity 1–10** and a **named failure mode** so downstre
 
 Every report records, per audited cache, the exact evidence scope you verified: the cache file's SHA-256, the SHA-256 of every construction/mutation code file you identified for it, and the SHA-256 of `empirical_plan.md` (whose documented logic your re-query implements). Compute these digests yourself at audit time and write the `## Scope digests` table below — it is what makes the next round's carry-forward checkable.
 
+**Keep `## Scope digests` to that one table.** The carry checker reads every table row under the heading as a scope row, so a second table (for example a shared "code files" table factored out to avoid repeating digests) makes the whole report unreadable and forces a full re-fire. When several rows share the same code closure, repeat the `path: sha256` list in each row's cell; put any explanation as prose above the table.
+
 <!-- DATA_FIRST_START -->
 Under data-first the construction plan is split per class, so the plan side of the scope is class-local: record and compare, instead of the whole-plan digest, the digests of the plan's `## Class: {class_id}` section for every class this cache feeds plus its `## Shared construction` section, taken from `python3 code/utils/spec_audit_scope.py sections --doc <plan>` (the `Plan sha256` cell lists those section digests). A repair that touched another class's section then leaves this cache eligible to carry. A plan without those sections carries nothing.
 <!-- DATA_FIRST_END -->
