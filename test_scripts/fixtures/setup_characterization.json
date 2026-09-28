@@ -1434,20 +1434,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
-          "size": 77901,
+          "sha256": "fa1f9b912f2a4f458ae0aefefd66e0b9bcd156947c3d0fd76e2d4943fece77a3",
+          "size": 79388,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
-          "size": 67551,
+          "sha256": "68eb45de11738716774480750beb4a87aefcc2de84f6b695c88d0c83b4fc1f69",
+          "size": 69038,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
-          "size": 72723,
+          "sha256": "b4825ef67c4a68d538fda39a4cba67bbb90dec5f29bd4cae7df5c2fed54954b0",
+          "size": 74210,
           "type": "file"
         },
         "code": {
@@ -1740,20 +1740,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -4231,20 +4231,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "afdaa696e301e8576b4e5dc189717a7673be70acf072c864c8b9ff53c656465d",
-          "size": 92233,
+          "sha256": "9a2ecd40f10241e7d032c390837a1bd4b48e51f0f376dc7bfb53b341096794cb",
+          "size": 93720,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "fc247e9c017abe601625134f03d46b552275aec678a1199f0ad7ff4e2c4418c5",
-          "size": 81883,
+          "sha256": "24098233f3a465c74ab3f6aa6161d3fecfa270bc3e1e772fe3a5c80192f130d6",
+          "size": 83370,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "452c41e712db00ec2a54d26e2b462b9a5730ecff7057bac2f08ecbdd30ac0af1",
-          "size": 87055,
+          "sha256": "40460b41bbf3fc00d1e19e5d25226f8c7d111498af7da1ea05b59e9394ed6bd7",
+          "size": 88542,
           "type": "file"
         },
         "code": {
@@ -4685,8 +4685,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -4739,20 +4739,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -7288,20 +7288,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "f15c33f4edf096807b679756638bdef4ba2ba0080ae3cee8469710f2667fd4d8",
-          "size": 92233,
+          "sha256": "c2d881f3946364546000fb9dafc950bc266f70ee8b6b608b86c38cf033b83190",
+          "size": 93720,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "9c2160250e027342cf62a782a2ede0a7d06495b56865435bc2fbb24a1b6a3f8c",
-          "size": 81883,
+          "sha256": "686b02a86f030d9518ae6b01a3566b39bebc40f67db200c048d732f923ef524c",
+          "size": 83370,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f202372899e13066b30921121f5bd897430a5ef7aa474ebbd3c79c3b8d095e34",
-          "size": 87055,
+          "sha256": "3bc867213a4ce699b9cd584d6bebe5308dca192f9a6be33259085697f555e872",
+          "size": 88542,
           "type": "file"
         },
         "code": {
@@ -7742,8 +7742,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -7796,20 +7796,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -10095,20 +10095,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "3dbcd81366b30826cfb959b63c002a8ce9323b2166beb25b6db523319036d0ff",
-          "size": 95494,
+          "sha256": "dd8869b7031c00af4297479e045d4f4850e39b1dede8ff4c4ddcbf94e7b89a10",
+          "size": 96981,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "18f95e1805734416bf40f7da7f2caf3d76aa3f0dabe2792b3edb7d4ac0ea156d",
-          "size": 85144,
+          "sha256": "0d817e1860483405d461ef333480e0e0eca723a64f44977ba8595d94dd1c6137",
+          "size": 86631,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "4ca54476dc7c0c2f7c8f15f7b1d082bec2b77687f5f79352256712748a0fef15",
-          "size": 90316,
+          "sha256": "16635ae10ab1435c6645237f0446c51a9c7bdc9e8b94f76268425f2cc3094ee6",
+          "size": 91803,
           "type": "file"
         },
         "code": {
@@ -10549,8 +10549,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "59653486922c48f1c07da01660d9ad45555ff58f0c5b98ab863b906cf6e22974",
-          "size": 114056,
+          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
+          "size": 118650,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -10597,20 +10597,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -12908,20 +12908,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "e4ad465423812c79b208d25b26732baff4eac7638c8504aa9e2e21e43f295794",
-          "size": 119431,
+          "sha256": "ee5caec70cf9cb1dc3b6b3cceab0a8c121fea9b7a59d19df26769941a98fd5b1",
+          "size": 120918,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "37a587fbb972f1254e3898fc6b72cfcec81b05239950109a3bb5f0a06d77fd92",
-          "size": 109081,
+          "sha256": "aa7bfa24ab89cd947781a8ddafcfc3a1cf180987db801fb7ac34c84946a9554e",
+          "size": 110568,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "1c9e0f87503c7e793a038397f465e1f49687c9b320b5bf35f3f3f59271e70697",
-          "size": 114253,
+          "sha256": "ab1ede542f83acdade5eb7bc695662983cdc916e1084bd8db219f09d6b780e10",
+          "size": 115740,
           "type": "file"
         },
         "code": {
@@ -13362,14 +13362,14 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "59653486922c48f1c07da01660d9ad45555ff58f0c5b98ab863b906cf6e22974",
-          "size": 114056,
+          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
+          "size": 118650,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "3ffda2a94c8125f999bba3fca34bdb7f2923b6bc0e4b0fcfe98c4ab233be1c4a",
-          "size": 18244,
+          "sha256": "ccb61a7fa65a47e11d9fc327585e7503cb1c9c1b65e50bba4036b3b90dc899ef",
+          "size": 20446,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -13410,20 +13410,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -16153,8 +16153,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "59653486922c48f1c07da01660d9ad45555ff58f0c5b98ab863b906cf6e22974",
-          "size": 114056,
+          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
+          "size": 118650,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -18419,20 +18419,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "36274d475202ceceed0295dfabcff3890c79c092b29502de9cf616d3cb88f2a8",
-          "size": 101619,
+          "sha256": "c377f2f6a4f610d2333b572b0130ea948184469757dd81c68c8e6b7b52e713d7",
+          "size": 103180,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "336ec05b8bf0924f72d0d679782c34af7d141f2536c77022b3a8b9a72bae879f",
-          "size": 91269,
+          "sha256": "2cc7fd0f3f86f0e3156e263a86f991c02711b3b382cfad984388de11ef43a13d",
+          "size": 92830,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "6cbf617b6db8a1ce3192e3bddc3fc73fae9b4114b9d4a2bb522f64d6fd966e58",
-          "size": 96441,
+          "sha256": "3d5afc0f6833d0d0af6740945a932f028a514ac32f566da13c63b043a4933907",
+          "size": 98002,
           "type": "file"
         },
         "code": {
@@ -18873,14 +18873,14 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "59653486922c48f1c07da01660d9ad45555ff58f0c5b98ab863b906cf6e22974",
-          "size": 114056,
+          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
+          "size": 118650,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "3ffda2a94c8125f999bba3fca34bdb7f2923b6bc0e4b0fcfe98c4ab233be1c4a",
-          "size": 18244,
+          "sha256": "ccb61a7fa65a47e11d9fc327585e7503cb1c9c1b65e50bba4036b3b90dc899ef",
+          "size": 20446,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -18921,20 +18921,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -20626,20 +20626,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
-          "size": 77901,
+          "sha256": "fa1f9b912f2a4f458ae0aefefd66e0b9bcd156947c3d0fd76e2d4943fece77a3",
+          "size": 79388,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
-          "size": 67551,
+          "sha256": "68eb45de11738716774480750beb4a87aefcc2de84f6b695c88d0c83b4fc1f69",
+          "size": 69038,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
-          "size": 72723,
+          "sha256": "b4825ef67c4a68d538fda39a4cba67bbb90dec5f29bd4cae7df5c2fed54954b0",
+          "size": 74210,
           "type": "file"
         },
         "code": {
@@ -20932,20 +20932,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -23426,20 +23426,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "afdaa696e301e8576b4e5dc189717a7673be70acf072c864c8b9ff53c656465d",
-          "size": 92233,
+          "sha256": "9a2ecd40f10241e7d032c390837a1bd4b48e51f0f376dc7bfb53b341096794cb",
+          "size": 93720,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "fc247e9c017abe601625134f03d46b552275aec678a1199f0ad7ff4e2c4418c5",
-          "size": 81883,
+          "sha256": "24098233f3a465c74ab3f6aa6161d3fecfa270bc3e1e772fe3a5c80192f130d6",
+          "size": 83370,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "452c41e712db00ec2a54d26e2b462b9a5730ecff7057bac2f08ecbdd30ac0af1",
-          "size": 87055,
+          "sha256": "40460b41bbf3fc00d1e19e5d25226f8c7d111498af7da1ea05b59e9394ed6bd7",
+          "size": 88542,
           "type": "file"
         },
         "code": {
@@ -23880,8 +23880,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -23934,20 +23934,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -26383,20 +26383,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "ca7585271f1d881c9a3e7ae218f77d32283da9022007f27965486eec8f92796a",
-          "size": 90995,
+          "sha256": "c35f2fa232a533195d23df62ac1015a5c791adc3d96e20f365dcb8d8f3263dd7",
+          "size": 92482,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "33a84da023823627c409575cc5f12a1862496d8de2c65e8fcd993a76e6d143cd",
-          "size": 80645,
+          "sha256": "119bfe3ff97b1841bf272e8d02847ec4126e6129e1d26a036cf009c1b4344426",
+          "size": 82132,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c21a94b166e58af4c8d82f82ad74000a9be96da0da9857fbf961a2a20459ba05",
-          "size": 85817,
+          "sha256": "2d73d7cb6df4825e3d0acdf8c393c0bcc6d259d014184241e0552bde85a36678",
+          "size": 87304,
           "type": "file"
         },
         "code": {
@@ -26837,8 +26837,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -26885,20 +26885,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -29341,20 +29341,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "c7be1f431fa4dfadb51f0d420acf94709ae4eb2bcd615caeed2fe8e0d910953a",
-          "size": 94354,
+          "sha256": "3cbdf5a49d4f423b6b51f596c50668eeccbf766221bb93f5f5a090e85e119865",
+          "size": 95841,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "ca02bb027b9de26187194585feb11262172dc3a7d61729b8effe4600e46e4014",
-          "size": 84004,
+          "sha256": "ff749e5f2d60e6d967771f802775e7b27928c8fb20b0edfef8c142140ed029eb",
+          "size": 85491,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "3834f20b5910b4371154b27b58655a8634d5f25cf18ebbd0cff2dbf1bcf84fcb",
-          "size": 89176,
+          "sha256": "94110029f024e9130a06b74954b6199d53d71c98215827e6b6a65892ae8d1389",
+          "size": 90663,
           "type": "file"
         },
         "code": {
@@ -29795,8 +29795,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "97433a4eab477c87e63bf64973edd085cba9bc864ebea2e3a8f02f3c3818e474",
-          "size": 78451,
+          "sha256": "a1177bcbe6a3b157ef87ab2a9c8bc6ed0327a88f8ebff44ff3cf0a25cfa4aefb",
+          "size": 82895,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -29843,20 +29843,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -32391,20 +32391,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "ed5141a1d166164f27a37387f1ce9b7168c7c9a70f60afc91136941cba420da8",
-          "size": 95592,
+          "sha256": "0f349db8f2f5856b3368d755e2e966a4589deede1f94d19fdac269385657e898",
+          "size": 97079,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "53551aa3457fb0448d68267fdc5e64e6b368e37e934c392dac8e20f9753634ee",
-          "size": 85242,
+          "sha256": "4b3ba9f19fb2e07b6d89e91aec9296aa6e82711b0900306d97a8d24e5d3693fb",
+          "size": 86729,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "7e7046a40fcfad963f14dc43fee78cbe0bc58eeb38931fa194762470affbfac9",
-          "size": 90414,
+          "sha256": "9562ee049195faeec926bad81a84f16c78ff68279ba56c006346121e3276adf7",
+          "size": 91901,
           "type": "file"
         },
         "code": {
@@ -32845,8 +32845,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "97433a4eab477c87e63bf64973edd085cba9bc864ebea2e3a8f02f3c3818e474",
-          "size": 78451,
+          "sha256": "a1177bcbe6a3b157ef87ab2a9c8bc6ed0327a88f8ebff44ff3cf0a25cfa4aefb",
+          "size": 82895,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -32899,20 +32899,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -34611,20 +34611,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
-          "size": 77901,
+          "sha256": "fa1f9b912f2a4f458ae0aefefd66e0b9bcd156947c3d0fd76e2d4943fece77a3",
+          "size": 79388,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
-          "size": 67551,
+          "sha256": "68eb45de11738716774480750beb4a87aefcc2de84f6b695c88d0c83b4fc1f69",
+          "size": 69038,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
-          "size": 72723,
+          "sha256": "b4825ef67c4a68d538fda39a4cba67bbb90dec5f29bd4cae7df5c2fed54954b0",
+          "size": 74210,
           "type": "file"
         },
         "code": {
@@ -34917,20 +34917,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -37341,20 +37341,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "a4b633a41d609312b8634408e81b4f556b7087545fbf4196707b00639ecd1601",
-          "size": 115018,
+          "sha256": "10521d26965e8a45bcf7d19318895c047e6ad81900fcefec9e32afcf2b59e1aa",
+          "size": 116505,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "29c79fdd4985d7704a0c246f6e5c2c224877f1d8efaee757bc18dd98e56de0c3",
-          "size": 104668,
+          "sha256": "b76ef5fe688e1c076245906422d007d866fecc4f89905a974eced51f83ae5bbf",
+          "size": 106155,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "141b18c2346a3dee49d0c9cef16696a5354e708eb5f6afe6621a7653c70767e6",
-          "size": 109840,
+          "sha256": "22c2f99d45c8e9bbcf5ea8df75360689217627c76304471d3a51986c9e40b118",
+          "size": 111327,
           "type": "file"
         },
         "code": {
@@ -37795,14 +37795,14 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "f3f4bfa10fa6bd1679d971445686fba4f3b04235228c0a8d319caf17dce1db66",
-          "size": 76704,
+          "sha256": "c4abf52ed69a2bd51de09f3faac39eaa9f131ddc944117564056fc1b7cccccf0",
+          "size": 81148,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "07bfd314bb6b3e3bf522c121c2faeff692b2b1bcedfee2a1961d0f8d32244452",
-          "size": 17178,
+          "sha256": "cf7277cfe58a491431e04fb947065c53e8ffd49820e88b31157411c754189441",
+          "size": 19380,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -37843,20 +37843,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -39562,20 +39562,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "5845014ba61c26c96f51519b6f96930a2171dad496c446eb8cce05ea10755ab7",
-          "size": 78437,
+          "sha256": "d2b8e58e63459b40ee4c9f03d820ed7b33bd7cb5a8ece6520e8ccdb0f2c3cc59",
+          "size": 79924,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "a4bc25c1ee02ce8ef0ac361770b380e2bd5023ca18921f5f1ea18aa99cd83779",
-          "size": 68087,
+          "sha256": "4c61f758ae96f3180f30f23d629d55347628f1a542ade9141869a0ee584be355",
+          "size": 69574,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "383f52489ae7db69597766ba031367e0d29c9c342984d6bbc61ccfb03869a2bb",
-          "size": 73259,
+          "sha256": "588192efa056248963f5507659b831170bebecb3b14f9a87e406d753a7438fd7",
+          "size": 74746,
           "type": "file"
         },
         "code": {
@@ -39868,20 +39868,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -41632,20 +41632,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
-          "size": 79139,
+          "sha256": "12ba8b02ab3616c8dad2b997411d8e1255f7d6523cefa165d80a70911ddce79c",
+          "size": 80626,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
-          "size": 68789,
+          "sha256": "3fde46c69bf3a2a0a5019da69ab41e9c13952128f9fc99cc630499b652f2087e",
+          "size": 70276,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
-          "size": 73961,
+          "sha256": "e7c8ef2c0ce5582f7d793474d9579011e6395cd3142e5d1e36aabd08c5bfdc53",
+          "size": 75448,
           "type": "file"
         },
         "code": {
@@ -41944,20 +41944,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -43725,20 +43725,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
-          "size": 79139,
+          "sha256": "12ba8b02ab3616c8dad2b997411d8e1255f7d6523cefa165d80a70911ddce79c",
+          "size": 80626,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
-          "size": 68789,
+          "sha256": "3fde46c69bf3a2a0a5019da69ab41e9c13952128f9fc99cc630499b652f2087e",
+          "size": 70276,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
-          "size": 73961,
+          "sha256": "e7c8ef2c0ce5582f7d793474d9579011e6395cd3142e5d1e36aabd08c5bfdc53",
+          "size": 75448,
           "type": "file"
         },
         "code": {
@@ -44037,20 +44037,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -45717,20 +45717,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "eb1130d8d9db87ae5a3c31556fdec7240250fa85b356f1dac6b26c0ca53bbcf7",
-          "size": 77901,
+          "sha256": "fa1f9b912f2a4f458ae0aefefd66e0b9bcd156947c3d0fd76e2d4943fece77a3",
+          "size": 79388,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "f85ff1034a87557985845eeeb33adce1150e8389197ec1e230dc0f13ba83e025",
-          "size": 67551,
+          "sha256": "68eb45de11738716774480750beb4a87aefcc2de84f6b695c88d0c83b4fc1f69",
+          "size": 69038,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "2e0b2ca9415c4631efc4f449fda97fa91da7bdb87290b5c67ce107ee4853439e",
-          "size": 72723,
+          "sha256": "b4825ef67c4a68d538fda39a4cba67bbb90dec5f29bd4cae7df5c2fed54954b0",
+          "size": 74210,
           "type": "file"
         },
         "code": {
@@ -46023,20 +46023,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -48963,8 +48963,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -60156,20 +60156,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "cc01211d63c473d68fab84ec858e1e3a57ce0b45bdc7ba7961fce0cb811342b2",
-          "size": 84112,
+          "sha256": "5edfd5a36c7310c7d9f76ac8fdd9a9bb312f30a5b663cc8a0d5d5b0e676bbd58",
+          "size": 85673,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "5ca51d1adbd948174d2f65f0c3cca0ceebab25199c1b880a3ef7068546d744e6",
-          "size": 73762,
+          "sha256": "a8cb501a8453d727fe808a0ac86b7a4a928d6e51a25667bcbe7bc51b5a932928",
+          "size": 75323,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "2e6fbb0c3fcd923d2e18bee98012a2fa39233511da36d00f1433114e4b3b2f51",
-          "size": 78934,
+          "sha256": "a0b0c174748ca584562d0c8f79c150bac2c615ebab75adda7570cb997a22dba9",
+          "size": 80495,
           "type": "file"
         },
         "code": {
@@ -60420,8 +60420,8 @@
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "140fb95ac8176de9936ff4466135f474896ca289fe5ce6c5b27d84b1cf0892ae",
-          "size": 17058,
+          "sha256": "d1c2bd17c373c04b6996bdfe69c384cf6ad9d0c1ba52653d3b89a564e83081e3",
+          "size": 19260,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -60462,20 +60462,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -62863,20 +62863,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "ca7585271f1d881c9a3e7ae218f77d32283da9022007f27965486eec8f92796a",
-          "size": 90995,
+          "sha256": "c35f2fa232a533195d23df62ac1015a5c791adc3d96e20f365dcb8d8f3263dd7",
+          "size": 92482,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "33a84da023823627c409575cc5f12a1862496d8de2c65e8fcd993a76e6d143cd",
-          "size": 80645,
+          "sha256": "119bfe3ff97b1841bf272e8d02847ec4126e6129e1d26a036cf009c1b4344426",
+          "size": 82132,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c21a94b166e58af4c8d82f82ad74000a9be96da0da9857fbf961a2a20459ba05",
-          "size": 85817,
+          "sha256": "2d73d7cb6df4825e3d0acdf8c393c0bcc6d259d014184241e0552bde85a36678",
+          "size": 87304,
           "type": "file"
         },
         "code": {
@@ -63317,8 +63317,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -63365,20 +63365,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -65171,20 +65171,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "846d9a77afdac2f27e1bb83968e0b58d2f67ab10582f2cbc502d31a53e3fa735",
-          "size": 79139,
+          "sha256": "12ba8b02ab3616c8dad2b997411d8e1255f7d6523cefa165d80a70911ddce79c",
+          "size": 80626,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "78bc6ed9cd71e764914c56d19a1faeccc1d0f349f93f0730c8b045c71beabed3",
-          "size": 68789,
+          "sha256": "3fde46c69bf3a2a0a5019da69ab41e9c13952128f9fc99cc630499b652f2087e",
+          "size": 70276,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "cf2b67accdb41b81785ac0ac344205c27b5adc48c299835806fd210ca4b0d81e",
-          "size": 73961,
+          "sha256": "e7c8ef2c0ce5582f7d793474d9579011e6395cd3142e5d1e36aabd08c5bfdc53",
+          "size": 75448,
           "type": "file"
         },
         "code": {
@@ -65483,20 +65483,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -67224,20 +67224,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "2ee6179ec371c35d79ad7ea00a7ebfe7aba4f3938d93546f07e8d2e92cc1d485",
-          "size": 79508,
+          "sha256": "c4a6bbe3a42a17bfbc6fb78fc6df215536fef922fe17edb349960920bfcf1b47",
+          "size": 80995,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "48f31d00ada9d6fc290e649cd480488b77c59bd3f123ac0edad0b37e26f01182",
-          "size": 69158,
+          "sha256": "d7fb394fce95ee4725164bdf0bb207fca89cbce5308d671ef86a01b754803523",
+          "size": 70645,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "bcdd6af5f68184fb9f9f3ff05ac16cff7d9d51083eed1ec7be434ee8e3b8df03",
-          "size": 74330,
+          "sha256": "9034e875d5bb3b875c56814943861753703fd20cd6d16ea39556e15442916dda",
+          "size": 75817,
           "type": "file"
         },
         "code": {
@@ -67510,20 +67510,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -69280,20 +69280,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "6272b2dbef7173ac118bc12e3e4612436097f4c0a632051db0152965ca5ac1ce",
-          "size": 102995,
+          "sha256": "0070a2eb80b9bc59867d21c9e9ee3e6d514eeda820713917dabd0595f5fabe2b",
+          "size": 104482,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "dcdacbf3257799ad46463678dced55ca0de305f88d56df13e1c81eaab2f799d9",
-          "size": 92645,
+          "sha256": "0bbef8ebed894ce8d307c16ee7d5cae390122d77a04aeb09fa371e036807f27c",
+          "size": 94132,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "c139a94b56207f89938a2dc667f9787ada1c49816ebb3aa87e67777f7680918d",
-          "size": 97817,
+          "sha256": "116febbeb7e21367e00bf917023a0e6fffe6555013d434e33321902a5fea761d",
+          "size": 99304,
           "type": "file"
         },
         "code": {
@@ -69524,8 +69524,8 @@
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "94aea10834d81d879a7a218ab3d2524bbe7e983fc6eb69fcf5e91f0818d3ee5a",
-          "size": 19098,
+          "sha256": "53d93a2541938166ab083f5c93efce9fdc0fee5b967861bf691c60abe51f6b5c",
+          "size": 21300,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -69566,20 +69566,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -71323,20 +71323,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "3c540abf5228302b540776c9726bf5c61c8ce25be14b66cfd1318aad0732a72c",
-          "size": 80044,
+          "sha256": "5bc60f8aa6a0c10135acbac11ca1d61e963a82100d440fbfc19aefb05edbd36c",
+          "size": 81531,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "b6e49156f1072ea0abe0c3524051c806b74af217f2f65b9645a700cfc02de204",
-          "size": 69694,
+          "sha256": "f16a6eddc3d71d94081c6e16c52198673219706a62587b3d5912deca10a6350b",
+          "size": 71181,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "768e672c9e9c9ff00b2d4e97b1d2f08aef35ded4e52cc5d388039cb410f6a167",
-          "size": 74866,
+          "sha256": "b91cf4706dbea94f3d71e99dda14fe0701b49c522391dcf6520c8714567a2551",
+          "size": 76353,
           "type": "file"
         },
         "code": {
@@ -71609,20 +71609,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -75305,20 +75305,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "957e9d6a70f6503ffb21d19965c8b3c429f3386e5b9eb4b9c68fc06bc9c6138a",
-          "size": 81315,
+          "sha256": "8aef2eadb4f6449dac80090986cfce611c978f4f769d2f9d0836a8fa3984e628",
+          "size": 82802,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "8ca99e639118934374254360ba70c2c5899846fa72cb52519e3ad8fd6b37a3af",
-          "size": 70965,
+          "sha256": "566090621ef0a958cba1eb06b661ef7552458e67c4f8ece6526a40fe55399a7e",
+          "size": 72452,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "5bd4fa75bda7c14c6eb26786d07a3efc6586c447c23c2a33bf8f8217af76b19a",
-          "size": 76137,
+          "sha256": "513b19b6e96b30569b5e31c04e6d7972488a60139e96404e222d8919caee5495",
+          "size": 77624,
           "type": "file"
         },
         "code": {
@@ -75591,20 +75591,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -79530,20 +79530,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "21ee4de2965161bfe87c00c26594b4956b014f27492c6e61b540b930b1297fb4",
-          "size": 77930,
+          "sha256": "e7175b30784777e963dc92cfcd77b5cd96d07314677754fa7752720bd4b857b3",
+          "size": 79417,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "092ec2fd86ab152ef25b591f84d19ec3073f9e6935c75a00d8c43bf5b418dfdd",
-          "size": 67580,
+          "sha256": "6d86efb670034a8639cdb7e2e2b104d2e82d0703386bc7187e05ec8b3409af60",
+          "size": 69067,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "a39641bf97206fd42a7bb51e7c5d6c7791975a12d2a62a6bc5ed9eff0cd03e6c",
-          "size": 72752,
+          "sha256": "5be8f05ea04569da704be3ba12aad9ca23a3204f7e88da7c5906f95b776c5ce2",
+          "size": 74239,
           "type": "file"
         },
         "code": {
@@ -79836,20 +79836,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
@@ -82327,20 +82327,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "2d3d0f7b178c101de12ddd74de441591aac5ece744b3ac0d3f219377be66900a",
-          "size": 92262,
+          "sha256": "bffe2f00bd4db6018913e6bfab54a0424e7d857b545b748214217567d2be9306",
+          "size": 93749,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "4c0a2f4200488da4a38280269fd5348900a3d17fb245d10f6c92288eb8f5d19f",
-          "size": 81912,
+          "sha256": "92cdd8772185d4358f2e0b3435fbc66c3eb6158b6f7f36929ca3fadaf2848b8c",
+          "size": 83399,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "f14a920e647c9380cf1bb99d7d01d25236600497b09ef4277090c80baf44bc62",
-          "size": 87084,
+          "sha256": "1991a022382c6122326a1ba82c6d18fe9f3764fb919d63c81b8e2a2937780b77",
+          "size": 88571,
           "type": "file"
         },
         "code": {
@@ -82781,8 +82781,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -82835,20 +82835,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -85284,20 +85284,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "4b56e75419966650b941f9456918743674c710fc7dea8caa98ac35b4d59faddc",
-          "size": 91024,
+          "sha256": "cf8360ed4d979d975a1be6bae65bae286db445e8a6af71a35f25472b316fb75f",
+          "size": 92511,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "8404ec3db68825c67c2f1a68bd31584fd35a938f1681252202fc339d5f284363",
-          "size": 80674,
+          "sha256": "69c53e0e2a7fff8df2a23e6f67b6b9df0191a6a8841b83a3ae9ea145b52e9751",
+          "size": 82161,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "a3ba2e9b84324ac0085dd87f13ee19de6d02a566086b9a259dcf8c7f9caf85c8",
-          "size": 85846,
+          "sha256": "cc76ec343bc57a3a6ef756c214777fe4d9d79b70ec22f50647a85707c5c429e8",
+          "size": 87333,
           "type": "file"
         },
         "code": {
@@ -85738,8 +85738,8 @@
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "fe312ea64a9464b8e495ed28198c58f565a75ae7b641b2d6bc450f8b19470d18",
-          "size": 75738,
+          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
+          "size": 80182,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -85786,20 +85786,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "b1e30f038b2aa842aeaed4165d9acd3cc459961a4feb80d5d83e9cb98eb03d95",
-          "size": 15680,
+          "sha256": "fed885b72b6159b8a478abb52074d6dfa1048106da228c2663b84ead233bcd01",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "cb23c52ac2784674ae50818da77c687b0a6b7e587d28b62ec421a7e98c886401",
-          "size": 15680,
+          "sha256": "38e5f4177cadc48191e80e6c14cbbe42dfa25b441dccb91e3183877eb51bbdff",
+          "size": 15911,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "62012d1491e1ee4d91466c5635db2b9f9929f1c691a6d3e93922da0b32f347f4",
-          "size": 15680,
+          "sha256": "219a916ffe3095f6b17640bc53e465221a0b6932ecfa5c34b59c9db8d968d8a5",
+          "size": 15911,
           "type": "file"
         },
         "launch.sh": {
@@ -93921,20 +93921,20 @@
         },
         "AGENTS.md": {
           "mode": "0644",
-          "sha256": "42d072dba62aff085f337c91a8a2026f86c306325dcc3c2a136b9884e51d9b30",
-          "size": 79168,
+          "sha256": "af59390b2df7486369f7b181db438d100cb1a6ea85f9f77854562172e9e4e9ca",
+          "size": 80655,
           "type": "file"
         },
         "CLAUDE.md": {
           "mode": "0644",
-          "sha256": "b6fef5b9eeb6064e75c61f4c27e0434f223e9453dc1d381e07fb1269921156af",
-          "size": 68818,
+          "sha256": "b6f1c7362c9aab4c0defa1ddb65758affa5e2e2ca12a66ca215b631aa5f9d0dc",
+          "size": 70305,
           "type": "file"
         },
         "GEMINI.md": {
           "mode": "0644",
-          "sha256": "ff87bf8c3421dfb93309d4b97a927a68e34e02d77c27718f7abe63c571a53872",
-          "size": 73990,
+          "sha256": "3c557c945738f2801e0b703d94199506e0c1efb0452ad47c3d3c22ba91fc6298",
+          "size": 75477,
           "type": "file"
         },
         "code": {
@@ -94233,20 +94233,20 @@
         },
         "docs/start_session_claude.md": {
           "mode": "0644",
-          "sha256": "205ebe75e5486132f86b13bb80d5f556ab9b1917c9a6db2392fd50ae750794db",
-          "size": 14440,
+          "sha256": "95116d505aae6c77d7e1d6f2047e6d35f6b6bf1704780f4c215a9e27ec21ebd4",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_codex.md": {
           "mode": "0644",
-          "sha256": "a53035e1dedc2966cfd33d1d8038ecdb61148785e276d44c180289b49921e122",
-          "size": 14440,
+          "sha256": "27f9d27a317fe6f9442616b1791e36d700b1ad40bbcc7587f447fc069fa73bbe",
+          "size": 14671,
           "type": "file"
         },
         "docs/start_session_gemini.md": {
           "mode": "0644",
-          "sha256": "b19a8ddee30a385d8458d7d3857745429b140f87ad742b32011390725b67ebe7",
-          "size": 14440,
+          "sha256": "af8f21ef5ada534136604742aef7fe554db06b46b6a7b1a4277e16133d914e33",
+          "size": 14671,
           "type": "file"
         },
         "launch.sh": {
