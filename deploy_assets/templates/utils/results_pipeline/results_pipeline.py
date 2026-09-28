@@ -5410,10 +5410,16 @@ def command_retire(args: argparse.Namespace) -> int:
     if receipt_raw not in registry["active"] and not pending_match:
         raise EvidenceError(f"cannot retire receipt outside active/pending state: {receipt_raw}")
     pending_pairs = pending_dataset_release_pairs(root, registry)
-    paired_pending = set(pending_pairs) | set(pending_pairs.values())
-    if receipt_raw in paired_pending:
+    if receipt_raw in pending_pairs:
+        # The pending analysis member never retires alone: its pending release
+        # would then name a retired analysis and the next registry load would
+        # refuse it. The pending release member may (release-only repair): a
+        # lone pending analysis with requires_dataset_release is the ordinary
+        # state between the analysis verify and its release run, and a fresh
+        # release run binds to it exactly as the first one did.
         raise EvidenceError(
-            "pending dataset-release pair members must use retire-pair"
+            "pending dataset-release analysis members must use retire-pair "
+            "(only the pending release member may retire alone)"
         )
     active_pairs = registry["active_dataset_release_pairs"]
     paired_active = set(active_pairs) | set(active_pairs.values())
@@ -8545,7 +8551,12 @@ def build_parser() -> argparse.ArgumentParser:
     retire_pair.set_defaults(func=command_retire_pair)
 
     retire = subparsers.add_parser(
-        "retire", help="explicitly retire an active result receipt without deleting it"
+        "retire",
+        help=(
+            "explicitly retire an active or pending result receipt without deleting "
+            "it; of a data-first pair only the pending release member may retire "
+            "alone (release-only repair), every other member uses retire-pair"
+        ),
     )
     retire.add_argument("--project-root", default=".")
     retire.add_argument("--receipt", required=True)

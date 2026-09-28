@@ -504,6 +504,15 @@ bundle = {{
         )
         self.assertIn("active dataset-release pair members must use retire-pair",
                       blocked_retire.stderr)
+        # The pending-release relaxation (release-only repair) never reaches
+        # an active member of either kind.
+        blocked_analysis_retire = self.call(
+            "retire", "--receipt", analysis, "--reason", "unsafe half-retirement",
+            expected=2,
+        )
+        self.assertIn("active dataset-release pair members must use retire-pair",
+                      blocked_analysis_retire.stderr)
+        self.assertEqual(json.loads(registry_path.read_text()), intact_registry)
 
         (self.root / "output/ordinary").mkdir()
         self.write_plan("output/ordinary/results.plan.json", prefix="output/ordinary/")
@@ -639,7 +648,10 @@ bundle = {{
             "retire", "--receipt", "output/stagex/results.receipt.json",
             "--reason", "terminal audit failure", expected=2,
         )
-        self.assertIn("pair members must use retire-pair", blocked.stderr)
+        self.assertIn(
+            "pending dataset-release analysis members must use retire-pair",
+            blocked.stderr,
+        )
         registry_path = self.root / "process_log/results_registry.json"
         intact_registry = json.loads(registry_path.read_text())
         erased_registry = json.loads(json.dumps(intact_registry))
@@ -703,6 +715,270 @@ bundle = {{
             },
         )
 
+    # Release-only repair: a pending release member retires alone and a fresh
+    # release run (new revision namespace) binds to the untouched pending
+    # analysis receipt.
+
+    def publish_pending_dataset_pair(self) -> tuple[str, str]:
+        """Publish the fixture analysis and release as one pending pair."""
+        self.write_dataset_release_fixture()
+        analysis = "output/stagex/results.receipt.json"
+        release = "output/stagex/dataset_release_v1_a1_results.receipt.json"
+        self.call(
+            "run", "--plan", "output/stagex/dataset_release_v1_a1.plan.json",
+            "--bundle", "output/stagex/dataset_release_v1_a1_results.json",
+            "--receipt", release, "--", sys.executable, "code/release.py",
+        )
+        return analysis, release
+
+    def write_release_revision(self, base_plan: str, revision: str = "r1") -> dict[str, str]:
+        """Fork a release attempt onto a fresh revision namespace that names the
+        same analysis receipt: the release-only repair shape. Only the release
+        entrypoint, provenance map, plan, and output paths change."""
+        plan = json.loads((self.root / base_plan).read_text())
+        contract = plan["dataset_release"]
+        old = {
+            "artifact": contract["artifact"],
+            "receipt": contract["producing_receipt"],
+            "provenance": contract["input_provenance"],
+            "entrypoint": plan["producer_code"][0],
+        }
+        new = {
+            "artifact": old["artifact"] + revision,
+            "receipt": old["receipt"].replace(
+                "_results.receipt.json", f"_{revision}_results.receipt.json"
+            ),
+            "provenance": old["provenance"].replace(".json", f"_{revision}.json"),
+            "entrypoint": old["entrypoint"].replace(".py", f"_{revision}.py"),
+            "plan": base_plan.replace(".plan.json", f"_{revision}.plan.json"),
+        }
+        new["bundle"] = new["receipt"].replace("_results.receipt.json", "_results.json")
+        shutil.copyfile(self.root / old["provenance"], self.root / new["provenance"])
+        source = (self.root / old["entrypoint"]).read_text()
+        for key in ("artifact", "receipt", "provenance", "entrypoint"):
+            self.assertIn(old[key], source)
+            source = source.replace(old[key], new[key])
+        (self.root / new["entrypoint"]).write_text(source)
+        plan["producer_code"] = [new["entrypoint"]]
+        plan["producer_inputs"] = [
+            new["provenance"] if raw == old["provenance"] else raw
+            for raw in plan["producer_inputs"]
+        ]
+        plan["artifacts"] = [new["artifact"]]
+        contract.update({
+            "artifact": new["artifact"],
+            "manifest": new["artifact"] + "/manifest.json",
+            "input_provenance": new["provenance"],
+            "producing_receipt": new["receipt"],
+        })
+        (self.root / new["plan"]).write_text(json.dumps(plan) + "\n")
+        return new
+
+    def run_release_revision(self, revision: dict[str, str], *args: str,
+                             expected: int = 0) -> subprocess.CompletedProcess[str]:
+        return self.call(
+            "run", "--plan", revision["plan"], "--bundle", revision["bundle"],
+            "--receipt", revision["receipt"], *args, "--",
+            sys.executable, revision["entrypoint"], expected=expected,
+        )
+
+    def load_utility_module(self, name: str):
+        spec = importlib.util.spec_from_file_location(name, UTILITY)
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_pending_release_member_retires_alone(self) -> None:
+        analysis, release = self.publish_pending_dataset_pair()
+        registry_path = self.root / "process_log/results_registry.json"
+        before = json.loads(registry_path.read_text())
+        release_fingerprint = before["receipt_fingerprints"][release]
+        analysis_bytes = (self.root / analysis).read_bytes()
+        reason = "release-only repair: restricted strings in the packaged schema module"
+        retired = self.call("retire", "--receipt", release, "--reason", reason)
+        self.assertEqual(
+            json.loads(retired.stdout), {"status": "RETIRED", "receipt": release}
+        )
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual([entry["receipt"] for entry in registry["pending"]], [analysis])
+        self.assertEqual(registry["retired"], [{
+            "receipt": release, "reason": reason,
+            "last_fingerprint": release_fingerprint,
+        }])
+        self.assertNotIn(release, registry["receipt_fingerprints"])
+        self.assertEqual(registry["active"], [])
+        self.assertEqual(registry["active_dataset_release_pairs"], {})
+        # Retired, never deleted: the release receipt and directory stay on disk.
+        self.assertTrue((self.root / release).is_file())
+        self.assertTrue((self.root / "output/dataset/release_v1_a1/manifest.json").is_file())
+        self.assertEqual((self.root / analysis).read_bytes(), analysis_bytes)
+        module = self.load_utility_module("results_pipeline_release_only_retire")
+        loaded, _ = module.load_registry(self.root)
+        self.assertEqual(module.pending_dataset_release_pairs(self.root, loaded), {})
+        # The post-state is the ordinary pre-release state: the lone pending
+        # analysis still cannot activate alone.
+        blocked = self.call("activate", "--receipt", analysis, expected=2)
+        self.assertIn("analysis receipt requires its dataset release", blocked.stderr)
+
+    def test_pending_analysis_member_still_requires_retire_pair(self) -> None:
+        analysis, release = self.publish_pending_dataset_pair()
+        registry_path = self.root / "process_log/results_registry.json"
+        intact = registry_path.read_bytes()
+        blocked = self.call(
+            "retire", "--receipt", analysis, "--reason", "unsafe half-retirement",
+            expected=2,
+        )
+        self.assertIn(
+            "pending dataset-release analysis members must use retire-pair",
+            blocked.stderr,
+        )
+        self.assertEqual(registry_path.read_bytes(), intact)
+        # Once the release member is gone the analysis is a lone pending
+        # receipt again and ordinary retire applies (the fallback when the
+        # scoped release run itself fails).
+        self.call("retire", "--receipt", release, "--reason", "release-only repair")
+        self.call("retire", "--receipt", analysis, "--reason", "scoped release run failed")
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual(registry["pending"], [])
+        self.assertEqual(
+            [entry["receipt"] for entry in registry["retired"]], [release, analysis]
+        )
+
+    def test_release_rerun_binds_to_same_pending_analysis(self) -> None:
+        analysis, release = self.publish_pending_dataset_pair()
+        analysis_bytes = (self.root / analysis).read_bytes()
+        self.call("retire", "--receipt", release, "--reason", "release-only repair")
+        revision = self.write_release_revision(
+            "output/stagex/dataset_release_v1_a1.plan.json"
+        )
+        self.run_release_revision(revision)
+        registry_path = self.root / "process_log/results_registry.json"
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual(
+            {entry["receipt"] for entry in registry["pending"]},
+            {analysis, revision["receipt"]},
+        )
+        release_entry = next(
+            entry for entry in registry["pending"]
+            if entry["receipt"] == revision["receipt"]
+        )
+        self.assertEqual(release_entry["paired_analysis_receipt"], analysis)
+        self.assertEqual((self.root / analysis).read_bytes(), analysis_bytes)
+        self.assertTrue((self.root / revision["artifact"] / "manifest.json").is_file())
+        self.call("verify", "--receipt", revision["receipt"])
+        self.call(
+            "activate-pair", "--analysis-receipt", analysis,
+            "--release-receipt", revision["receipt"],
+        )
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual(registry["pending"], [])
+        self.assertEqual(set(registry["active"]), {analysis, revision["receipt"]})
+        self.assertEqual(
+            registry["active_dataset_release_pairs"], {analysis: revision["receipt"]}
+        )
+        self.assertEqual([entry["receipt"] for entry in registry["retired"]], [release])
+        # The retired release namespace stays on disk exactly like a retired
+        # attempt's.
+        self.assertTrue((self.root / "output/dataset/release_v1_a1/manifest.json").is_file())
+
+    def test_release_rerun_refused_when_analysis_closure_changed(self) -> None:
+        analysis, release = self.publish_pending_dataset_pair()
+        self.call("retire", "--receipt", release, "--reason", "release-only repair")
+        revision = self.write_release_revision(
+            "output/stagex/dataset_release_v1_a1.plan.json"
+        )
+        # A "repair" that edits a file inside the analysis closure in place is
+        # fenced by the runner, never by anyone reading a diff.
+        with (self.root / "code/analyze.py").open("a", encoding="utf-8") as handle:
+            handle.write("# repaired in place\n")
+        registry_path = self.root / "process_log/results_registry.json"
+        intact = registry_path.read_bytes()
+        blocked = self.run_release_revision(revision, expected=2)
+        self.assertIn("paired analysis receipt is not fresh and fully rendered", blocked.stderr)
+        self.assertIn("producer_run.code: stale bytes at code/analyze.py", blocked.stderr)
+        self.assertEqual(registry_path.read_bytes(), intact)
+        self.assertFalse((self.root / revision["artifact"]).exists())
+        self.assertFalse((self.root / revision["bundle"]).exists())
+        self.assertFalse((self.root / revision["receipt"]).exists())
+
+    def test_release_rerun_rejects_retired_release_namespace(self) -> None:
+        analysis, release = self.publish_pending_dataset_pair()
+        self.call("retire", "--receipt", release, "--reason", "release-only repair")
+        registry_path = self.root / "process_log/results_registry.json"
+        intact = registry_path.read_bytes()
+        revision = self.write_release_revision(
+            "output/stagex/dataset_release_v1_a1.plan.json"
+        )
+        # The retired receipt path is never reissued.
+        reused_receipt = self.call(
+            "run", "--plan", revision["plan"], "--bundle", revision["bundle"],
+            "--receipt", release, "--", sys.executable, revision["entrypoint"],
+            expected=2,
+        )
+        self.assertIn("already exists", reused_receipt.stderr)
+        # Nor is the retired release directory, even under a fresh receipt.
+        plan_path = self.root / revision["plan"]
+        plan = json.loads(plan_path.read_text())
+        plan["artifacts"] = ["output/dataset/release_v1_a1"]
+        plan["dataset_release"]["artifact"] = "output/dataset/release_v1_a1"
+        plan["dataset_release"]["manifest"] = "output/dataset/release_v1_a1/manifest.json"
+        plan_path.write_text(json.dumps(plan) + "\n")
+        reused_directory = self.run_release_revision(revision, expected=2)
+        self.assertIn("output/dataset/release_v1_a1", reused_directory.stderr)
+        self.assertEqual(registry_path.read_bytes(), intact)
+        self.assertFalse((self.root / revision["receipt"]).exists())
+
+    def test_release_rerun_keeps_predecessor_lineage(self) -> None:
+        old_analysis, old_release, new_analysis, new_release = (
+            self.publish_replacement_pair_after_gate2()
+        )
+        self.call("retire", "--receipt", new_release, "--reason", "release-only repair")
+        registry_path = self.root / "process_log/results_registry.json"
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual([entry["receipt"] for entry in registry["pending"]], [new_analysis])
+        self.assertEqual(
+            registry["active_dataset_release_pairs"], {old_analysis: old_release}
+        )
+        revision = self.write_release_revision(
+            "output/stagex/v2/dataset_release.plan.json"
+        )
+        # The pending analysis supersedes the predecessor analysis, so the
+        # revised release must supersede the predecessor release (and the
+        # retired release never appears in its lineage).
+        unmatched = self.run_release_revision(revision, expected=2)
+        self.assertIn(
+            "release supersession does not match the analysis pair lineage",
+            unmatched.stderr,
+        )
+        retired_lineage = self.run_release_revision(
+            revision, "--supersedes", new_release, expected=2
+        )
+        self.assertIn("superseded receipt is not active", retired_lineage.stderr)
+        self.run_release_revision(revision, "--supersedes", old_release)
+        self.call(
+            "activate-pair", "--analysis-receipt", new_analysis,
+            "--release-receipt", revision["receipt"],
+        )
+        self.call(
+            "retire-pair", "--analysis-receipt", old_analysis,
+            "--release-receipt", old_release,
+            "--reason", "superseded dataset pair",
+            "--superseded-by-analysis", new_analysis,
+            "--superseded-by-release", revision["receipt"],
+        )
+        registry = json.loads(registry_path.read_text())
+        self.assertEqual(set(registry["active"]), {new_analysis, revision["receipt"]})
+        self.assertEqual(
+            registry["active_dataset_release_pairs"], {new_analysis: revision["receipt"]}
+        )
+        retired = {entry["receipt"]: entry for entry in registry["retired"]}
+        self.assertEqual(retired[old_release]["superseded_by"], revision["receipt"])
+        self.assertEqual(retired[old_analysis]["superseded_by"], new_analysis)
+        self.assertEqual(retired[new_release]["reason"], "release-only repair")
+        self.assertNotIn("superseded_by", retired[new_release])
+
     def test_pair_activation_rechecks_current_gate2_binding(self) -> None:
         self.write_dataset_release_fixture()
         self.call(
@@ -733,7 +1009,10 @@ bundle = {{
         )
         self.assertIn("not the current Gate-2-accepted theory version", blocked.stderr)
 
-    def test_dataset_pair_replacement_can_start_after_gate2_advances(self) -> None:
+    def publish_replacement_pair_after_gate2(self) -> tuple[str, str, str, str]:
+        """Activate the fixture pair, advance Gate 2, and publish a pending
+        replacement pair that supersedes it; returns (old analysis, old
+        release, new analysis, new release)."""
         self.write_dataset_release_fixture()
         old_analysis = "output/stagex/results.receipt.json"
         old_release = "output/stagex/dataset_release_v1_a1_results.receipt.json"
@@ -918,6 +1197,12 @@ bundle = {{
             "--bundle", "output/stagex/v2/dataset_release_results.json",
             "--receipt", new_release, "--supersedes", old_release, "--",
             sys.executable, "code/release_v2.py",
+        )
+        return old_analysis, old_release, new_analysis, new_release
+
+    def test_dataset_pair_replacement_can_start_after_gate2_advances(self) -> None:
+        old_analysis, old_release, new_analysis, new_release = (
+            self.publish_replacement_pair_after_gate2()
         )
         self.call(
             "activate-pair", "--analysis-receipt", new_analysis,
