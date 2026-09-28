@@ -5421,6 +5421,12 @@ def command_retire(args: argparse.Namespace) -> int:
             "pending dataset-release analysis members must use retire-pair "
             "(only the pending release member may retire alone)"
         )
+    if receipt_raw in pending_pairs.values() and args.superseded_by is not None:
+        # A pending release never entered anyone's lineage (--supersedes must
+        # name active receipts), so a replacement claim here is meaningless.
+        raise EvidenceError(
+            "a pending dataset-release member retires without --superseded-by"
+        )
     active_pairs = registry["active_dataset_release_pairs"]
     paired_active = set(active_pairs) | set(active_pairs.values())
     if receipt_raw in paired_active:

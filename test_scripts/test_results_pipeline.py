@@ -797,6 +797,13 @@ bundle = {{
         release_fingerprint = before["receipt_fingerprints"][release]
         analysis_bytes = (self.root / analysis).read_bytes()
         reason = "release-only repair: restricted strings in the packaged schema module"
+        # A pending release has no lineage to hand over.
+        claimed = self.call(
+            "retire", "--receipt", release, "--reason", reason,
+            "--superseded-by", analysis, expected=2,
+        )
+        self.assertIn("retires without --superseded-by", claimed.stderr)
+        self.assertEqual(json.loads(registry_path.read_text()), before)
         retired = self.call("retire", "--receipt", release, "--reason", reason)
         self.assertEqual(
             json.loads(retired.stdout), {"status": "RETIRED", "receipt": release}
