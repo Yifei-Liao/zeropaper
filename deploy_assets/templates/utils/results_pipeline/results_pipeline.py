@@ -936,6 +936,7 @@ def scan_result_receipts(path: Path) -> tuple[
     try:
         # The directory's timestamps are taken before it is listed, so a
         # change landing after the listing always carries a newer timestamp.
+        root_now = time.time_ns()
         root_info = os.fstat(root_fd)
         root_entries = sorted_entries(root_fd)
     except OSError as exc:
@@ -952,7 +953,7 @@ def scan_result_receipts(path: Path) -> tuple[
             (entry.name, entry.is_dir(follow_symlinks=False)) for entry in listing
         ))
 
-    if _timestamps_hot(root_info, time.time_ns()):
+    if _timestamps_hot(root_info, root_now):
         hot[""] = entry_pairs(root_entries)
     # One frame per depth level: (descriptor, entries, next index, relative
     # prefix, display Path), so descriptor use stays depth-bounded.
@@ -991,6 +992,7 @@ def scan_result_receipts(path: Path) -> tuple[
             except OSError as exc:
                 raise EvidenceError(f"cannot open declared directory {child}: {exc}") from exc
             try:
+                child_now = time.time_ns()
                 opened = os.fstat(child_fd)
                 if (opened.st_dev, opened.st_ino) != (info.st_dev, info.st_ino):
                     raise EvidenceError(f"directory changed while inspecting {child}")
@@ -1005,7 +1007,7 @@ def scan_result_receipts(path: Path) -> tuple[
                 raise
             directories.append(relative)
             _InventoryState._fold(state_digest, relative, opened)
-            if _timestamps_hot(opened, time.time_ns()):
+            if _timestamps_hot(opened, child_now):
                 hot[relative] = entry_pairs(child_entries)
             stack.append((child_fd, child_entries, 0, relative, child))
     except BaseException:
@@ -5627,7 +5629,10 @@ def _dependency_signatures(root: Path, paths: Iterable[str]) -> tuple[Any, ...]:
 
     Any rewrite, replacement or removal of a file changes its signature (for
     a cold file — see _MEMO_COLD_NS), so a memoized verdict is never served
-    once one of the files it read differs.
+    once one of the files it read differs. Regular files also carry their
+    content digest: a write through a shared mapping can change the bytes
+    without touching mtime/ctime again, and these files are small next to
+    the validation the memo saves.
     """
     states: list[tuple[Any, ...]] = []
     for raw in paths:
@@ -5636,8 +5641,14 @@ def _dependency_signatures(root: Path, paths: Iterable[str]) -> tuple[Any, ...]:
         except (OSError, ValueError):
             states.append((raw, None))
             continue
+        digest = None
+        if stat.S_ISREG(info.st_mode):
+            try:
+                digest = sha256_file(root.joinpath(*PurePosixPath(raw).parts))
+            except (OSError, EvidenceError):
+                digest = "unreadable"
         states.append((raw, info.st_dev, info.st_ino, info.st_size,
-                       info.st_mtime_ns, info.st_ctime_ns, info.st_mode))
+                       info.st_mtime_ns, info.st_ctime_ns, info.st_mode, digest))
     return tuple(states)
 
 
@@ -5725,8 +5736,9 @@ def load_registry(root: Path, *, candidate: dict[str, Any] | None = None,
             # Dependency signatures are taken before validation reads the
             # files, so a file rewritten during validation is never memoized.
             dependencies = _registry_dependencies(root, value)
+            signatures_now = time.time_ns()
             dependency_signatures = _dependency_signatures(root, dependencies)
-            dependencies_cold = _signatures_cold(dependency_signatures, time.time_ns())
+            dependencies_cold = _signatures_cold(dependency_signatures, signatures_now)
         else:
             value = load_json(path)
     else:
