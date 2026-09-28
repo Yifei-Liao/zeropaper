@@ -9,13 +9,16 @@ outputs, and fails closed when any recorded byte becomes stale.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import errno
 import fcntl
 import hashlib
 import importlib.util
 import json
+import operator
 import os
 import re
+import resource
 import secrets
 import select
 import signal
@@ -52,7 +55,18 @@ LOCK_PATH = "process_log/results_pipeline.lock"
 TRANSACTION_PATH = "process_log/results_pipeline.transaction.json"
 TRANSACTION_BACKUP_PATH = "process_log/.results_pipeline-transaction-backup"
 AUDIT_NAMESPACE = "output/evidence"
+RESULT_RECEIPT_SUFFIX = "results.receipt.json"
+# Worker threads that digest the files of one declared directory concurrently
+# (hashlib and os.read release the GIL); declared input trees hold ~100k
+# files and several GB, and every verification fingerprints them again.
+FINGERPRINT_HASH_WORKERS = max(1, min(8, os.cpu_count() or 1))
 RESULT_ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
+# Precompiled forms of two checks that run once per directory entry over
+# trees with millions of entries; each matches exactly the inline expression
+# it replaces (a control character below 0x20, and a full SHA-256 digest).
+_CONTROL_CHARACTER_RE = re.compile(r"[\x00-\x1f]")
+_SHA256_DIGEST_RE = re.compile(r"sha256:[0-9a-f]{64}")
+_ENTRY_NAME = operator.attrgetter("name")
 CITATION_COMMANDS = {
     "cite", "cites", "parencite", "parencites", "textcite", "textcites",
     "footcite", "footcites", "footcitetext", "smartcite", "smartcites",
@@ -253,7 +267,7 @@ def _validate_descendant_name(name: str, parent: Path) -> None:
         raise EvidenceError(
             f"directory entry name is not valid UTF-8 under {parent}"
         ) from exc
-    if "\\" in name or any(ord(character) < 32 for character in name):
+    if "\\" in name or _CONTROL_CHARACTER_RE.search(name) is not None:
         raise EvidenceError(
             "control characters and backslashes are forbidden in directory entries: "
             f"{parent / name}"
@@ -384,6 +398,18 @@ def read_utf8(path: Path, label: str) -> str:
         raise EvidenceError(f"cannot read {label} from {path}: {exc}") from exc
 
 
+def _read_regular_bytes(path: Path, label: str) -> bytes:
+    """Read one non-aliased regular file's exact bytes (no newline translation)."""
+    try:
+        descriptor = _open_regular_read(path)
+        with os.fdopen(descriptor, "rb") as handle:
+            return handle.read()
+    except EvidenceError:
+        raise
+    except OSError as exc:
+        raise EvidenceError(f"cannot read {label} from {path}: {exc}") from exc
+
+
 def _unique_json_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     value: dict[str, Any] = {}
     for key, item in pairs:
@@ -466,6 +492,7 @@ def ensure_directory_durable(path: Path) -> None:
 
 
 def atomic_json(path: Path, value: Any) -> None:
+    _invalidate_registry_memo()
     try:
         payload = json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False,
                              allow_nan=False) + "\n"
@@ -515,10 +542,18 @@ def atomic_json(path: Path, value: Any) -> None:
             os.close(parent_descriptor)
 
 
+# While load_registry validates the durable registry this holds every
+# (raw path, must_exist) check project_path was asked to make; a memoized
+# registry is served only after every one of them is replayed successfully.
+_PATH_CHECK_RECORDER: list[tuple[str, bool]] | None = None
+
+
 def project_path(root: Path, raw: str, *, must_exist: bool = True) -> tuple[str, Path]:
+    if _PATH_CHECK_RECORDER is not None and isinstance(raw, str):
+        _PATH_CHECK_RECORDER.append((raw, must_exist))
     if not isinstance(raw, str) or not raw:
         raise EvidenceError("paths must be non-empty strings")
-    if any(ord(character) < 32 for character in raw):
+    if _CONTROL_CHARACTER_RE.search(raw) is not None:
         raise EvidenceError(f"control characters are forbidden in project paths: {raw!r}")
     posix = PurePosixPath(raw.replace("\\", "/"))
     if posix.is_absolute() or ".." in posix.parts or "." in posix.parts:
@@ -562,33 +597,173 @@ def sha256_file(path: Path) -> str:
     return f"sha256:{digest.hexdigest()}"
 
 
+def _hash_descriptor(descriptor: int) -> str:
+    """Digest one already-validated open file, then close it."""
+    try:
+        file_digest = hashlib.sha256()
+        for chunk in iter(lambda: os.read(descriptor, 1024 * 1024), b""):
+            file_digest.update(chunk)
+        return f"sha256:{file_digest.hexdigest()}"
+    finally:
+        os.close(descriptor)
+
+
+def _hash_descriptors(descriptors: list[int]) -> list[str]:
+    """Worker body: digest a batch in order, closing every descriptor."""
+    digests: list[str] = []
+    try:
+        for descriptor in descriptors:
+            digests.append(_hash_descriptor(descriptor))
+    except BaseException:
+        for remaining in descriptors[len(digests) + 1:]:
+            try:
+                os.close(remaining)
+            except OSError:
+                pass
+        raise
+    return digests
+
+
+class _PendingDigest:
+    """Handle for one file's digest inside a submitted batch."""
+
+    __slots__ = ("future", "position")
+
+    def __init__(self, future: Any, position: int) -> None:
+        self.future = future
+        self.position = position
+
+    def result(self) -> str:
+        return self.future.result()[self.position]
+
+
+class _ParallelHasher:
+    """Hash validated file descriptors on worker threads, in submission order.
+
+    walk_directory opens and identity-checks every file itself and only hands
+    the open descriptor over; hashlib and os.read release the GIL, so the
+    digests of a large declared directory are computed concurrently while
+    the traversal continues. Descriptors are handed over in small batches so
+    the per-file thread handoff stays negligible, and the number of
+    descriptors in flight is bounded well below the process's descriptor
+    limit. Results are resolved in submission order and the first failure in
+    that order is the one raised, exactly as when each file was digested
+    inline.
+    """
+
+    def __init__(self) -> None:
+        self._executor: Any = None
+        self._batch: list[int] = []
+        self._handles: list[_PendingDigest] = []
+        self._pending: list[tuple[Any, int]] = []
+        self._in_flight = 0
+        # Set once a digest failure has been raised to the caller; every
+        # later failure is for a later file and must not replace it.
+        self.failed = False
+        try:
+            soft_limit, _ = resource.getrlimit(resource.RLIMIT_NOFILE)
+        except (OSError, ValueError):
+            soft_limit = 1024
+        if soft_limit == resource.RLIM_INFINITY or soft_limit <= 0:
+            soft_limit = 1024
+        self._budget = max(2, min(256, soft_limit // 4))
+        self._batch_size = max(1, min(32, self._budget // (2 * FINGERPRINT_HASH_WORKERS)))
+
+    def _flush(self) -> None:
+        if not self._batch:
+            return
+        if self._executor is None:
+            self._executor = concurrent.futures.ThreadPoolExecutor(
+                max_workers=FINGERPRINT_HASH_WORKERS
+            )
+        while self._pending and self._in_flight + len(self._batch) > self._budget:
+            self._await_oldest()
+        batch = self._batch
+        self._batch = []
+        try:
+            future = self._executor.submit(_hash_descriptors, batch)
+        except BaseException:
+            for descriptor in batch:
+                try:
+                    os.close(descriptor)
+                except OSError:
+                    pass
+            raise
+        self._pending.append((future, len(batch)))
+        self._in_flight += len(batch)
+        for handle in self._handles:
+            handle.future = future
+        self._handles = []
+
+    def submit(self, descriptor: int) -> _PendingDigest:
+        handle = _PendingDigest(None, len(self._batch))
+        self._batch.append(descriptor)
+        self._handles.append(handle)
+        if len(self._batch) >= self._batch_size:
+            self._flush()
+        return handle
+
+    def _await_oldest(self) -> None:
+        future, size = self._pending.pop(0)
+        self._in_flight -= size
+        try:
+            future.result()
+        except BaseException:
+            self.failed = True
+            raise
+
+    def drain(self) -> None:
+        """Wait for every outstanding digest; raise the earliest failure."""
+        self._flush()
+        while self._pending:
+            self._await_oldest()
+
+    def close(self) -> None:
+        for descriptor in self._batch:
+            try:
+                os.close(descriptor)
+            except OSError:
+                pass
+        self._batch = []
+        self._handles = []
+        if self._executor is not None:
+            self._executor.shutdown(wait=True)
+            self._executor = None
+        self._pending = []
+        self._in_flight = 0
+
+
 def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None = None
                    ) -> list[tuple[str, Path, os.stat_result, str | None]]:
     """Enumerate through held no-follow descriptors with depth-bounded FD use."""
     flags = (os.O_RDONLY | getattr(os, "O_DIRECTORY", 0) |
              getattr(os, "O_NOFOLLOW", 0))
     root_fd = os.dup(root_fd) if root_fd is not None else _open_directory_path(path)
-    found: list[tuple[str, Path, os.stat_result, str | None]] = []
+    found: list[tuple[str, Path, os.stat_result, Any]] = []
     try:
         root_names = sorted(os.listdir(root_fd))
     except OSError as exc:
         os.close(root_fd)
         raise EvidenceError(f"cannot inspect declared directory {path}: {exc}") from exc
-    stack: list[tuple[int, PurePosixPath, list[str], int]] = [
-        (root_fd, PurePosixPath(), root_names, 0)
+    # Each frame carries the directory's relative POSIX prefix ("" at the
+    # root) and its display Path, so the per-entry work below is string
+    # concatenation plus one Path join instead of several pathlib parses.
+    stack: list[tuple[int, str, Path, list[str], int]] = [
+        (root_fd, "", path, root_names, 0)
     ]
+    hasher = _ParallelHasher() if hash_files else None
     try:
         while stack:
-            directory_fd, prefix, names, index = stack[-1]
+            directory_fd, prefix, directory, names, index = stack[-1]
             if index >= len(names):
                 os.close(directory_fd)
                 stack.pop()
                 continue
             name = names[index]
-            stack[-1] = (directory_fd, prefix, names, index + 1)
-            _validate_descendant_name(name, path / prefix)
-            relative = prefix / name
-            child = path.joinpath(*relative.parts)
+            stack[-1] = (directory_fd, prefix, directory, names, index + 1)
+            _validate_descendant_name(name, directory)
+            relative = f"{prefix}/{name}" if prefix else name
+            child = directory / name
             try:
                 info = os.stat(name, dir_fd=directory_fd, follow_symlinks=False)
             except OSError as exc:
@@ -603,7 +778,7 @@ def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None 
                     opened = os.fstat(child_fd)
                     if ((opened.st_dev, opened.st_ino) != (info.st_dev, info.st_ino)):
                         raise EvidenceError(f"directory changed while inspecting {child}")
-                    found.append((relative.as_posix(), child, info, None))
+                    found.append((relative, child, info, None))
                     try:
                         child_names = sorted(os.listdir(child_fd))
                     except OSError as exc:
@@ -611,7 +786,7 @@ def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None 
                         raise EvidenceError(
                             f"cannot inspect declared directory {child}: {exc}"
                         ) from exc
-                    stack.append((child_fd, relative, child_names, 0))
+                    stack.append((child_fd, relative, child, child_names, 0))
                 except BaseException:
                     if not any(frame[0] == child_fd for frame in stack):
                         try:
@@ -620,7 +795,7 @@ def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None 
                             pass
                     raise
                 continue
-            if hash_files and stat.S_ISREG(info.st_mode):
+            if hasher is not None and stat.S_ISREG(info.st_mode):
                 file_flags = (os.O_RDONLY | os.O_NONBLOCK |
                               getattr(os, "O_NOFOLLOW", 0))
                 try:
@@ -635,13 +810,204 @@ def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None 
                             "file changed or is not one non-aliased regular file "
                             f"while fingerprinting {child}"
                         )
-                    file_digest = hashlib.sha256()
-                    for chunk in iter(lambda: os.read(file_fd, 1024 * 1024), b""):
-                        file_digest.update(chunk)
-                    digest = f"sha256:{file_digest.hexdigest()}"
-                finally:
+                except BaseException:
                     os.close(file_fd)
-            found.append((relative.as_posix(), child, info, digest))
+                    raise
+                # The worker owns and closes the descriptor from here on.
+                digest = hasher.submit(file_fd)
+            found.append((relative, child, info, digest))
+        if hasher is not None:
+            hasher.drain()
+    except BaseException:
+        try:
+            # A digest failure on an earlier file is the error the inline
+            # implementation would have raised first; let it take precedence
+            # over a traversal error. Once a digest failure has been raised,
+            # the remaining digests are for later files and are not consulted.
+            if hasher is not None and not hasher.failed:
+                hasher.drain()
+        finally:
+            for descriptor, *_ in stack:
+                try:
+                    os.close(descriptor)
+                except OSError:
+                    pass
+        raise
+    finally:
+        if hasher is not None:
+            hasher.close()
+    if hasher is not None:
+        found = [
+            (relative, child, info, digest.result() if digest is not None else None)
+            for relative, child, info, digest in found
+        ]
+    return sorted(found, key=lambda entry: entry[0])
+
+
+# A recorded timestamp older than this is "cold": any later change to the
+# same inode or directory is guaranteed a strictly newer mtime/ctime, whatever
+# the filesystem's timestamp granularity (up to one second). Memo freshness
+# relies only on cold timestamps; hot directories keep their entry names.
+_MEMO_COLD_NS = 2 * 10**9
+
+
+def _timestamps_hot(info: os.stat_result, now_ns: int) -> bool:
+    return (info.st_mtime_ns > now_ns - _MEMO_COLD_NS or
+            info.st_ctime_ns > now_ns - _MEMO_COLD_NS)
+
+
+class _InventoryState:
+    """Directory-entry state of one output tree at the time it was scanned.
+
+    Holds every directory's relative path (one newline-joined blob) and a
+    digest over each directory's (device, inode, mtime, ctime). A directory's
+    mtime and ctime change whenever an entry is created, removed, renamed or
+    linked into it, so any receipt-shaped entry appearing or disappearing
+    anywhere beneath the tree changes this digest — provided the recorded
+    timestamps were cold when taken (a change within the same timestamp tick
+    would be invisible). Directories that were hot at scan time therefore
+    also keep their sorted (name, is-directory) entry pairs, which
+    `unchanged` re-lists. The check costs one lstat per directory (plus one
+    listing per hot directory), far cheaper than a full rescan.
+    """
+
+    __slots__ = ("directories", "digest", "hot")
+
+    def __init__(self, directories: bytes, digest: str,
+                 hot: dict[str, tuple[tuple[str, bool], ...]]) -> None:
+        self.directories = directories
+        self.digest = digest
+        self.hot = hot
+
+    @staticmethod
+    def _fold(digest: Any, relative: str, info: os.stat_result) -> None:
+        digest.update(
+            f"{relative}\0{info.st_dev}\0{info.st_ino}\0"
+            f"{info.st_mtime_ns}\0{info.st_ctime_ns}\n".encode("utf-8")
+        )
+
+    def unchanged(self, path: Path) -> bool:
+        """True when every directory still has the state it was scanned with."""
+        digest = hashlib.sha256()
+        base = str(path)
+        join = os.path.join
+        lstat = os.lstat
+        try:
+            for relative in self.directories.decode("utf-8").split("\n"):
+                info = lstat(base if relative == "" else join(base, relative))
+                if not stat.S_ISDIR(info.st_mode):
+                    return False
+                self._fold(digest, relative, info)
+            for relative, entries in self.hot.items():
+                with os.scandir(base if relative == "" else join(base, relative)) as it:
+                    current = sorted(
+                        (entry.name, entry.is_dir(follow_symlinks=False)) for entry in it
+                    )
+                if tuple(current) != entries:
+                    return False
+        except OSError:
+            return False
+        return f"sha256:{digest.hexdigest()}" == self.digest
+
+
+def scan_result_receipts(path: Path) -> tuple[
+        list[tuple[str, Path, os.stat_result]], _InventoryState]:
+    """Enumerate every result-receipt-shaped entry beneath one directory.
+
+    This is the registry's on-disk inventory scan. It keeps walk_directory's
+    traversal contract — every ancestor held as a no-follow descriptor, each
+    subdirectory's identity re-checked after opening, every entry name
+    validated and every entry lstat'ed (a vanished entry fails closed),
+    entries visited in sorted order, no symlink followed — but reads each
+    directory through os.scandir and does only string work per entry,
+    returning just the entries whose name ends with RESULT_RECEIPT_SUFFIX
+    together with the tree's directory-entry state. The project tree can
+    hold millions of scratch entries, and the per-entry pathlib work of the
+    general walk made this scan the dominant cost of every registry command.
+    """
+    flags = (os.O_RDONLY | getattr(os, "O_DIRECTORY", 0) |
+             getattr(os, "O_NOFOLLOW", 0))
+
+    def sorted_entries(descriptor: int) -> list[Any]:
+        with os.scandir(descriptor) as iterator:
+            return sorted(iterator, key=_ENTRY_NAME)
+
+    root_fd = _open_directory_path(path)
+    try:
+        # The directory's timestamps are taken before it is listed, so a
+        # change landing after the listing always carries a newer timestamp.
+        root_info = os.fstat(root_fd)
+        root_entries = sorted_entries(root_fd)
+    except OSError as exc:
+        os.close(root_fd)
+        raise EvidenceError(f"cannot inspect declared directory {path}: {exc}") from exc
+    found: list[tuple[str, Path, os.stat_result]] = []
+    directories: list[str] = [""]
+    hot: dict[str, tuple[tuple[str, bool], ...]] = {}
+    state_digest = hashlib.sha256()
+    _InventoryState._fold(state_digest, "", root_info)
+
+    def entry_pairs(listing: list[Any]) -> tuple[tuple[str, bool], ...]:
+        return tuple(sorted(
+            (entry.name, entry.is_dir(follow_symlinks=False)) for entry in listing
+        ))
+
+    if _timestamps_hot(root_info, time.time_ns()):
+        hot[""] = entry_pairs(root_entries)
+    # One frame per depth level: (descriptor, entries, next index, relative
+    # prefix, display Path), so descriptor use stays depth-bounded.
+    stack: list[tuple[int, list[Any], int, str, Path]] = [
+        (root_fd, root_entries, 0, "", path)
+    ]
+    try:
+        while stack:
+            directory_fd, entries, index, prefix, directory = stack[-1]
+            if index >= len(entries):
+                os.close(directory_fd)
+                stack.pop()
+                continue
+            entry = entries[index]
+            stack[-1] = (directory_fd, entries, index + 1, prefix, directory)
+            name = entry.name
+            _validate_descendant_name(name, directory)
+            try:
+                info = entry.stat(follow_symlinks=False)
+            except OSError as exc:
+                raise EvidenceError(
+                    f"cannot inspect directory entry {directory / name}: {exc}"
+                ) from exc
+            receipt_shaped = name.endswith(RESULT_RECEIPT_SUFFIX)
+            is_directory = stat.S_ISDIR(info.st_mode)
+            if not (receipt_shaped or is_directory):
+                continue
+            relative = f"{prefix}/{name}" if prefix else name
+            child = directory / name
+            if receipt_shaped:
+                found.append((relative, child, info))
+            if not is_directory:
+                continue
+            try:
+                child_fd = os.open(name, flags, dir_fd=directory_fd)
+            except OSError as exc:
+                raise EvidenceError(f"cannot open declared directory {child}: {exc}") from exc
+            try:
+                opened = os.fstat(child_fd)
+                if (opened.st_dev, opened.st_ino) != (info.st_dev, info.st_ino):
+                    raise EvidenceError(f"directory changed while inspecting {child}")
+                child_entries = sorted_entries(child_fd)
+            except OSError as exc:
+                os.close(child_fd)
+                raise EvidenceError(
+                    f"cannot inspect declared directory {child}: {exc}"
+                ) from exc
+            except BaseException:
+                os.close(child_fd)
+                raise
+            directories.append(relative)
+            _InventoryState._fold(state_digest, relative, opened)
+            if _timestamps_hot(opened, time.time_ns()):
+                hot[relative] = entry_pairs(child_entries)
+            stack.append((child_fd, child_entries, 0, relative, child))
     except BaseException:
         for descriptor, *_ in stack:
             try:
@@ -649,7 +1015,17 @@ def walk_directory(path: Path, *, hash_files: bool = False, root_fd: int | None 
             except OSError:
                 pass
         raise
-    return sorted(found, key=lambda entry: entry[0])
+    state = _InventoryState(
+        "\n".join(directories).encode("utf-8"),
+        f"sha256:{state_digest.hexdigest()}",
+        hot,
+    )
+    return sorted(found, key=lambda entry: entry[0]), state
+
+
+def result_receipt_inventory(path: Path) -> list[tuple[str, Path, os.stat_result]]:
+    """Every result-receipt-shaped entry beneath one directory (see scan_result_receipts)."""
+    return scan_result_receipts(path)[0]
 
 
 def fingerprint(root: Path, raw: str) -> dict[str, Any]:
@@ -672,7 +1048,9 @@ def fingerprint(root: Path, raw: str) -> dict[str, Any]:
         entries: list[dict[str, Any]] = []
         for relative, child, child_info, child_digest in walk_directory(
                 path, hash_files=True, root_fd=descriptor):
-            if any(_forbidden_part(part) for part in PurePosixPath(relative).parts):
+            # walk_directory joins validated entry names with "/", so the
+            # split is exactly the PurePosixPath part list.
+            if any(_forbidden_part(part) for part in relative.split("/")):
                 raise EvidenceError(
                     f"credential-bearing descendant may not enter result provenance: "
                     f"{normalized}/{relative}"
@@ -1327,6 +1705,7 @@ def enforce_empirical_spec_immutability(root: Path, spec_paths: Iterable[str],
     receipt_paths = list(registry["active"])
     receipt_paths.extend(entry["receipt"] for entry in registry["pending"])
     receipt_paths.extend(entry["receipt"] for entry in registry["retired"])
+    empirical_receipts: list[tuple[str, dict[str, Any]]] = []
     for receipt_raw in receipt_paths:
         _, receipt_path_value = result_receipt_path(root, receipt_raw)
         raw_receipt = load_json(receipt_path_value)
@@ -1334,16 +1713,11 @@ def enforce_empirical_spec_immutability(root: Path, spec_paths: Iterable[str],
                 raw_receipt.get("receipt_version") != EMPIRICAL_RECEIPT_VERSION):
             continue
         receipt = validate_receipt_contract(root, receipt_path_value)
+        empirical_receipts.append((receipt_raw, receipt))
         for item in receipt["lineage"]:
             specs.update({item["baseline_path"], item["contract_path"]})
     current = {raw: fingerprint(root, raw) for raw in specs}
-    for receipt_raw in receipt_paths:
-        _, receipt_path_value = result_receipt_path(root, receipt_raw)
-        raw_receipt = load_json(receipt_path_value)
-        if (not isinstance(raw_receipt, dict) or
-                raw_receipt.get("receipt_version") != EMPIRICAL_RECEIPT_VERSION):
-            continue
-        receipt = validate_receipt_contract(root, receipt_path_value)
+    for receipt_raw, receipt in empirical_receipts:
         for snapshot in receipt["producer_run"]["inputs"]:
             raw = snapshot.get("path") if isinstance(snapshot, dict) else None
             if raw in current and snapshot != current[raw]:
@@ -3741,6 +4115,7 @@ def _validate_staged_dataset_release(plan: dict[str, Any], workspace: Path,
 
 def _remove_entry_at(parent_fd: int, name: str) -> None:
     """Remove one entry beneath an already anchored directory without following links."""
+    _invalidate_registry_memo()
     try:
         info = os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
     except FileNotFoundError:
@@ -3766,6 +4141,7 @@ def _copy_evidence_path(source: Path, destination: Path, *, source_fd: int | Non
                         destination_parent_fd: int | None = None,
                         destination_name: str | None = None) -> None:
     """Durably copy evidence with reflinks and depth-bounded descriptor use."""
+    _invalidate_registry_memo()
     source_root_fd = os.dup(source_fd) if source_fd is not None else _open_entry_read(source)
     destination_root_parent_fd = (
         os.dup(destination_parent_fd)
@@ -3982,6 +4358,7 @@ def _open_project_parent(root: Path, raw: str, *, create: bool) -> tuple[int, st
 
 def _remove_project_path(root: Path, raw: str) -> None:
     """Remove one validated project-relative entry through an anchored parent."""
+    _invalidate_registry_memo()
     normalized, _ = project_path(root, raw, must_exist=False)
     try:
         parent_fd, name = _open_relative_parent(root, normalized, create=False)
@@ -4706,56 +5083,122 @@ def validate_snapshot_record(root: Path, value: Any, where: str) -> str:
         raise EvidenceError(f"{where}.path is not normalized")
     digest = value.get("sha256")
     if (not isinstance(digest, str) or
-            re.fullmatch(r"sha256:[0-9a-f]{64}", digest) is None):
+            _SHA256_DIGEST_RE.fullmatch(digest) is None):
         raise EvidenceError(f"{where}.sha256 is malformed")
     if kind == "directory":
         entries = value["entries"]
         if not isinstance(entries, list):
             raise EvidenceError(f"{where}.entries must be an array")
+        # The per-entry checks below are a pure function of the entries'
+        # canonical encoding, so entries whose digest already validated in
+        # this process are not walked again; the digest is still compared
+        # with the recorded one every time.
+        encoded = json.dumps(entries, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        expected_digest = f"sha256:{hashlib.sha256(encoded).hexdigest()}"
+        if expected_digest not in _VALIDATED_DIRECTORY_ENTRIES:
+            _validate_directory_entries(entries, where)
+            _VALIDATED_DIRECTORY_ENTRIES.add(expected_digest)
+        if digest != expected_digest:
+            raise EvidenceError(f"{where}.sha256 does not match its directory entries")
+    return raw
+
+
+# Canonical digests of directory snapshot entry lists that passed
+# _validate_directory_entries in this process (see validate_snapshot_record).
+_VALIDATED_DIRECTORY_ENTRIES: set[str] = set()
+
+
+def _validate_directory_entries(entries: list[Any], where: str) -> None:
+    """Reject a directory snapshot's entries unless every one is well formed."""
+    if True:
         prior = ""
         entry_kinds: dict[str, str] = {}
+        file_keys = {"path", "kind", "sha256"}
+        directory_keys = {"path", "kind"}
         for index, entry in enumerate(entries):
             entry_where = f"{where}.entries[{index}]"
             if (not isinstance(entry, dict) or
                     not isinstance(entry.get("kind"), str) or
                     entry.get("kind") not in {"file", "directory"}):
                 raise EvidenceError(f"{entry_where} is malformed")
-            entry_expected = {"path", "kind"} | (
-                {"sha256"} if entry["kind"] == "file" else set()
-            )
+            entry_expected = file_keys if entry["kind"] == "file" else directory_keys
             if set(entry) != entry_expected:
                 raise EvidenceError(f"{entry_where} has malformed keys")
             entry_path = entry.get("path")
-            entry_posix = PurePosixPath(entry_path) if isinstance(entry_path, str) else None
-            if (entry_posix is None or not entry_path or entry_path == "." or
-                    "\\" in entry_path or any(ord(character) < 32 for character in entry_path) or
-                    entry_posix.is_absolute() or
-                    "." in entry_posix.parts or ".." in entry_posix.parts or
-                    entry_posix.as_posix() != entry_path or
-                    any(_forbidden_part(part) for part in entry_posix.parts) or
+            # A recorded entry path must be exactly its own PurePosixPath
+            # rendering: relative, and free of empty, "." and ".." components
+            # (which is what pathlib would drop or keep on re-rendering), so
+            # splitting on "/" reproduces PurePosixPath(entry_path).parts
+            # without constructing a path object per entry.
+            parts = entry_path.split("/") if isinstance(entry_path, str) else None
+            # An empty, "." or ".." part can only occur where the path starts
+            # with "/" or ".", ends with "/", or contains "//" or "/."; a
+            # credential-bearing part (".git", ".env*") only where the folded
+            # path contains ".git" or ".env". Those substring tests gate the
+            # exact per-part checks, which then run only on candidates.
+            folded = entry_path.casefold() if parts is not None else ""
+            if (parts is None or not entry_path or
+                    "\\" in entry_path or
+                    _CONTROL_CHARACTER_RE.search(entry_path) is not None or
+                    ((entry_path[0] in "/." or entry_path[-1] == "/" or
+                      "//" in entry_path or "/." in entry_path) and
+                     any(part in {"", ".", ".."} for part in parts)) or
+                    ((".git" in folded or ".env" in folded) and
+                     any(_forbidden_part(part) for part in parts)) or
                     entry_path <= prior):
                 raise EvidenceError(f"{entry_where}.path is malformed or unsorted")
-            for depth in range(1, len(entry_posix.parts)):
-                parent = PurePosixPath(*entry_posix.parts[:depth]).as_posix()
-                if entry_kinds.get(parent) != "directory":
-                    raise EvidenceError(
-                        f"{entry_where}.path has a missing or non-directory parent {parent}"
-                    )
+            # Every recorded parent was itself checked against its own
+            # ancestors when it was recorded, so the immediate parent decides;
+            # the shallowest missing ancestor is reported on failure exactly as
+            # before.
+            if len(parts) > 1 and entry_kinds.get("/".join(parts[:-1])) != "directory":
+                for depth in range(1, len(parts)):
+                    parent = "/".join(parts[:depth])
+                    if entry_kinds.get(parent) != "directory":
+                        raise EvidenceError(
+                            f"{entry_where}.path has a missing or non-directory "
+                            f"parent {parent}"
+                        )
             prior = entry_path
             entry_kinds[entry_path] = entry["kind"]
             if entry["kind"] == "file" and (
                     not isinstance(entry.get("sha256"), str) or
-                    re.fullmatch(r"sha256:[0-9a-f]{64}", entry["sha256"]) is None):
+                    _SHA256_DIGEST_RE.fullmatch(entry["sha256"]) is None):
                 raise EvidenceError(f"{entry_where}.sha256 is malformed")
-        encoded = json.dumps(entries, sort_keys=True, separators=(",", ":")).encode("utf-8")
-        expected_digest = f"sha256:{hashlib.sha256(encoded).hexdigest()}"
-        if digest != expected_digest:
-            raise EvidenceError(f"{where}.sha256 does not match its directory entries")
-    return raw
+
+
+def _declared_plan_path(receipt: Any) -> str | None:
+    """The plan path a receipt names, before any of it has been validated."""
+    producer = receipt.get("producer_run") if isinstance(receipt, dict) else None
+    plan = producer.get("plan") if isinstance(producer, dict) else None
+    plan_raw = plan.get("path") if isinstance(plan, dict) else None
+    return plan_raw if isinstance(plan_raw, str) else None
+
+
+def _lineage_spec_paths(receipt: Any) -> list[str]:
+    """Baseline/contract paths an (unvalidated) empirical receipt's lineage names."""
+    if (not isinstance(receipt, dict) or
+            receipt.get("receipt_version") != EMPIRICAL_RECEIPT_VERSION or
+            not isinstance(receipt.get("lineage"), list)):
+        return []
+    return [
+        item[key]
+        for item in receipt["lineage"] if isinstance(item, dict)
+        for key in ("baseline_path", "contract_path")
+        if isinstance(item.get(key), str)
+    ]
 
 
 def validate_receipt_contract(root: Path, receipt_path: Path) -> dict[str, Any]:
+    """Parse one receipt and reject it unless it is structurally valid."""
     receipt = load_json(receipt_path)
+    _validate_receipt_contract_structure(root, receipt_path, receipt)
+    return receipt
+
+
+def _validate_receipt_contract_structure(root: Path, receipt_path: Path,
+                                         receipt: Any) -> str | None:
+    """Run the full structural checks; return the receipt's declared plan path."""
     version = receipt.get("receipt_version") if isinstance(receipt, dict) else None
     expected_keys = {"kind", "receipt_version", "supersedes", "producer_run", "render_run"}
     if version == EMPIRICAL_RECEIPT_VERSION:
@@ -4879,7 +5322,7 @@ def validate_receipt_contract(root: Path, receipt_path: Path) -> dict[str, Any]:
             render["environment"], "render_run.environment", render_command
         )
         command_uses_declared_code(render_command, code_paths, "renderer")
-    return receipt
+    return plan_raw
 
 
 def verify_receipt(root: Path, receipt_path: Path, *, rerender: bool,
@@ -5112,16 +5555,203 @@ def empty_registry() -> dict[str, Any]:
             "receipt_fingerprints": {}}
 
 
+# The durable registry as last validated against the project tree in this
+# process: root -> (registry bytes digest, dependency paths, their inode
+# signatures, output-tree directory state, the path checks the validation
+# made, validated registry). See load_registry.
+_REGISTRY_MEMO: dict[
+    str, tuple[str, list[str], tuple[Any, ...], _InventoryState,
+               tuple[tuple[str, bool], ...], dict[str, Any]]
+] = {}
+
+
+def _registry_dependencies(root: Path, value: Any) -> list[str]:
+    """Every project file a registry validation reads, from unvalidated bytes.
+
+    Receipts come from the registry itself; receipt-bound plans and lineage
+    baseline/contract paths from a parse of each named receipt. A receipt that
+    cannot be read or parsed contributes nothing (validation will reject it).
+    """
+    receipts = _registry_receipt_paths(value)
+    dependencies = set(receipts)
+    for raw in receipts:
+        try:
+            receipt = load_json(root.joinpath(*PurePosixPath(raw).parts))
+        except EvidenceError:
+            continue
+        for candidate in (_declared_plan_path(receipt), *_lineage_spec_paths(receipt)):
+            if _memo_relative_path(candidate):
+                dependencies.add(candidate)
+    return sorted(dependencies)
+
+
+def _invalidate_registry_memo() -> None:
+    """Forget validated registries; called by every project-tree write primitive."""
+    _REGISTRY_MEMO.clear()
+
+
+def _memo_relative_path(raw: Any) -> bool:
+    """True for a path project_path would accept lexically: relative, no
+    traversal, no credential-bearing or control-character parts. Only such
+    paths are ever stat'ed for a memo signature, so a malformed registry or
+    receipt cannot make the memo look outside the project root."""
+    if not isinstance(raw, str) or not raw or "\\" in raw:
+        return False
+    if _CONTROL_CHARACTER_RE.search(raw) is not None:
+        return False
+    posix = PurePosixPath(raw)
+    parts = posix.parts
+    return (not posix.is_absolute() and bool(parts) and
+            "." not in parts and ".." not in parts and
+            not any(_forbidden_part(part) for part in parts))
+
+
+def _registry_receipt_paths(value: Any) -> list[str]:
+    """Every lexically safe receipt path a (not yet validated) registry names."""
+    receipts: list[str] = []
+    if isinstance(value, dict):
+        active = value.get("active")
+        if isinstance(active, list):
+            receipts.extend(raw for raw in active if _memo_relative_path(raw))
+        for key in ("pending", "retired"):
+            entries = value.get(key)
+            if isinstance(entries, list):
+                receipts.extend(
+                    entry["receipt"] for entry in entries
+                    if isinstance(entry, dict) and _memo_relative_path(entry.get("receipt"))
+                )
+    return sorted(set(receipts))
+
+
+def _dependency_signatures(root: Path, paths: Iterable[str]) -> tuple[Any, ...]:
+    """Inode signatures (device, inode, size, mtime, ctime) of project files.
+
+    Any rewrite, replacement or removal of a file changes its signature (for
+    a cold file — see _MEMO_COLD_NS), so a memoized verdict is never served
+    once one of the files it read differs.
+    """
+    states: list[tuple[Any, ...]] = []
+    for raw in paths:
+        try:
+            info = os.lstat(root.joinpath(*PurePosixPath(raw).parts))
+        except (OSError, ValueError):
+            states.append((raw, None))
+            continue
+        states.append((raw, info.st_dev, info.st_ino, info.st_size,
+                       info.st_mtime_ns, info.st_ctime_ns, info.st_mode))
+    return tuple(states)
+
+
+def _signatures_cold(signatures: tuple[Any, ...], now_ns: int) -> bool:
+    """True when every signature names a regular file whose timestamps are cold."""
+    for state in signatures:
+        if len(state) < 7 or not stat.S_ISREG(state[6]):
+            return False
+        if (state[4] > now_ns - _MEMO_COLD_NS or state[5] > now_ns - _MEMO_COLD_NS):
+            return False
+    return True
+
+
+def _replay_path_checks(root: Path, checks: Iterable[tuple[str, bool]]) -> bool:
+    """Re-run the path existence/symlink checks a validation made; False on any failure."""
+    try:
+        for raw, must_exist in checks:
+            project_path(root, raw, must_exist=must_exist)
+    except EvidenceError:
+        return False
+    return True
+
+
 def load_registry(root: Path, *, candidate: dict[str, Any] | None = None,
                   verify_receipt_bytes: bool = True
                   ) -> tuple[dict[str, Any], Path]:
+    """Load and validate the durable registry, or validate a candidate value.
+
+    Validating the durable registry against the project tree (every receipt's
+    bytes, the receipt inventory on disk, receipt-bound plans, bound baseline
+    and contract bytes) is the most expensive step of every lifecycle command,
+    and commands reach it many times through the helpers that resolve one
+    receipt. Within one process the durable registry's validated value is
+    therefore memoized on its exact bytes, the inode signatures of every
+    file the validation read (receipts, receipt-bound plans, baselines and
+    contracts) and the directory-entry state of the whole output tree (so a
+    receipt-shaped entry appearing or vanishing anywhere beneath output/
+    forces a full rescan). The signatures are captured before validation
+    reads anything and the memo is stored only if they are unchanged after
+    it and were cold when captured, so a file rewritten during or right
+    after validation is never covered by a memo. Every primitive that writes
+    into the project tree (atomic_json, _copy_evidence_path,
+    _remove_project_path, _remove_entry_at) discards the memo as well, so a
+    command's own publications are always re-validated. A caller always
+    receives its own copy, exactly as if the file had been re-read.
+    Candidate registries are never memoized, so the validation that precedes
+    every registry write is always complete. The
+    freshness checks rely on local-filesystem timestamp semantics (a wall
+    clock that does not step backwards, and directory mtime/ctime updated on
+    every entry change); every actual byte check of the evidence is still
+    performed by the commands themselves, unmemoized.
+    """
     _, path = project_path(root, REGISTRY_PATH, must_exist=False)
+    registry_digest: str | None = None
+    dependencies: list[str] = []
+    dependency_signatures: tuple[Any, ...] = ()
+    dependencies_cold = False
     if candidate is None:
         if not path.exists():
             raise EvidenceError(f"missing durable result registry: {REGISTRY_PATH}")
-        value = load_json(path)
+        if verify_receipt_bytes:
+            data = _read_regular_bytes(path, "JSON")
+            try:
+                text = data.decode("utf-8")
+            except UnicodeError as exc:
+                raise EvidenceError(f"cannot read JSON from {path}: {exc}") from exc
+            value = _parse_json_text(text, path)
+            registry_digest = _sha256_bytes(data)
+            memo = _REGISTRY_MEMO.get(str(root))
+            if (memo is not None and memo[0] == registry_digest and
+                    _dependency_signatures(root, memo[1]) == memo[2] and
+                    memo[3].unchanged(project_path(root, "output")[1]) and
+                    _replay_path_checks(root, memo[4])):
+                return json.loads(json.dumps(memo[5])), path
+            _REGISTRY_MEMO.pop(str(root), None)
+            # Dependency signatures are taken before validation reads the
+            # files, so a file rewritten during validation is never memoized.
+            dependencies = _registry_dependencies(root, value)
+            dependency_signatures = _dependency_signatures(root, dependencies)
+            dependencies_cold = _signatures_cold(dependency_signatures, time.time_ns())
+        else:
+            value = load_json(path)
     else:
         value = candidate
+    if registry_digest is None:
+        return _validate_registry_value(
+            root, path, value, verify_receipt_bytes=verify_receipt_bytes
+        )
+    global _PATH_CHECK_RECORDER
+    previous_recorder = _PATH_CHECK_RECORDER
+    recorder: list[tuple[str, bool]] = []
+    _PATH_CHECK_RECORDER = recorder
+    try:
+        value, inventory_state = _validate_registry_value(
+            root, path, value, verify_receipt_bytes=True, want_inventory_state=True
+        )
+    finally:
+        _PATH_CHECK_RECORDER = previous_recorder
+    if (dependencies_cold and
+            _dependency_signatures(root, dependencies) == dependency_signatures):
+        _REGISTRY_MEMO[str(root)] = (
+            registry_digest, dependencies, dependency_signatures,
+            inventory_state, tuple(dict.fromkeys(recorder)),
+            json.loads(json.dumps(value)),
+        )
+    return value, path
+
+
+def _validate_registry_value(root: Path, path: Path, value: Any, *,
+                             verify_receipt_bytes: bool,
+                             want_inventory_state: bool = False) -> Any:
+    """Validate one registry value against the project tree (see load_registry)."""
+    inventory_state: _InventoryState | None = None
     if (not isinstance(value, dict) or value.get("kind") != "result_registry" or
             isinstance(value.get("registry_version"), bool) or
             value.get("registry_version") != REGISTRY_VERSION):
@@ -5263,18 +5893,15 @@ def load_registry(root: Path, *, candidate: dict[str, Any] | None = None,
                 "result registry active dataset-release pair identity disagrees with receipts"
             )
         _, output = project_path(root, "output")
-        receipt_entries = [
-            (relative, info) for relative, _, info, _ in walk_directory(output)
-            if relative.endswith("results.receipt.json")
-        ]
-        for relative, info in receipt_entries:
+        receipt_entries, inventory_state = scan_result_receipts(output)
+        for relative, _, info in receipt_entries:
             if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
                 raise EvidenceError(
                     "result receipt-shaped path on disk is not one regular "
                     f"non-aliased file: output/{relative}"
                 )
         on_disk_receipts = {
-            f"output/{relative}" for relative, _ in receipt_entries
+            f"output/{relative}" for relative, _, _ in receipt_entries
         }
         tracked_receipts = set(active) | set(pending_paths) | set(retired_paths)
         if on_disk_receipts != tracked_receipts:
@@ -5286,6 +5913,8 @@ def load_registry(root: Path, *, candidate: dict[str, Any] | None = None,
                 "receipts; rename documentary copies to *results.receipt.snapshot.json"
             )
         enforce_empirical_spec_immutability(root, [], value)
+    if want_inventory_state:
+        return value, inventory_state
     return value, path
 
 
@@ -5385,9 +6014,8 @@ def command_init_registry(args: argparse.Namespace) -> int:
     if path.exists():
         raise EvidenceError(f"result registry already exists: {REGISTRY_PATH}")
     _, output = project_path(root, "output")
-    receipt_entries = [entry for entry in walk_directory(output)
-                       if entry[0].endswith("results.receipt.json")]
-    for relative, _, info, _ in receipt_entries:
+    receipt_entries = result_receipt_inventory(output)
+    for relative, _, info in receipt_entries:
         if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
             raise EvidenceError(
                 f"result receipt-shaped path is not one regular non-aliased file: "
@@ -6396,12 +7024,14 @@ def command_inspect_registry(args: argparse.Namespace) -> int:
         }
 
         def add_snapshot_paths(snapshot: dict[str, Any]) -> None:
-            base = PurePosixPath(snapshot["path"])
-            referenced_paths.add(base.as_posix())
+            # Snapshot paths and their entries are validated normalized POSIX
+            # paths (validate_receipt_contract), so joining with "/" is the
+            # PurePosixPath join without a path object per entry.
+            base = snapshot["path"]
+            referenced_paths.add(base)
             if snapshot["kind"] == "directory":
                 referenced_paths.update(
-                    (base / entry["path"]).as_posix()
-                    for entry in snapshot["entries"]
+                    f"{base}/{entry['path']}" for entry in snapshot["entries"]
                 )
 
         for key in ("code", "inputs", "renderer_code", "artifacts"):
@@ -6496,9 +7126,7 @@ def discover_result_receipts(root: Path) -> list[Path]:
     if not output.is_dir():
         raise EvidenceError("output/ must be a real directory")
     candidates: list[Path] = []
-    for relative, child, info, _ in walk_directory(output):
-        if not relative.endswith("results.receipt.json"):
-            continue
+    for relative, child, info in result_receipt_inventory(output):
         if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
             raise EvidenceError(
                 f"result receipt-shaped path is not one regular non-aliased file: "

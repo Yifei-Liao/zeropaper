@@ -7321,6 +7321,275 @@ bundle = {
         )
         self.assertIn("symlink path is forbidden", completed.stderr)
 
+    def load_module(self, name: str):
+        spec = importlib.util.spec_from_file_location(name, UTILITY)
+        assert spec is not None and spec.loader is not None
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_registry_memo_revalidates_after_in_process_receipt_rewrite(self) -> None:
+        self.call("run", "--bundle", "output/stagex/results.json",
+                  "--receipt", "output/stagex/results.receipt.json", "--",
+                  sys.executable, "code/analyze.py")
+        module = self.load_module("results_pipeline_registry_memo")
+        first, _ = module.load_registry(self.root)
+        self.assertIn("output/stagex/results.receipt.json", first["receipt_fingerprints"])
+        # A caller's copy is its own: mutating it never leaks into a later load.
+        first["active"].append("output/stagex/other_results.receipt.json")
+        second, _ = module.load_registry(self.root)
+        self.assertEqual(second["active"], [])
+        # Rewriting a registered receipt in place (a tamper the same process
+        # never announced through a write primitive) must be seen on the very
+        # next load rather than served from the memo.
+        receipt = self.root / "output/stagex/results.receipt.json"
+        value = json.loads(receipt.read_text(encoding="utf-8"))
+        value["supersedes"] = ["output/stagex/other_results.receipt.json"]
+        receipt.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n",
+                           encoding="utf-8")
+        with self.assertRaisesRegex(module.EvidenceError, "receipt bytes are stale"):
+            module.load_registry(self.root)
+
+    def test_registry_memo_sees_receipts_appearing_on_disk(self) -> None:
+        self.call("run", "--bundle", "output/stagex/results.json",
+                  "--receipt", "output/stagex/results.receipt.json", "--",
+                  sys.executable, "code/analyze.py")
+        module = self.load_module("results_pipeline_registry_inventory")
+        # Whether or not the fresh receipt is still hot (and therefore kept
+        # out of the memo), a stray receipt-shaped entry is caught next.
+        module.load_registry(self.root)
+        stray = self.root / "output/stagex/stray_results.receipt.json"
+        shutil.copyfile(self.root / "output/stagex/results.receipt.json", stray)
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "exactly inventory every result receipt"):
+            module.load_registry(self.root)
+        stray.unlink()
+        time.sleep(module._MEMO_COLD_NS / 1e9 + 0.5)
+        # Cold dependencies, but a directory that was just created is hot: the
+        # memo keeps its entry names, so a receipt-shaped entry appearing in
+        # it within the same timestamp tick is still caught.
+        hot_dir = self.root / "output/hot"
+        hot_dir.mkdir()
+        module.load_registry(self.root)
+        self.assertIn(str(self.root), module._REGISTRY_MEMO)
+        self.assertEqual(set(module._REGISTRY_MEMO[str(self.root)][3].hot), {"", "hot"})
+        stray = hot_dir / "stray_results.receipt.json"
+        shutil.copyfile(self.root / "output/stagex/results.receipt.json", stray)
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "exactly inventory every result receipt"):
+            module.load_registry(self.root)
+        stray.unlink()
+        hot_dir.rmdir()
+        # Once the tree is cold, the memo relies on directory timestamps: a
+        # receipt-shaped entry that appears out of band, anywhere beneath
+        # output/ and without any write primitive of this process, is caught
+        # by the very next load.
+        time.sleep(module._MEMO_COLD_NS / 1e9 + 0.5)
+        module.load_registry(self.root)
+        self.assertFalse(module._REGISTRY_MEMO[str(self.root)][3].hot)
+        deep = self.root / "output/other/nested"
+        deep.mkdir(parents=True)
+        stray = deep / "stray_results.receipt.json"
+        shutil.copyfile(self.root / "output/stagex/results.receipt.json", stray)
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "exactly inventory every result receipt"):
+            module.load_registry(self.root)
+        stray.unlink()
+        module.load_registry(self.root)
+        # Removing a tracked receipt is seen as well.
+        tracked = self.root / "output/stagex/results.receipt.json"
+        held = tracked.read_bytes()
+        tracked.unlink()
+        with self.assertRaisesRegex(module.EvidenceError, "unavailable|missing"):
+            module.load_registry(self.root)
+        tracked.write_bytes(held)
+        module.load_registry(self.root)
+        # A dependency that was rewritten just before validation is hot and
+        # is therefore never covered by a memo.
+        self.assertNotIn(str(self.root), module._REGISTRY_MEMO)
+        # Every path existence/symlink check the validation made is replayed
+        # before a memoized registry is served: a declared producer input or
+        # code file that vanishes afterwards fails the next load exactly as
+        # a fresh validation would.
+        time.sleep(module._MEMO_COLD_NS / 1e9 + 0.5)
+        module.load_registry(self.root)
+        self.assertIn(str(self.root), module._REGISTRY_MEMO)
+        recorded = dict(module._REGISTRY_MEMO[str(self.root)][4])
+        self.assertTrue(recorded.get("code/analyze.py"))
+        self.assertTrue(recorded.get("data/input.txt"))
+        for raw in ("code/analyze.py", "data/input.txt"):
+            target = self.root / raw
+            held = target.read_bytes()
+            target.unlink()
+            try:
+                with self.assertRaisesRegex(module.EvidenceError,
+                                            f"declared path does not exist: {raw}"):
+                    module.load_registry(self.root)
+            finally:
+                target.write_bytes(held)
+        # A symlink inserted along a declared path is caught the same way.
+        code = self.root / "code"
+        code.rename(self.root / "code-held")
+        code.symlink_to("code-held", target_is_directory=True)
+        try:
+            with self.assertRaisesRegex(module.EvidenceError, "symlink path is forbidden"):
+                module.load_registry(self.root)
+        finally:
+            code.unlink()
+            (self.root / "code-held").rename(code)
+        # A malformed registry never makes the memo look outside the project.
+        self.assertFalse(module._memo_relative_path("../../etc/passwd"))
+        self.assertFalse(module._memo_relative_path("/etc/passwd"))
+        self.assertFalse(module._memo_relative_path("output/.git/x"))
+        self.assertTrue(module._memo_relative_path("output/stagex/x_results.receipt.json"))
+
+    def test_directory_entries_memo_never_skips_a_changed_snapshot(self) -> None:
+        module = self.load_module("results_pipeline_entries_memo")
+        tree = self.root / "data/tree/sub"
+        tree.mkdir(parents=True)
+        (tree / "a.txt").write_text("a\n", encoding="utf-8")
+        (self.root / "data/tree/b.txt").write_text("b\n", encoding="utf-8")
+        record = module.fingerprint(self.root, "data/tree")
+        module.validate_snapshot_record(self.root, record, "r")
+        module.validate_snapshot_record(self.root, record, "r")
+        # Any change to the entries changes their canonical digest, so the
+        # per-entry checks run again: a malformed entry is rejected even
+        # though the same record just validated.
+        broken = json.loads(json.dumps(record))
+        broken["entries"][0]["path"] = "../escape"
+        with self.assertRaisesRegex(module.EvidenceError, "malformed or unsorted"):
+            module.validate_snapshot_record(self.root, broken, "r")
+        unsorted = json.loads(json.dumps(record))
+        unsorted["entries"].reverse()
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "missing or non-directory parent"):
+            module.validate_snapshot_record(self.root, unsorted, "r")
+        swapped = json.loads(json.dumps(record))
+        swapped["entries"][0], swapped["entries"][1] = (
+            swapped["entries"][1], swapped["entries"][0]
+        )
+        with self.assertRaisesRegex(module.EvidenceError, "malformed or unsorted"):
+            module.validate_snapshot_record(self.root, swapped, "r")
+        # A digest that disagrees with (already validated) entries still fails.
+        stale = json.loads(json.dumps(record))
+        stale["sha256"] = "sha256:" + "0" * 64
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "does not match its directory entries"):
+            module.validate_snapshot_record(self.root, stale, "r")
+        # Receipt-level checks are never memoized: a live plan that no longer
+        # matches, or a receipt that supersedes itself, is rejected on the
+        # next validation.
+        self.call("run", "--bundle", "output/stagex/results.json",
+                  "--receipt", "output/stagex/results.receipt.json", "--",
+                  sys.executable, "code/analyze.py")
+        receipt = self.root / "output/stagex/results.receipt.json"
+        module.validate_receipt_contract(self.root, receipt)
+        plan = self.root / "output/stagex/results.plan.json"
+        value = json.loads(plan.read_text(encoding="utf-8"))
+        value["artifacts"].append("output/stagex/extra.json")
+        plan.write_text(json.dumps(value) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(module.EvidenceError,
+                                    "inventory differs from the plan"):
+            module.validate_receipt_contract(self.root, receipt)
+        value = json.loads(receipt.read_text(encoding="utf-8"))
+        value["supersedes"] = ["output/stagex/results.receipt.json"]
+        receipt.write_text(json.dumps(value) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(module.EvidenceError, "cannot supersede itself"):
+            module.validate_receipt_contract(self.root, receipt)
+
+    def test_result_receipt_inventory_matches_full_walk(self) -> None:
+        module = self.load_module("results_pipeline_inventory")
+        output = self.root / "output"
+        (output / "deep/er").mkdir(parents=True)
+        (output / "deep/er/x_results.receipt.json").write_text("{}\n", encoding="utf-8")
+        (output / "deep/dir_results.receipt.json").mkdir()
+        (output / "deep/dir_results.receipt.json/y_results.receipt.json").write_text(
+            "{}\n", encoding="utf-8"
+        )
+        os.symlink("er", output / "deep/link_results.receipt.json")
+        os.symlink("er/x_results.receipt.json", output / "deep/file_results.receipt.json")
+        (output / "deep/er/plain.txt").write_text("x\n", encoding="utf-8")
+        expected = [
+            (relative, child, info.st_ino, info.st_mode, info.st_nlink)
+            for relative, child, info, _ in module.walk_directory(output)
+            if relative.endswith("results.receipt.json")
+        ]
+        actual = [
+            (relative, child, info.st_ino, info.st_mode, info.st_nlink)
+            for relative, child, info in module.result_receipt_inventory(output)
+        ]
+        self.assertEqual(actual, expected)
+        self.assertEqual(len(actual), 5)
+        self.assertTrue(any(stat.S_ISLNK(entry[3]) for entry in actual))
+        (output / "deep/bad\x01name").write_text("x\n", encoding="utf-8")
+        with self.assertRaisesRegex(module.EvidenceError, "control characters"):
+            module.result_receipt_inventory(output)
+
+    def test_parallel_fingerprint_matches_serial_digests_and_error_order(self) -> None:
+        module = self.load_module("results_pipeline_parallel_hash")
+        tree = self.root / "data/tree"
+        (tree / "sub").mkdir(parents=True)
+        expected: dict[str, str] = {}
+        for index in range(300):
+            relative = f"sub/f{index:03d}.bin" if index % 2 else f"f{index:03d}.bin"
+            payload = os.urandom(1024 * (index % 7)) + bytes([index % 256])
+            (tree / relative).write_bytes(payload)
+            expected[relative] = "sha256:" + hashlib.sha256(payload).hexdigest()
+        snapshot = module.fingerprint(self.root, "data/tree")
+        digests = {entry["path"]: entry["sha256"]
+                   for entry in snapshot["entries"] if entry["kind"] == "file"}
+        self.assertEqual(digests, expected)
+        self.assertEqual(module.fingerprint(self.root, "data/tree"), snapshot)
+        # The same tree under a tight descriptor limit: the hashing workers
+        # must bound their descriptors in flight below the limit.
+        open_before = len(os.listdir("/proc/self/fd"))
+        soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+        lowered = min(64, hard)
+        try:
+            resource.setrlimit(resource.RLIMIT_NOFILE, (lowered, hard))
+            self.assertEqual(module.fingerprint(self.root, "data/tree"), snapshot)
+        finally:
+            resource.setrlimit(resource.RLIMIT_NOFILE, (soft, hard))
+        self.assertEqual(len(os.listdir("/proc/self/fd")), open_before)
+        # A file the walker cannot open fails synchronously, in traversal order.
+        for name in ("f100.bin", "f200.bin"):
+            (tree / name).chmod(0)
+        try:
+            with self.assertRaisesRegex(module.EvidenceError,
+                                        "cannot fingerprint .*f100.bin"):
+                module.fingerprint(self.root, "data/tree")
+        finally:
+            for name in ("f100.bin", "f200.bin"):
+                (tree / name).chmod(0o600)
+        # A digest failure inside a worker is raised for the earliest failing
+        # file in traversal order, ahead of a later traversal error, and no
+        # descriptor is leaked on the way out.
+        original = module._hash_descriptor
+        failing = {os.fstat(os.open(tree / name, os.O_RDONLY)).st_ino
+                   for name in ("f150.bin", "sub/f051.bin")}
+
+        def hash_or_fail(descriptor: int) -> str:
+            if os.fstat(descriptor).st_ino in failing:
+                os.close(descriptor)
+                raise OSError(5, "simulated read failure")
+            return original(descriptor)
+
+        (tree / "sub/zz\x01bad").write_bytes(b"x")
+        open_before = len(os.listdir("/proc/self/fd"))
+        try:
+            with mock.patch.object(module, "_hash_descriptor", hash_or_fail):
+                with self.assertRaisesRegex(OSError, "simulated read failure"):
+                    module.fingerprint(self.root, "data/tree")
+        finally:
+            (tree / "sub/zz\x01bad").unlink()
+        self.assertEqual(len(os.listdir("/proc/self/fd")), open_before)
+        with self.assertRaisesRegex(module.EvidenceError, "control characters"):
+            (tree / "sub/zz\x01bad").write_bytes(b"x")
+            try:
+                module.fingerprint(self.root, "data/tree")
+            finally:
+                (tree / "sub/zz\x01bad").unlink()
+
 
 if __name__ == "__main__":
     unittest.main()
