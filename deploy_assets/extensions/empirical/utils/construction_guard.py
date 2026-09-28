@@ -77,6 +77,11 @@ SCHEMA_VERSION = 1
 # A column is treated as carrying content digests once this share of its
 # non-empty cells parse as one. Below it, digest-shaped cells are incidental.
 DIGEST_COLUMN_SHARE = 0.5
+# ...or once this many cells parse as one, whatever the share. Otherwise a
+# comparison table whose other rows carry values can dilute a digest column
+# below the share on smoke data and pass the precheck, then fail live once
+# those rows vanish (field case: k19 in change_scope_vs_v11a19.csv).
+DIGEST_COLUMN_MIN_CELLS = 8
 # A constant *_locator column is a construction failure rather than a warning
 # only once there are enough rows for constancy to be unambiguous.
 LOCATOR_CONSTANCY_ROWS = 10
@@ -508,7 +513,8 @@ def check_digest_provenance(
             for index, value in enumerate(values)
             if value.strip() and (match := DIGEST_CELL.fullmatch(value.strip()))
         ]
-        if not claimed or len(claimed) < DIGEST_COLUMN_SHARE * len(present):
+        if not claimed or (len(claimed) < DIGEST_COLUMN_SHARE * len(present)
+                           and len(claimed) < DIGEST_COLUMN_MIN_CELLS):
             continue
 
         bound_to_input = 0

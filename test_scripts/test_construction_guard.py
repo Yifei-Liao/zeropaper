@@ -218,6 +218,25 @@ class FabricatedLedgerTest(GuardFixture):
         self.assertEqual(finding["binding"], "row-scoped")
         self.assertEqual(len(finding["mismatched_examples"]), 5)
 
+    def test_invented_digests_diluted_by_value_rows_still_fail(self) -> None:
+        # A comparison table whose other rows carry plain values must not
+        # dilute a digest column below the share and slip past the check.
+        rows = self.honest_rows()
+        for index, row in enumerate(rows):
+            row["payload_sha256"] = digest_of(f"invented {index}".encode())
+        for index in range(30):
+            rows.append({
+                "row_id": str(100 + index),
+                "source_document": "doc_00.html",
+                "payload_sha256": f"{index * 0.137:.4f}",
+                "decision_locator": rows[0]["decision_locator"],
+                "heading_type": "operative",
+            })
+        ledger = self.write_ledger("ledger.csv", rows)
+        code, report = self.run_guard(self.receipt(ledger))
+        self.assertEqual(code, 1)
+        self.assertIn("FAIL", self.statuses(report, "claimed-digest-provenance"))
+
     def test_rows_citing_documents_outside_the_corpus_fail(self) -> None:
         rows = self.honest_rows()
         rows[0]["source_document"] = "doc_99.html"
