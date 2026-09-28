@@ -6,6 +6,18 @@ Per `CLAUDE.md` ("no unsolved, undocumented, or untracked architectural limits")
 
 ---
 
+## Stage 3a: the pre-run drift check on active receipts is producer-hashed; the trusted runner has no read-only closure check to hand it
+
+**Scope:** `--ext empirical` Stage 3a re-fires while a receipt is active (every mode; sharpest under data-first, where the active release binds its build closure and `--supersedes` never waives drift on it).
+
+**Failure mode:** the "Release-bound code while a release is active" preflight exists so an in-place edit to a receipt-bound module is caught before `run-empirical` refuses and the attempt is lost. As first written it asked the empiricist to run a full `results_pipeline.py verify` on the active release receipt before every live run. That command re-hashes every declared input under the registry lock (15–25 minutes on a large cache), and under data-first after a spec revision it reports `STALE` on the moved Gate-2 rights-inventory pointer whether or not any code drifted, so the empiricist could not act on its exit code anyway. Field evidence: eventcal verified the same active pair (`v9_a18`) before each of three consecutive attempts in one day — analysis `PASS`, release `STALE` on the pointer, zero manifest mismatches, identical output each time. The stage document now asks for the check that matches the purpose — compare the current SHA-256 of every file under the active receipts' `producer_run.code` / `renderer_code` / `render_run.code` with the digest the receipt records — and forbids re-verifying an active receipt inside a campaign except where a step names it. That is correct and cheap, but it is hashing the producer does by hand: nothing in `results_pipeline.py` exposes the receipt's code closure as a read-only, lock-free comparison, so the check's fidelity rests on the empiricist reproducing the receipt's snapshot semantics (file vs directory entries, path normalization) rather than on the runner's own code. Correctness is unaffected either way — the runner re-verifies every active receipt before the producer starts and refuses on drift — so a mis-implemented preflight costs an attempt, never a wrong result.
+
+**What would close it:** a `results_pipeline.py check-closure --receipt <path> --read-only` subcommand that reuses `compare_snapshot` over the receipt's code entries only, takes no registry lock, and prints the drifted paths; the stage document's preflight then names that command instead of describing the hash. A verify-stamp in the registry (receipt path → last PASS with registry and input fingerprints) would additionally let Gate 4's full verify of an unchanged active pair be skipped on recorded evidence, which the runner's pre-run check does not cover.
+
+**Tracking:** issue to be filed (proposed text in the change report for `speed-345`).
+
+---
+
 ## WRDS watchdog residuals: venv not integrity-bound, pre-v2.29 orphan misclassification, no OpenCode coverage
 
 **Scope:** the `--ext empirical` launcher-side watchdog (`code/utils/wrds_watchdog.py`, v2.44.0, #322).
