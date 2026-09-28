@@ -93,6 +93,8 @@ Save to the exact `AUDIT_OUTPUT_PATH` named by the launch prompt. The default St
 [one paragraph]
 ```
 
+{{> repair_scope_line }}
+
 ## Verdict rules
 
 - **PASS** — every non-waived class triangulated by a genuinely independent pair over its claimed span (a class the spec stages and the report lists as `outstanding` under `## Staged classes` is exempt, provided step 4.5 confirmed it is genuinely absent); no severity-7+ findings; your sample re-checks agree with the reconciliation log (no unlogged discrepancies beyond isolated noise); every waiver spec-stated with a holding reason; and any REQUIRED certificate has a valid binding and zero full-key/predicate drift.

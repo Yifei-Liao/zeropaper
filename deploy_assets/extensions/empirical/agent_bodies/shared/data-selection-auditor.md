@@ -91,6 +91,8 @@ Save to the exact `AUDIT_OUTPUT_PATH` named by the launch prompt. The default St
 [one paragraph]
 ```
 
+{{> repair_scope_line }}
+
 ## Verdict rules
 
 - **PASS** — no severity-7+ findings; silent-exclusion rate <2% on every audited universe; documented inclusion rule matches code verbatim (or the deviations are documented and benign); treatment-assignment spot-check matches 100% on the sample; cross-method effective N's within 10% (or the divergence is documented).

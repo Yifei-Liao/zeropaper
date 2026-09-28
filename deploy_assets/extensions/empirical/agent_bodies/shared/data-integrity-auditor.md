@@ -87,6 +87,8 @@ Save to the exact `AUDIT_OUTPUT_PATH` named by the launch prompt. The default St
 [one paragraph]
 ```
 
+{{> repair_scope_line }}
+
 ## Verdict rules
 
 - **PASS** — no severity-7+ findings; source re-query divergence rate <2% on every audited cache; no failure mode listed twice on different fields (which would indicate a systemic transform bug rather than an isolated one).

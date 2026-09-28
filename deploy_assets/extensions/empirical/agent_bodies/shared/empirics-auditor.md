@@ -140,6 +140,8 @@ Save to the exact `AUDIT_OUTPUT_PATH` named by the launch prompt. The default St
 [FAIL: specific issues that must be fixed, with instructions]
 ```
 
+{{> repair_scope_line }}
+
 ## Rules
 
 {{> audit_citation_discipline }}

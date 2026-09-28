@@ -73,6 +73,24 @@ for a in identification-designer identification-auditor \
         pass "data-first: $a pruned"
     fi
 done
+# Release-only repair (data-first): the shared `repair_scope_line` fragment must
+# resolve inside every data-first auditor body, in every runtime that assembles
+# extension agents, and never ship as a literal include directive.
+for a in empirics-auditor data-integrity-auditor data-selection-auditor coverage-auditor; do
+    for f in "$D/.claude/agents/$a.md" "$D/.codex/agents/$a.toml" "$D/.gemini/agents/$a.md" \
+             "$D/.opencode/agents/$a.md"; do
+        if [ ! -f "$f" ]; then
+            fail "data-first: $f missing"
+        elif grep -q '{{>' "$f"; then
+            fail "data-first: literal fragment include shipped in $f"
+        elif ! grep -q 'Repair scope: release' "$f"; then
+            fail "data-first: repair-scope line missing from $f"
+        else
+            pass "data-first: repair-scope line resolved in $f"
+        fi
+    done
+done
+
 # #350: the Stage 9 roster (agent list + report list) and the polish bodies'
 # division-of-labor lines must not name a pruned polisher. (Conditional rules
 # such as the triager's polish-formula override stay; they cannot fire.)
@@ -132,6 +150,8 @@ if grep -q "output/stage2/source_rights_s{dataset_spec_serial}_vN.json" "$D/docs
         && grep -q 'dataset_rights_inventory_sha256' "$D/docs/stage_3a_empirical.md" \
         && grep -q 'RELEASE_SUPERSEDES_ARGS' "$D/docs/stage_3a_empirical.md" \
         && grep -q 'retire-pair' "$D/docs/stage_3a_empirical.md" \
+        && grep -q 'Release-only repair' "$D/docs/stage_3a_empirical.md" \
+        && grep -q 'is a named caller too' "$D/docs/stage_3a_empirical.md" \
         && grep -q 'pipeline_state.json:dataset_rights_inventory' "$D/.claude/agents/empirics-auditor.md" \
         && ! grep -q 'source_rights_s{dataset_spec_serial}' "$D/.claude/agents/empirics-auditor.md" \
         && grep -q 'pipeline_state.json:dataset_rights_inventory' "$D/docs/stage_5.md" \
@@ -307,6 +327,11 @@ else
         fail "empirical-first control: DATA_FIRST content leaked into agents"
     else
         pass "empirical-first control: agents clean of DATA_FIRST content"
+    fi
+    if grep -rl "Repair scope" "$E/.claude/agents" "$E/docs" >/dev/null 2>&1; then
+        fail "empirical-first control: data-first repair-scope line leaked"
+    else
+        pass "empirical-first control: no repair-scope line"
     fi
     if grep -q 'coverage-census-only' "$E/.claude/agents/empiricist.md"; then
         fail "empirical-first control: census-only launch leaked into empiricist"
