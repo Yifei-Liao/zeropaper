@@ -14,7 +14,7 @@ Per `CLAUDE.md` ("no unsolved, undocumented, or untracked architectural limits")
 
 **What would close it:** a `results_pipeline.py check-closure --receipt <path> --read-only` subcommand that reuses `compare_snapshot` over the receipt's code entries only, takes no registry lock, and prints the drifted paths; the stage document's preflight then names that command instead of describing the hash. A verify-stamp in the registry (receipt path → last PASS with registry and input fingerprints) would additionally let Gate 4's full verify of an unchanged active pair be skipped on recorded evidence, which the runner's pre-run check does not cover.
 
-**Tracking:** issue to be filed (proposed text in the change report for `speed-345`).
+**Tracking:** [#355](https://github.com/alejandroll10/zeropaper/issues/355).
 
 ---
 
@@ -26,7 +26,7 @@ Per `CLAUDE.md` ("no unsolved, undocumented, or untracked architectural limits")
 
 **What would close it:** a campaign serial in `pipeline_state.json` (incremented at every Stage 3a entry, first pass and each "Re-fire on theory revision" entry) written into the snapshot directory name, so condition (2) becomes a string comparison. Worth designing with the `stage3a_upstream_return` ceiling, which already needs the same "which campaign is this" fact.
 
-**Tracking:** issue to be filed (proposed text in the change report for `speed-345`).
+**Tracking:** [#356](https://github.com/alejandroll10/zeropaper/issues/356).
 
 ---
 
@@ -841,4 +841,4 @@ The proposed remedy was also unnecessary. The transition prohibits editing *in p
 
 **What would close it:** (1) a mechanical qualification — for example, a construction-guard-style check that maps each finding's stated locus to the receipt whose closure binds it, refusing `release` for any locus the analysis receipt binds — would remove the judgement call for path-addressable findings; (2) a two-row `## Scope digests` table in the empirics-auditor (analysis receipt digest + code content set, release receipt likewise) would let its analysis legs carry when the analysis row had zero findings, under the same #344 discipline the triad uses.
 
-**Tracking:** issue to be filed (see the release-only repair change's report).
+**Tracking:** [#357](https://github.com/alejandroll10/zeropaper/issues/357).
