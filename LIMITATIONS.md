@@ -18,6 +18,18 @@ Per `CLAUDE.md` ("no unsolved, undocumented, or untracked architectural limits")
 
 ---
 
+## Stage 3a audit carry-forward: campaign membership of the prior report is read from the commit trail, not from state
+
+**Scope:** `--ext empirical` Stage 3a step 7.5 "Audit carry-forward" (issues #344, #347), every mode.
+
+**Failure mode:** `PRIOR_AUDIT_REPORT` was passed at the orchestrator's discretion ("or any doubt, pass nothing"), with no stated location for the prior report — whose fixed path the next firing overwrites — so two live campaigns invented snapshot paths ad hoc (`audit_scratch/prior_v15_a11/`, `audit_prior_k16/`, `audit_history/v7_a13_carry_reports/`) and more often re-fired the data auditors with nothing, re-buying every live source re-query for units the repair never touched. The stage document now snapshots every batch's reports at step 8 (`output/stage3a/audit_history/v{N}_a{K}/`) and passes the prior report on three mechanical conditions: a snapshot exists at the current `theory_version`, it was produced inside the current build campaign, and the launch is not the no-marker-less-carry re-launch or a post-pipeline firing. The second condition is decided from the commit trail — the batch's step-8 commit must postdate the campaign's entry commit (the `audit_fix` reset commit of a "Re-fire on theory revision" entry) — because `pipeline_state.json` records no campaign identity: nothing distinguishes a data-first staged-class follow-up at an unchanged `theory_version` from a fresh attempt inside the previous campaign except that reset commit. An orchestrator that misreads the trail in the strict direction passes nothing and pays today's cost; one that misreads it in the loose direction hands a closed campaign's report to the auditor, whose own recomputed cache/code/plan-section digests refuse every row the follow-up touched and admit only a row whose evidence scope is byte-identical — the same test every within-campaign carry rests on — with the no-marker-less-carry check still standing between any carried row and acceptance. The re-entry exclusion is therefore belt-and-braces over the digest rule rather than the thing that keeps a carry sound, which is why this is a cost limit far more than a correctness one. The auditor bodies' carry rules are unchanged and remain the strict side.
+
+**What would close it:** a campaign serial in `pipeline_state.json` (incremented at every Stage 3a entry, first pass and each "Re-fire on theory revision" entry) written into the snapshot directory name, so condition (2) becomes a string comparison. Worth designing with the `stage3a_upstream_return` ceiling, which already needs the same "which campaign is this" fact.
+
+**Tracking:** issue to be filed (proposed text in the change report for `speed-345`).
+
+---
+
 ## WRDS watchdog residuals: venv not integrity-bound, pre-v2.29 orphan misclassification, no OpenCode coverage
 
 **Scope:** the `--ext empirical` launcher-side watchdog (`code/utils/wrds_watchdog.py`, v2.44.0, #322).
