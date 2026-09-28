@@ -54,6 +54,14 @@ expect_text "$BASE" "## Unseeded score-routing path" \
     "unseeded Gate 4 retains strategic score routing"
 reject_text "$BASE" "### Seeded-mode override" \
     "unseeded Gate 4 has no seeded route"
+reject_text "$BASE" "gate4_correctness_return" \
+    "unseeded Gate 4 has no seeded correctness-return cap"
+for shape in seed faithful; do
+    expect_text "$ROOT/$shape/CLAUDE.md" '| `gate4_correctness_return` | 3 |' \
+        "$shape core registers the correctness-return loop"
+    expect_text "$ROOT/$shape/CLAUDE.md" "halted_seed_gate4_correctness" \
+        "$shape session guidance names the correctness-return halt"
+done
 
 for item in "$SEED" "$FAITHFUL"; do
     label="$(basename "$(dirname "$(dirname "$item")")")"
@@ -71,6 +79,14 @@ for item in "$SEED" "$FAITHFUL"; do
         "$label does not promote strategic triage to correctness"
     expect_text "$item" "Otherwise, proceed to Stage 5" \
         "$label advances when correctness is clear"
+    expect_text "$item" 'increment `loops.gate4_correctness_return.round`' \
+        "$label counts correctness returns to an owning gate"
+    expect_text "$item" 'status = "halted_seed_gate4_correctness"' \
+        "$label halts at the cap on a confirmed load-bearing defect"
+    expect_text "$item" "Nothing an audit confirmed is dropped on either branch" \
+        "$label carries confirmed findings forward at the cap"
+    expect_order "$item" "Correctness-return cap" "Otherwise, proceed to Stage 5" \
+        "$label decides the cap route before the clean advance"
     reject_text "$item" "Plateau ship rule" \
         "$label has no score-plateau wait"
     reject_text "$item" "Gate 4 ABANDON" \

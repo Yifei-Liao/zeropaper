@@ -48,7 +48,7 @@ Per-gate seeded-mode overrides are injected into each stage doc at the verdict l
 <!-- NOT_DATA_FIRST_START -->
 - `docs/stage_3a_empirical.md` — Gate 3a-feasibility FALSIFIED (`--ext empirical`).
 <!-- NOT_DATA_FIRST_END -->
-- `docs/stage_4.md` — seeded correctness gate (aggregate score does not route; branch-manager is skipped).
+- `docs/stage_4.md` — seeded correctness gate (aggregate score does not route; branch-manager is skipped; returns to an owning gate are capped by `loops.gate4_correctness_return`).
 - `docs/stage_6.md` — Gate 5 Major Revision / Reject.
 - `docs/stage_puzzle_triage.md` — PIVOT / BACK-TO-IDEA / HONEST-NULL.
 
