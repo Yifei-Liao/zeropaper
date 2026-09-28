@@ -237,6 +237,23 @@ class FabricatedLedgerTest(GuardFixture):
         self.assertEqual(code, 1)
         self.assertIn("FAIL", self.statuses(report, "claimed-digest-provenance"))
 
+    def test_mixed_path_column_below_the_share_still_fails(self) -> None:
+        # A column naming the whole corpus must not escape resolution because
+        # other rows name things the receipt never declared.
+        rows = self.honest_rows()
+        for index in range(30):
+            rows.append({
+                "row_id": str(100 + index),
+                "source_document": f"code/module_{index}.py",
+                "payload_sha256": rows[0]["payload_sha256"],
+                "decision_locator": rows[0]["decision_locator"],
+                "heading_type": "operative",
+            })
+        ledger = self.write_ledger("ledger.csv", rows)
+        code, report = self.run_guard(self.receipt(ledger))
+        self.assertEqual(code, 1)
+        self.assertIn("FAIL", self.statuses(report, "source-reference-resolution"))
+
     def test_rows_citing_documents_outside_the_corpus_fail(self) -> None:
         rows = self.honest_rows()
         rows[0]["source_document"] = "doc_99.html"

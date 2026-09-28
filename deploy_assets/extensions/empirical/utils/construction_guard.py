@@ -89,6 +89,11 @@ LOCATOR_CONSTANCY_ROWS = 10
 # values resolves to a declared input; below it, a lone coincidental match in
 # a free-text column must not turn the whole column into a failure.
 PATH_COLUMN_SHARE = 0.5
+# ...or once this many distinct values resolve, whatever the share. A precheck
+# cannot resolve rows naming the run's own live artifacts, so without this
+# floor a mixed path column sits below the share on smoke data, passes, and
+# then fails live (field case: k21 in change_scope_vs_v11a20.csv).
+PATH_COLUMN_MIN_RESOLVED = 8
 # Artifacts larger than this are refused rather than silently skipped.
 DEFAULT_MAX_BYTES = 512 * 1024 * 1024
 
@@ -462,7 +467,8 @@ def _reference_columns(columns: dict[str, list[str]], evidence: dict[str, Any]
         resolved = distinct & known
         if not any(not BARE_INTEGER.fullmatch(value) for value in resolved):
             continue
-        if len(resolved) >= PATH_COLUMN_SHARE * len(distinct):
+        if (len(resolved) >= PATH_COLUMN_SHARE * len(distinct)
+                or len(resolved) >= PATH_COLUMN_MIN_RESOLVED):
             selected[name] = values
     return selected
 
