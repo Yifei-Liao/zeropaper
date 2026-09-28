@@ -5110,61 +5110,60 @@ _VALIDATED_DIRECTORY_ENTRIES: set[str] = set()
 
 def _validate_directory_entries(entries: list[Any], where: str) -> None:
     """Reject a directory snapshot's entries unless every one is well formed."""
-    if True:
-        prior = ""
-        entry_kinds: dict[str, str] = {}
-        file_keys = {"path", "kind", "sha256"}
-        directory_keys = {"path", "kind"}
-        for index, entry in enumerate(entries):
-            entry_where = f"{where}.entries[{index}]"
-            if (not isinstance(entry, dict) or
-                    not isinstance(entry.get("kind"), str) or
-                    entry.get("kind") not in {"file", "directory"}):
-                raise EvidenceError(f"{entry_where} is malformed")
-            entry_expected = file_keys if entry["kind"] == "file" else directory_keys
-            if set(entry) != entry_expected:
-                raise EvidenceError(f"{entry_where} has malformed keys")
-            entry_path = entry.get("path")
-            # A recorded entry path must be exactly its own PurePosixPath
-            # rendering: relative, and free of empty, "." and ".." components
-            # (which is what pathlib would drop or keep on re-rendering), so
-            # splitting on "/" reproduces PurePosixPath(entry_path).parts
-            # without constructing a path object per entry.
-            parts = entry_path.split("/") if isinstance(entry_path, str) else None
-            # An empty, "." or ".." part can only occur where the path starts
-            # with "/" or ".", ends with "/", or contains "//" or "/."; a
-            # credential-bearing part (".git", ".env*") only where the folded
-            # path contains ".git" or ".env". Those substring tests gate the
-            # exact per-part checks, which then run only on candidates.
-            folded = entry_path.casefold() if parts is not None else ""
-            if (parts is None or not entry_path or
-                    "\\" in entry_path or
-                    _CONTROL_CHARACTER_RE.search(entry_path) is not None or
-                    ((entry_path[0] in "/." or entry_path[-1] == "/" or
-                      "//" in entry_path or "/." in entry_path) and
-                     any(part in {"", ".", ".."} for part in parts)) or
-                    ((".git" in folded or ".env" in folded) and
-                     any(_forbidden_part(part) for part in parts)) or
-                    entry_path <= prior):
-                raise EvidenceError(f"{entry_where}.path is malformed or unsorted")
-            # Every recorded parent was itself checked against its own
-            # ancestors when it was recorded, so the immediate parent decides;
-            # the shallowest missing ancestor is reported on failure exactly as
-            # before.
-            if len(parts) > 1 and entry_kinds.get("/".join(parts[:-1])) != "directory":
-                for depth in range(1, len(parts)):
-                    parent = "/".join(parts[:depth])
-                    if entry_kinds.get(parent) != "directory":
-                        raise EvidenceError(
-                            f"{entry_where}.path has a missing or non-directory "
-                            f"parent {parent}"
-                        )
-            prior = entry_path
-            entry_kinds[entry_path] = entry["kind"]
-            if entry["kind"] == "file" and (
-                    not isinstance(entry.get("sha256"), str) or
-                    _SHA256_DIGEST_RE.fullmatch(entry["sha256"]) is None):
-                raise EvidenceError(f"{entry_where}.sha256 is malformed")
+    prior = ""
+    entry_kinds: dict[str, str] = {}
+    file_keys = {"path", "kind", "sha256"}
+    directory_keys = {"path", "kind"}
+    for index, entry in enumerate(entries):
+        entry_where = f"{where}.entries[{index}]"
+        if (not isinstance(entry, dict) or
+                not isinstance(entry.get("kind"), str) or
+                entry.get("kind") not in {"file", "directory"}):
+            raise EvidenceError(f"{entry_where} is malformed")
+        entry_expected = file_keys if entry["kind"] == "file" else directory_keys
+        if set(entry) != entry_expected:
+            raise EvidenceError(f"{entry_where} has malformed keys")
+        entry_path = entry.get("path")
+        # A recorded entry path must be exactly its own PurePosixPath
+        # rendering: relative, and free of empty, "." and ".." components
+        # (which is what pathlib would drop or keep on re-rendering), so
+        # splitting on "/" reproduces PurePosixPath(entry_path).parts
+        # without constructing a path object per entry.
+        parts = entry_path.split("/") if isinstance(entry_path, str) else None
+        # An empty, "." or ".." part can only occur where the path starts
+        # with "/" or ".", ends with "/", or contains "//" or "/."; a
+        # credential-bearing part (".git", ".env*") only where the folded
+        # path contains ".git" or ".env". Those substring tests gate the
+        # exact per-part checks, which then run only on candidates.
+        folded = entry_path.casefold() if parts is not None else ""
+        if (parts is None or not entry_path or
+                "\\" in entry_path or
+                _CONTROL_CHARACTER_RE.search(entry_path) is not None or
+                ((entry_path[0] in "/." or entry_path[-1] == "/" or
+                  "//" in entry_path or "/." in entry_path) and
+                 any(part in {"", ".", ".."} for part in parts)) or
+                ((".git" in folded or ".env" in folded) and
+                 any(_forbidden_part(part) for part in parts)) or
+                entry_path <= prior):
+            raise EvidenceError(f"{entry_where}.path is malformed or unsorted")
+        # Every recorded parent was itself checked against its own
+        # ancestors when it was recorded, so the immediate parent decides;
+        # the shallowest missing ancestor is reported on failure exactly as
+        # before.
+        if len(parts) > 1 and entry_kinds.get("/".join(parts[:-1])) != "directory":
+            for depth in range(1, len(parts)):
+                parent = "/".join(parts[:depth])
+                if entry_kinds.get(parent) != "directory":
+                    raise EvidenceError(
+                        f"{entry_where}.path has a missing or non-directory "
+                        f"parent {parent}"
+                    )
+        prior = entry_path
+        entry_kinds[entry_path] = entry["kind"]
+        if entry["kind"] == "file" and (
+                not isinstance(entry.get("sha256"), str) or
+                _SHA256_DIGEST_RE.fullmatch(entry["sha256"]) is None):
+            raise EvidenceError(f"{entry_where}.sha256 is malformed")
 
 
 def _declared_plan_path(receipt: Any) -> str | None:
@@ -5643,9 +5642,18 @@ def _dependency_signatures(root: Path, paths: Iterable[str]) -> tuple[Any, ...]:
 
 
 def _signatures_cold(signatures: tuple[Any, ...], now_ns: int) -> bool:
-    """True when every signature names a regular file whose timestamps are cold."""
+    """True when every present dependency is a regular file with cold timestamps.
+
+    A dependency that does not exist is memoizable as absent: the validation
+    that just ran either tolerated its absence or rejected the registry, and
+    its signature can only change by something appearing at the path, which
+    no timestamp granularity can hide. A path that holds anything but a
+    regular file refuses memoization outright.
+    """
     for state in signatures:
-        if len(state) < 7 or not stat.S_ISREG(state[6]):
+        if len(state) < 7:
+            continue
+        if not stat.S_ISREG(state[6]):
             return False
         if (state[4] > now_ns - _MEMO_COLD_NS or state[5] > now_ns - _MEMO_COLD_NS):
             return False

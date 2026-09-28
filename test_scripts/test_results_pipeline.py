@@ -7437,6 +7437,32 @@ bundle = {
         finally:
             code.unlink()
             (self.root / "code-held").rename(code)
+        # A dependency that is absent on disk (a retired receipt's cleaned-up
+        # plan) is memoized as absent, and its reappearance is seen.
+        registry_path = self.root / "process_log/results_registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        pending = registry["pending"][0]
+        fingerprint = registry["receipt_fingerprints"].pop(pending["receipt"])
+        registry["pending"] = []
+        registry["retired"].append({
+            "receipt": pending["receipt"],
+            "reason": "test retirement",
+            "last_fingerprint": fingerprint,
+        })
+        registry_path.write_text(json.dumps(registry, indent=2, sort_keys=True) + "\n",
+                                 encoding="utf-8")
+        plan = self.root / "output/stagex/results.plan.json"
+        held = plan.read_bytes()
+        plan.unlink()
+        time.sleep(module._MEMO_COLD_NS / 1e9 + 0.5)
+        module.load_registry(self.root)
+        self.assertIn(str(self.root), module._REGISTRY_MEMO)
+        self.assertIn(("output/stagex/results.plan.json", None),
+                      module._REGISTRY_MEMO[str(self.root)][2])
+        module.load_registry(self.root)
+        plan.write_bytes(held)
+        module.load_registry(self.root)
+        self.assertNotIn(str(self.root), module._REGISTRY_MEMO)
         # A malformed registry never makes the memo look outside the project.
         self.assertFalse(module._memo_relative_path("../../etc/passwd"))
         self.assertFalse(module._memo_relative_path("/etc/passwd"))
