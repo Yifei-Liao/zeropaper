@@ -27,6 +27,8 @@ For every implication, launch `gap-scout` — all of them in one message, since 
 
 Save each gap-scout result to `output/stage3/lit_check_impl_N.md`.
 
+**Per-implication reuse on a re-derive.** When this stage re-runs for the current `theory_attempt` because the consumed sections changed, an implication whose canonicalized statement (Step 5's `implication_key` rule: lowercase, whitespace-collapsed) equals one in the existing `output/stage3/implications.md` keeps that implication's lit-check: name the prior `lit_check_impl_N.md` in its **Lit status** line and give it the prior tag; launch `gap-scout` only for statements with no such match, writing their results at indices above the highest existing `lit_check_impl_N.md` so no kept implication's cited file is overwritten. The match is on the statement text, never on the item number — the deriver renumbers — and a reworded implication is a new one. A statement the literature has already answered once in this run does not need the answer bought again for every spec revision that touched other items.
+
 ## Step 3: Tag each implication
 
 Based on the lit-check, assign one of four tags:

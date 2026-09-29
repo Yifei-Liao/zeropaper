@@ -171,6 +171,26 @@ def main():
         changed = [a[0] for a, b in zip(first["sections"], second["sections"]) if a[1] != b[1]]
         check("editing one class changes only that class's section digest", changed == ["Class: cpi"])
         check("sections on a missing file exits 2", run("sections", "--doc", str(tmp / "absent.md")).returncode == 2)
+        plan.write_text("# Plan\n\n## Portfolio plan\nall items use VW\n### Item 1\none\n### Item 2\ntwo\n"
+                        "```\n### not an item\n```\n### Item 2\ntwo again\n\n## Shared construction\nspine\n")
+        deep = json.loads(run("sections", "--doc", str(plan), "--depth", "3").stdout)
+        check("depth 3 keeps the level-2 sections and adds per-subsection digests, fences unsplit",
+              [k for k, _ in deep["sections"]] == ["(preamble)", "Portfolio plan", "Shared construction"]
+              and [k for k, _ in deep["subsections"]] == ["Portfolio plan / (preamble)", "Portfolio plan / Item 1",
+                                                          "Portfolio plan / Item 2", "Portfolio plan / Item 2#2"])
+        check("depth 2 output carries no subsections",
+              "subsections" not in json.loads(run("sections", "--doc", str(plan)).stdout))
+        parts = scope.split_sections(dict(scope.split_sections(plan.read_text()))["Portfolio plan"], level=3)
+        check("subsections reassemble their section byte for byte",
+              "".join(t for _, t in parts) == dict(scope.split_sections(plan.read_text()))["Portfolio plan"])
+        plan.write_text(plan.read_text().replace("### Item 1\none\n", "### Item 1\nchanged\n"))
+        after = json.loads(run("sections", "--doc", str(plan), "--depth", "3").stdout)
+        moved = [a[0] for a, b in zip(deep["subsections"], after["subsections"]) if a[1] != b[1]]
+        check("an edit inside one item changes only that item's subsection digest and its section",
+              moved == ["Portfolio plan / Item 1"]
+              and [a[0] for a, b in zip(deep["sections"], after["sections"]) if a[1] != b[1]] == ["Portfolio plan"])
+        check("sections rejects an unsupported depth",
+              run("sections", "--doc", str(plan), "--depth", "4").returncode == 2)
 
         def audit(paras):
             dims = "".join(f"### {i}. Dim {i}\n{p}\n" for i, p in enumerate(paras, 1))
@@ -205,11 +225,15 @@ def main():
             table = "\n".join([header, "|---|---|---|---|", *rows])
             return "# Data Selection Audit — round 3\n\n## Findings\n\n## Scope digests\n" + table + "\n\n## Verdict rationale\nok\n"
         rep = tmp / "selection_audit.md"
-        rep.write_text(scope_report(["| crsp | sha256:aa | marker: 2026-09-01 | carried (round 1) |",
+        rep.write_text(scope_report(["| crsp | sha256:aa | marker: 2026-09-01 | carried (v3_a7) |",
                               "| fomc | sha256:bb | ids-sha256:cc | live |"]))
         out = run("acceptance-carries", "--report", str(rep))
         check("acceptance-carries passes marker-probed carries and live rows",
               out.returncode == 0 and json.loads(out.stdout)["carried_without_marker"] == [])
+        rep.write_text(scope_report(["| crsp | sha256:aa | ids-sha256:cc | carried (v3_a7) |"]))
+        out = run("acceptance-carries", "--report", str(rep))
+        check("acceptance-carries flags a snapshot-named carry over an identifier-list probe",
+              out.returncode == 1 and json.loads(out.stdout)["carried_without_marker"] == ["crsp"])
         rep.write_text(scope_report(["| crsp | sha256:aa | `marker: v7` | **carried (round 1)** |",
                               "| fomc | sha256:bb | ids-sha256:cc | carried (round 2) |"]))
         out = run("acceptance-carries", "--report", str(rep))

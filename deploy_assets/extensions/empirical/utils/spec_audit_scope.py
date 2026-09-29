@@ -27,11 +27,17 @@ can only read as a change.  Exit status 2 means carry-forward is unavailable
 (missing or malformed block, a prior file that no longer matches its recorded
 digest, an unparseable document); the auditor then audits in full.
 
-``sections --doc FILE`` prints one SHA-256 per ``## `` section of any markdown
-document, split by the same rule.  The data-first Stage 3a auditors use it to
-key carry-forward on the construction plan's ``## Class: <id>`` and
-``## Shared construction`` sections instead of the whole plan, so a replan that
-touches one class does not reset every other class's carried evidence.
+``sections --doc FILE [--depth 3]`` prints one SHA-256 per ``## `` section of
+any markdown document, split by the same rule.  The data-first Stage 3a
+auditors use it to key carry-forward on the construction plan's
+``## Class: <id>`` and ``## Shared construction`` sections instead of the whole
+plan, so a replan that touches one class does not reset every other class's
+carried evidence.  With ``--depth 3`` the output also carries ``subsections``:
+for every ``## `` section that holds ``### `` headings, one digest for its text
+before the first of them (``<section> / (preamble)``) and one per ``### ``
+subsection (``<section> / <subsection>``), so a row can bind the one plan item
+or spec class it depends on and carry across a specification revision that
+left that item byte-identical (issue #344).
 
 ``depth --prior-report P --report R`` enforces the one-hop carry bound (issue
 #349): it reads each ``### N.`` paragraph under ``## Assessment by dimension``
@@ -41,7 +47,7 @@ runs it, so the bound does not rest on the auditor's own discipline.
 
 ``acceptance-carries --report R`` reads the ``## Scope digests`` table of a
 Stage 3a data-integrity, data-selection, or coverage report and exits 1 if any
-row was carried (``Evidence`` cell ``carried (round k)``) over a source probe
+row was carried (``Evidence`` cell ``carried (v{N}_a{K})``) over a source probe
 that is not the source's own update marker (``Source probe`` cell not starting
 ``marker:``).  Carried evidence over a marker-less source may ride through
 repair rounds but never reaches acceptance (issue #347): an in-place value
@@ -96,14 +102,16 @@ def _read_bytes(path):
         raise ScopeError(f"cannot read {path}: {exc}") from exc
 
 
-def split_sections(text):
-    """Return [(key, text)] for the preamble and each level-2 section.
+def split_sections(text, level=2):
+    """Return [(key, text)] for the preamble and each level-``level`` section.
 
-    A section runs from its ``## `` heading line up to the next one.  Lines
-    inside fenced code blocks never start a section.  Keys are the heading
-    lines; a repeated heading gets a ``#n`` suffix so every section stays
-    addressable instead of silently merging with its namesake.
+    A section runs from its heading line (``## `` at level 2, ``### `` at
+    level 3) up to the next one.  Lines inside fenced code blocks never start
+    a section.  Keys are the heading lines; a repeated heading gets a ``#n``
+    suffix so every section stays addressable instead of silently merging
+    with its namesake.
     """
+    heading = "#" * level + " "
     sections = [["(preamble)", []]]
     fence = None
     for line in text.splitlines(keepends=True):
@@ -115,8 +123,8 @@ def split_sections(text):
                 fence = token
             elif token[0] == fence[0] and len(token) >= len(fence):
                 fence = None
-        elif fence is None and stripped.startswith("## ") and len(line) - len(stripped) <= 3:
-            sections.append([stripped.rstrip("\r\n")[3:].strip(), []])
+        elif fence is None and stripped.startswith(heading) and len(line) - len(stripped) <= 3:
+            sections.append([stripped.rstrip("\r\n")[len(heading):].strip(), []])
             sections[-1][1].append(line)
             continue
         sections[-1][1].append(line)
@@ -166,17 +174,28 @@ def digest(spec, rights, inputs):
     }
 
 
-def document_sections(doc):
+def document_sections(doc, depth=2):
     raw = _read_bytes(doc)
     try:
         text = raw.decode("utf-8")
     except UnicodeDecodeError as exc:
         raise ScopeError(f"document {doc} is not UTF-8: {exc}") from exc
-    return {
+    if depth not in (2, 3):
+        raise ScopeError(f"depth must be 2 or 3, not {depth!r}")
+    sections = split_sections(text)
+    result = {
         "doc_path": str(doc),
         "doc_sha256": _sha256(raw),
-        "sections": [[key, _sha256(body.encode("utf-8"))] for key, body in split_sections(text)],
+        "sections": [[key, _sha256(body.encode("utf-8"))] for key, body in sections],
     }
+    if depth == 3:
+        subsections = []
+        for key, body in sections:
+            parts = split_sections(body, level=3)
+            if len(parts) > 1:
+                subsections.extend([f"{key} / {sub}", _sha256(text_.encode("utf-8"))] for sub, text_ in parts)
+        result["subsections"] = subsections
+    return result
 
 
 CARRY_MARK = re.compile(r"^(?:Sites carried|Carried) from v\d+\.")
@@ -425,6 +444,7 @@ def main(argv=None):
             cmd.add_argument("--prior-report", required=True)
     sections_cmd = sub.add_parser("sections")
     sections_cmd.add_argument("--doc", required=True)
+    sections_cmd.add_argument("--depth", type=int, default=2, choices=(2, 3))
     carries_cmd = sub.add_parser("acceptance-carries")
     carries_cmd.add_argument("--report", required=True)
     depth_cmd = sub.add_parser("depth")
@@ -468,7 +488,7 @@ def main(argv=None):
         return 1 if result["carried_twice"] else 0
     if args.command == "sections":
         try:
-            print(json.dumps(document_sections(args.doc), indent=2))
+            print(json.dumps(document_sections(args.doc, args.depth), indent=2))
         except ScopeError as exc:
             print(f"spec_audit_scope: {exc}; carry-forward unavailable, audit in full", file=sys.stderr)
             return 2
