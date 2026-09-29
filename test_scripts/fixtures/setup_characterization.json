@@ -1692,8 +1692,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -2377,14 +2377,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -3025,14 +3025,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -3345,14 +3345,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -3913,14 +3913,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -4531,8 +4531,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -4679,14 +4679,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -5434,14 +5434,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -6082,14 +6082,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -6402,14 +6402,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -6970,14 +6970,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -7588,8 +7588,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -7736,14 +7736,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -8473,20 +8473,20 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "fab07d9126dd11dfef619db09d2060b2028a4c0ae89eb2b4982716a75c5ddf7d",
-          "size": 28943,
+          "sha256": "f05e1046ff2bb594410ee66a66bcd88822691c81b489a7ff2ceff64007138bef",
+          "size": 32004,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "4410f7a2f739bc2b033a6855633226cf3f6f4f295455714849cb80d39ed6dca2",
-          "size": 19330,
+          "sha256": "373a7e4d7255b013e244d6f18ebc21992247ba7886df3597341a76d4bcba9950",
+          "size": 22839,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fc20b98f12dc0e288c9c1fc6f5aa79ae65f90e23f5bbca6254a257845d71a39d",
-          "size": 24286,
+          "sha256": "294f63d6c5506dd8c07299f051fc41de4bb57906777b4342edb63985b70d46ca",
+          "size": 27824,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -9063,20 +9063,20 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "760c24040e3cedeaa4eee78cfdaa7642c750715c6d640a36f49d208b02db9d1b",
-          "size": 29063,
+          "sha256": "dda38d104edbdaf6be40b8295a1184fb2020133090f4989685481e6d3c9d2300",
+          "size": 32124,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "27c3615280662127279f7704b5e4b1f87c3b4a46e4d678f7e0804320279489c9",
-          "size": 19450,
+          "sha256": "1220cc8ecfc66385db2cd68a38c0ffcc3e8f74da4b15aff5bd47d4ffdbbe0a47",
+          "size": 22959,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "31113b3806732970081b1f40195cb9167e19563053305f58014099049e265bc8",
-          "size": 24406,
+          "sha256": "6b63d59d759b0d6c8649271b551206a487dcbd7a7c8fe4bb6d4c3d5aeb161b7c",
+          "size": 27944,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -9335,20 +9335,20 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "2eec37668b9c2eb675439ae37822e0ec4a823b1adfcc350df8c688eb2909b6eb",
-          "size": 29019,
+          "sha256": "38e2b1ceb1b59ad61046f87b4413777c7450b8ab6c23f89d8e4777a89a9f5fe3",
+          "size": 32080,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "6b2ac56fc2c380ee0692f19686c10de3eb59b51901fd656aab032e207daff775",
-          "size": 19406,
+          "sha256": "1cb06d9b605f26f70d47d769bcae045f24f4aacfb0c0935a31baa04adaf4c7cb",
+          "size": 22915,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "025ecb88e48d7c5f64f7665592a3323c3723952e6e0ec075a34212bdef09ab88",
-          "size": 24362,
+          "sha256": "8831789128fcd5a74abfdd3b062f23594b4b4d2af360b1c85bd3b6d8dda60de7",
+          "size": 27900,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -9825,20 +9825,20 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "7d7a0a073a4ea04a3570dd73bdafb795bf18b75481b7a3b4da0a3b6f5c33ccc8",
-          "size": 28792,
+          "sha256": "b51ab4c82baa2ce00a267b5e3e08ca25155ccb7c6d3419ac6f7726e6e7c59f8c",
+          "size": 31853,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "d923b0daf9d50d37edee134aeae7440c01dd016f45459449e4e1f29117cd0301",
-          "size": 19173,
+          "sha256": "7729b5fa32c9ba42fc0aac838d3a1c8c76e6e5c02a2d0310edbfc709551965ae",
+          "size": 22682,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7d744cb838fb901101b0f497b86c18dba60f2aaba37eb536a1c400582f3835ba",
-          "size": 24129,
+          "sha256": "641b5238154cc778a785b2360e353313e2ec8c3786b45555a3b9bf9c90d9552c",
+          "size": 27667,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -10395,8 +10395,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -10543,14 +10543,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "0da1939e87ae6807a1b3a18229e0101567267ae80a2afb4d769d315ddaac8c36",
-          "size": 9418,
+          "sha256": "dee2c9e05b17bb985ed1c60fc18b98165da2f0f97060096b9a9e116637e1a6ce",
+          "size": 10429,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
-          "size": 118650,
+          "sha256": "497be48672aba6ebb49a5835696f0fc72c541b4444efb94c542277c0266d1ba6",
+          "size": 120053,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -11256,20 +11256,20 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "fab07d9126dd11dfef619db09d2060b2028a4c0ae89eb2b4982716a75c5ddf7d",
-          "size": 28943,
+          "sha256": "f05e1046ff2bb594410ee66a66bcd88822691c81b489a7ff2ceff64007138bef",
+          "size": 32004,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "4410f7a2f739bc2b033a6855633226cf3f6f4f295455714849cb80d39ed6dca2",
-          "size": 19330,
+          "sha256": "373a7e4d7255b013e244d6f18ebc21992247ba7886df3597341a76d4bcba9950",
+          "size": 22839,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fc20b98f12dc0e288c9c1fc6f5aa79ae65f90e23f5bbca6254a257845d71a39d",
-          "size": 24286,
+          "sha256": "294f63d6c5506dd8c07299f051fc41de4bb57906777b4342edb63985b70d46ca",
+          "size": 27824,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -11852,20 +11852,20 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "b70bd33dc59acf86cbe0742fb526d41e308f81dc46871e6759c63da3e575a0ec",
-          "size": 29029,
+          "sha256": "57e664cdc34672f5f5992f3edc44105af94f2a0089e718cc6566d0e57a2ac4e2",
+          "size": 32090,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "f341d3e5bad780eb90e75f117b9b8ce3db05299b383588bbce07226ca15b696b",
-          "size": 19416,
+          "sha256": "044d4eca21fd2331db41e85ee0fb705dd99bcdc647c8d2205f6e885774b370dd",
+          "size": 22925,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "565ceaa2682bb1cbe3b5aa28661e4821eeed0e662fe3dbd67aad83fd25fbd0df",
-          "size": 24372,
+          "sha256": "bb27b887adcb88418a5abab2b35b62d5431a7e0261cc8fbf6aa537ecc44bfca5",
+          "size": 27910,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -12130,20 +12130,20 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "ef0c8bc18cd495137ef00866cc9f0d21ff1a2b1946763aecf268d164995ce50f",
-          "size": 29025,
+          "sha256": "3cb059adf5aa6f622b789ced8f773103c5b3eb06b86cbf609c17cc47906f7ba4",
+          "size": 32086,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "d60c646af249a637ac06303c4e8583c1e323dc0c24f1b8b450e65dfdf548c543",
-          "size": 19412,
+          "sha256": "655ffe9f48843023b09e67e231eb5e75eeec9cf55cb7a69de4ea1ba6927fdb6e",
+          "size": 22921,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "1580ff85bd6987883a9e55d9f89a616068f7f18270e4cc0d79a64c25390155c6",
-          "size": 24368,
+          "sha256": "e4dd605dadbbdc3ecb97c0362faf1812d53125830d523de706684c15b3783a64",
+          "size": 27906,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -12632,20 +12632,20 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "7d7a0a073a4ea04a3570dd73bdafb795bf18b75481b7a3b4da0a3b6f5c33ccc8",
-          "size": 28792,
+          "sha256": "b51ab4c82baa2ce00a267b5e3e08ca25155ccb7c6d3419ac6f7726e6e7c59f8c",
+          "size": 31853,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "d923b0daf9d50d37edee134aeae7440c01dd016f45459449e4e1f29117cd0301",
-          "size": 19173,
+          "sha256": "7729b5fa32c9ba42fc0aac838d3a1c8c76e6e5c02a2d0310edbfc709551965ae",
+          "size": 22682,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7d744cb838fb901101b0f497b86c18dba60f2aaba37eb536a1c400582f3835ba",
-          "size": 24129,
+          "sha256": "641b5238154cc778a785b2360e353313e2ec8c3786b45555a3b9bf9c90d9552c",
+          "size": 27667,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -13208,8 +13208,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -13356,20 +13356,20 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "304f30348c4d5896881a95eabb2763c01d8cc7695a144fb2d98b8f305e008489",
-          "size": 11573,
+          "sha256": "a3f0d537c27c6431361231a3593b2ea32f13532ae17528d6696cf690e0ada149",
+          "size": 12584,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
-          "size": 118650,
+          "sha256": "497be48672aba6ebb49a5835696f0fc72c541b4444efb94c542277c0266d1ba6",
+          "size": 120053,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "ccb61a7fa65a47e11d9fc327585e7503cb1c9c1b65e50bba4036b3b90dc899ef",
-          "size": 20446,
+          "sha256": "f9c023099c6ea4fc0c8f8d2df0e411b37dad7026a31833e36a5f00d0335f8036",
+          "size": 20801,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -14083,20 +14083,20 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "86ffb80d5e8a94b0956da1270a944866d733249f9e2818d9b2d2dee1ab3935ea",
-          "size": 29691,
+          "sha256": "81bbfd2d4b66d208f43b5d4c2932a6f3ec765f495a559e6d0ffcbc096fbbe988",
+          "size": 32752,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "061d1a9968144f38c03b7ba305344872c65e7dfe0fce88dfd778a72a17a7ad75",
-          "size": 20078,
+          "sha256": "17688be993f77454b8c269b45a3eba490a9dd4e2b9d9a9a140df5a6b569a1857",
+          "size": 23587,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "6088d13b1b6bff88871cf7e1e2d87648cc9decff8dfd8e60fb0cee2ce96f8e16",
-          "size": 25034,
+          "sha256": "2f0d08188aa1488ec9465f62faf6df714640c84fcac82a84f480851100a2d1a1",
+          "size": 28572,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -14673,20 +14673,20 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "e0b323bb3b9be2b33fc21f42d8ae5e00b79f7bad48343aa60907462e8fcce96d",
-          "size": 29811,
+          "sha256": "0f2a9bb4102cf0e1dc772cdea4d22eb578d4b8bb7fe258600ecac2fbddfa158f",
+          "size": 32872,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "5bfdd6fcb56c53c5473eeb2f97c4f29cf81611a3f923add5fb71f35b78dfd17c",
-          "size": 20198,
+          "sha256": "6897c79cc4ac31211fa08929ea4e7f5939401ec937ff929c2fda22eabad4a56e",
+          "size": 23707,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "896b357730ec72fe93e2500d62fbb0ca708d75073e0d96c04aea4020d5e3090e",
-          "size": 25154,
+          "sha256": "aefe79ff2ca6639931c12ecc737e7df41800d0c07411840f586da22bd155dd60",
+          "size": 28692,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -14945,20 +14945,20 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "35b221d81751fd6ca4fa84b592c20747e291323beceb9373e163dee4685b1333",
-          "size": 29767,
+          "sha256": "85dfc39d185038cebbf3b15c9d184b0d7b87d6fc4e5b741e4127a2d9fbc84741",
+          "size": 32828,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "196e749b6cbe0a1582b66bbed6ff0b43a1fda69021f25e2d0a311dd1f4db6524",
-          "size": 20154,
+          "sha256": "24fc01539698ad6b7c88ec40223090dbd9e62e8171ac9650a084ed2dfaf6d244",
+          "size": 23663,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "f7cdef51e7e20a9180fdccdeb27b049bd5de7e80715596d476cd00da7d49f439",
-          "size": 25110,
+          "sha256": "e1ed5e98a79d53f712e37a5eb933c9bcd067a8bf7575bc016e205b656e784d26",
+          "size": 28648,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -15435,20 +15435,20 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "5892b66f64692c7260130b78a22f8dff38ae4ae659cabcfb8283e7ccf885a199",
-          "size": 29540,
+          "sha256": "e2071bd7cc227c1097cf8196db398365b888a80b07ee76f833c4fe20aaf5060a",
+          "size": 32601,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "0bc38e47cfd89839953550fa5d7e1f89abcbb02a0ca11f5ad0550aa3413dc276",
-          "size": 19921,
+          "sha256": "dc562ba306d4a388184717a49a51e5f9cfb6da4f993b62aef4c395c0163bfa97",
+          "size": 23430,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "65f05c7035191d01ce6decf1b20caf844cfba1863705336afd5db43d83752c6d",
-          "size": 24877,
+          "sha256": "252740f8053fbafcf9c33c02674d05a2498d23a3d70c784bcc44cedfb72340f5",
+          "size": 28415,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -16005,8 +16005,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -16147,14 +16147,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "0da1939e87ae6807a1b3a18229e0101567267ae80a2afb4d769d315ddaac8c36",
-          "size": 9418,
+          "sha256": "dee2c9e05b17bb985ed1c60fc18b98165da2f0f97060096b9a9e116637e1a6ce",
+          "size": 10429,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
-          "size": 118650,
+          "sha256": "497be48672aba6ebb49a5835696f0fc72c541b4444efb94c542277c0266d1ba6",
+          "size": 120053,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -16797,20 +16797,20 @@
         },
         ".claude/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "fab07d9126dd11dfef619db09d2060b2028a4c0ae89eb2b4982716a75c5ddf7d",
-          "size": 28943,
+          "sha256": "f05e1046ff2bb594410ee66a66bcd88822691c81b489a7ff2ceff64007138bef",
+          "size": 32004,
           "type": "file"
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "4410f7a2f739bc2b033a6855633226cf3f6f4f295455714849cb80d39ed6dca2",
-          "size": 19330,
+          "sha256": "373a7e4d7255b013e244d6f18ebc21992247ba7886df3597341a76d4bcba9950",
+          "size": 22839,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fc20b98f12dc0e288c9c1fc6f5aa79ae65f90e23f5bbca6254a257845d71a39d",
-          "size": 24286,
+          "sha256": "294f63d6c5506dd8c07299f051fc41de4bb57906777b4342edb63985b70d46ca",
+          "size": 27824,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -17387,20 +17387,20 @@
         },
         ".codex/agents/coverage-auditor.toml": {
           "mode": "0644",
-          "sha256": "760c24040e3cedeaa4eee78cfdaa7642c750715c6d640a36f49d208b02db9d1b",
-          "size": 29063,
+          "sha256": "dda38d104edbdaf6be40b8295a1184fb2020133090f4989685481e6d3c9d2300",
+          "size": 32124,
           "type": "file"
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "27c3615280662127279f7704b5e4b1f87c3b4a46e4d678f7e0804320279489c9",
-          "size": 19450,
+          "sha256": "1220cc8ecfc66385db2cd68a38c0ffcc3e8f74da4b15aff5bd47d4ffdbbe0a47",
+          "size": 22959,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "31113b3806732970081b1f40195cb9167e19563053305f58014099049e265bc8",
-          "size": 24406,
+          "sha256": "6b63d59d759b0d6c8649271b551206a487dcbd7a7c8fe4bb6d4c3d5aeb161b7c",
+          "size": 27944,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -17659,20 +17659,20 @@
         },
         ".gemini/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "2eec37668b9c2eb675439ae37822e0ec4a823b1adfcc350df8c688eb2909b6eb",
-          "size": 29019,
+          "sha256": "38e2b1ceb1b59ad61046f87b4413777c7450b8ab6c23f89d8e4777a89a9f5fe3",
+          "size": 32080,
           "type": "file"
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "6b2ac56fc2c380ee0692f19686c10de3eb59b51901fd656aab032e207daff775",
-          "size": 19406,
+          "sha256": "1cb06d9b605f26f70d47d769bcae045f24f4aacfb0c0935a31baa04adaf4c7cb",
+          "size": 22915,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "025ecb88e48d7c5f64f7665592a3323c3723952e6e0ec075a34212bdef09ab88",
-          "size": 24362,
+          "sha256": "8831789128fcd5a74abfdd3b062f23594b4b4d2af360b1c85bd3b6d8dda60de7",
+          "size": 27900,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -18149,20 +18149,20 @@
         },
         ".opencode/agents/coverage-auditor.md": {
           "mode": "0644",
-          "sha256": "7d7a0a073a4ea04a3570dd73bdafb795bf18b75481b7a3b4da0a3b6f5c33ccc8",
-          "size": 28792,
+          "sha256": "b51ab4c82baa2ce00a267b5e3e08ca25155ccb7c6d3419ac6f7726e6e7c59f8c",
+          "size": 31853,
           "type": "file"
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "d923b0daf9d50d37edee134aeae7440c01dd016f45459449e4e1f29117cd0301",
-          "size": 19173,
+          "sha256": "7729b5fa32c9ba42fc0aac838d3a1c8c76e6e5c02a2d0310edbfc709551965ae",
+          "size": 22682,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7d744cb838fb901101b0f497b86c18dba60f2aaba37eb536a1c400582f3835ba",
-          "size": 24129,
+          "sha256": "641b5238154cc778a785b2360e353313e2ec8c3786b45555a3b9bf9c90d9552c",
+          "size": 27667,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -18719,8 +18719,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -18867,20 +18867,20 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "304f30348c4d5896881a95eabb2763c01d8cc7695a144fb2d98b8f305e008489",
-          "size": 11573,
+          "sha256": "a3f0d537c27c6431361231a3593b2ea32f13532ae17528d6696cf690e0ada149",
+          "size": 12584,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "2b019f18b92f444809e37c5754815bd31d60ccb37ba87b25b0086bc647ee007b",
-          "size": 118650,
+          "sha256": "497be48672aba6ebb49a5835696f0fc72c541b4444efb94c542277c0266d1ba6",
+          "size": 120053,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "ccb61a7fa65a47e11d9fc327585e7503cb1c9c1b65e50bba4036b3b90dc899ef",
-          "size": 20446,
+          "sha256": "f9c023099c6ea4fc0c8f8d2df0e411b37dad7026a31833e36a5f00d0335f8036",
+          "size": 20801,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -20884,8 +20884,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -21572,14 +21572,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -22220,14 +22220,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -22540,14 +22540,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -23108,14 +23108,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -23726,8 +23726,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -23874,14 +23874,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -24611,14 +24611,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -25231,14 +25231,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -25533,14 +25533,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -26083,14 +26083,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -26683,8 +26683,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -26831,14 +26831,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -27545,14 +27545,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -28171,14 +28171,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -28479,14 +28479,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -29035,14 +29035,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -29641,8 +29641,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -29789,14 +29789,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "f7533f157ff2a5d2358ca21d0dcf4be7166cd3356d5d24924126bb0267890478",
-          "size": 9499,
+          "sha256": "918075780dd958db0003442efb6417b39701438a43434b6353dbf9dcf8229063",
+          "size": 10510,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a1177bcbe6a3b157ef87ab2a9c8bc6ed0327a88f8ebff44ff3cf0a25cfa4aefb",
-          "size": 82895,
+          "sha256": "77cbd96f74251f33b55440e0ee225e4c835f43e40731ba7bf7e2ada35093a3f1",
+          "size": 84132,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -30513,14 +30513,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -31167,14 +31167,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -31493,14 +31493,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -32067,14 +32067,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -32691,8 +32691,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -32839,14 +32839,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "f7533f157ff2a5d2358ca21d0dcf4be7166cd3356d5d24924126bb0267890478",
-          "size": 9499,
+          "sha256": "918075780dd958db0003442efb6417b39701438a43434b6353dbf9dcf8229063",
+          "size": 10510,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "a1177bcbe6a3b157ef87ab2a9c8bc6ed0327a88f8ebff44ff3cf0a25cfa4aefb",
-          "size": 82895,
+          "sha256": "77cbd96f74251f33b55440e0ee225e4c835f43e40731ba7bf7e2ada35093a3f1",
+          "size": 84132,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -34869,8 +34869,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -35539,14 +35539,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -36165,14 +36165,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "4ee629c16ce8fd83b31451cc62c24e6ac06e93c926e2c205070214538ebf0ec3",
-          "size": 17928,
+          "sha256": "63b188ff6545229fdc98777bb6ad2fd3405687bd3a2c7f60edf3e4a9f7f24fda",
+          "size": 21409,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "dedcbe2587ba165709f03af9d0918fbd5cfa3040355de48dda08d758d85ec98e",
-          "size": 22878,
+          "sha256": "540f237fe14ea206e3164336e0132e5a278b1c4bc2c7b9931006c0e5d658fce9",
+          "size": 26388,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -36473,14 +36473,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "3c1ed6a3f0007deddc496691cd1acd97cc97852fc30f79e6b3e02efd663360a6",
-          "size": 17924,
+          "sha256": "1bd18ff0679ff3a65e1c974dd22e1d33ddd9d543b3093bbc32dc8852fb8038f6",
+          "size": 21405,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "e90427acc91fcd797a2e0ec731dfe3fd5641b3f907d30f3cb655eb67e4afd82b",
-          "size": 22874,
+          "sha256": "115a42b613cd517270e934bb0aea7bda1196fce44041cfb15226ca6344d9413e",
+          "size": 26384,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -37035,14 +37035,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -37641,8 +37641,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -37789,20 +37789,20 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "35b013d0445b323d9d021fb01c30ef06dca5b638f2bb3144faf96b3c6dc162fc",
-          "size": 9088,
+          "sha256": "832a5687f096c286beb5f80c6a057e16a016da9c8cb0304d84937f45404585d3",
+          "size": 10099,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "c4abf52ed69a2bd51de09f3faac39eaa9f131ddc944117564056fc1b7cccccf0",
-          "size": 81148,
+          "sha256": "fc4426d142ed20de3fffb1841f6311cebad721880afa1d39539649cc47328e74",
+          "size": 82385,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "cf7277cfe58a491431e04fb947065c53e8ffd49820e88b31157411c754189441",
-          "size": 19380,
+          "sha256": "0fa31bab6026ea57966f018dbe27969cf2e3aea63182b809f68f161b04b7e6c6",
+          "size": 19735,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -39820,8 +39820,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -41890,8 +41890,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -43983,8 +43983,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -45975,8 +45975,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -46661,14 +46661,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "4137fd66da5553c63b9291d64ecb1da83925c521acc96bd364a77e7222d5f09a",
-          "size": 18590,
+          "sha256": "ff94def0950a96b4ad707f0108227bd5dd0381800f0cc46b96d0286fbb8868e6",
+          "size": 22071,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "0f3c657af4edafb4a68b551996ad3765e21545d42a2e77cd552faca9246082fc",
-          "size": 23540,
+          "sha256": "c0beb75091d49cb711c1662cda15c8609ebd34baa8680967ccbba2d8b5a0afd2",
+          "size": 27050,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -47309,14 +47309,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "ea0270d7d74d68e70a32c24790a76ea895845f6d97018ea63ce5654b7093f19d",
-          "size": 18710,
+          "sha256": "121ebbeff531573d0335cf5b36e21157a40aa855aebcaa4e22abfa0860f0102b",
+          "size": 22191,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "2caa1221338dc843a6a4442e4791e8752bc899a818d55cd5efdb5c1b48469c8e",
-          "size": 23660,
+          "sha256": "4d773df4272d1f0ca5cecfc81c2dc253e5d3eca5ecb3258baa292af1a7313158",
+          "size": 27170,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -47629,14 +47629,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c68dcea6bc55911530a05f0922610ec75752cfcf375810347bd47600c9219d",
-          "size": 18666,
+          "sha256": "0adfdfe1b071a2bebe844b7da73b8a524223c954b055c25c33d58673e1f917a3",
+          "size": 22147,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "3f86a44d6fd843e801a9176482d9360a22ec3afb42252bcce2a7e03725bb7d17",
-          "size": 23616,
+          "sha256": "8c76f9196be47a3c7197858d74eb8970ca67ce831ee91bfa7400312f07687cd4",
+          "size": 27126,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -48197,14 +48197,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "0fbc06994de995fb67cc5e26b0a69d9a2c66284aa0469692b61b08bd9f84198b",
-          "size": 18433,
+          "sha256": "ec3ddc06d3ff3ecf4de76ffd369165f3308a372f9e1887a5ed750f8a2277921e",
+          "size": 21914,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "d05badccfdfcf83f58bb3808540add123c18441312c16a4961967a04dbd44fa0",
-          "size": 23383,
+          "sha256": "117014e8a4e63c9986b7c4c0f3b9b2f9bdfff454723283729369ed3977155243",
+          "size": 26893,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -48815,8 +48815,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -48957,14 +48957,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -52101,8 +52101,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -54081,8 +54081,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -56033,8 +56033,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -60414,14 +60414,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "35b013d0445b323d9d021fb01c30ef06dca5b638f2bb3144faf96b3c6dc162fc",
-          "size": 9088,
+          "sha256": "832a5687f096c286beb5f80c6a057e16a016da9c8cb0304d84937f45404585d3",
+          "size": 10099,
           "type": "file"
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "d1c2bd17c373c04b6996bdfe69c384cf6ad9d0c1ba52653d3b89a564e83081e3",
-          "size": 19260,
+          "sha256": "8fccc93a0a3aa32eacd91c1f8cb56d5034e71bbb02a90272e9119c9383582672",
+          "size": 19615,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -61091,14 +61091,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -61711,14 +61711,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -62013,14 +62013,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -62563,14 +62563,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -63163,8 +63163,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -63311,14 +63311,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -65429,8 +65429,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -67456,8 +67456,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -69512,8 +69512,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "35b013d0445b323d9d021fb01c30ef06dca5b638f2bb3144faf96b3c6dc162fc",
-          "size": 9088,
+          "sha256": "832a5687f096c286beb5f80c6a057e16a016da9c8cb0304d84937f45404585d3",
+          "size": 10099,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -69524,8 +69524,8 @@
         },
         "docs/stage_4.md": {
           "mode": "0644",
-          "sha256": "53d93a2541938166ab083f5c93efce9fdc0fee5b967861bf691c60abe51f6b5c",
-          "size": 21300,
+          "sha256": "d8f5df5b05f824fa7e43c93c86309156cd268865e25771605a72e75e29093ae1",
+          "size": 21655,
           "type": "file"
         },
         "docs/stage_5.md": {
@@ -71555,8 +71555,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -73575,8 +73575,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -75537,8 +75537,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -79788,8 +79788,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -80473,14 +80473,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -81121,14 +81121,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -81441,14 +81441,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -82009,14 +82009,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -82627,8 +82627,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -82775,14 +82775,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
@@ -83512,14 +83512,14 @@
         },
         ".claude/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "5ec42e79be4d415ff941d9ef9da124ab988099e2cbde38e08d37df7a30ebb5cb",
-          "size": 17842,
+          "sha256": "f0e10f2a82b33fe79383ed888d083934d647d28b87f992b393509deef87c27b5",
+          "size": 21323,
           "type": "file"
         },
         ".claude/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "7c2d4753be4ee1a6023d953a4c0ce02c3ce92e6b4e910eae6b8c4ea1b19a1628",
-          "size": 22792,
+          "sha256": "c559ad4dddb8f1fdddf32c21e6306f2635807c065e393ed85ae17888d58df624",
+          "size": 26302,
           "type": "file"
         },
         ".claude/agents/debugger.md": {
@@ -84132,14 +84132,14 @@
         },
         ".codex/agents/data-integrity-auditor.toml": {
           "mode": "0644",
-          "sha256": "bc23703271753cdd9e30d263e505070548691c6508d728672a07ca520d12c74f",
-          "size": 17962,
+          "sha256": "4c7e6b7895e5d6d0f9dd3a8dc9cf26ff83c677b34a3eb1fc30060fd1a61c8a41",
+          "size": 21443,
           "type": "file"
         },
         ".codex/agents/data-selection-auditor.toml": {
           "mode": "0644",
-          "sha256": "ff4db0ada1c78734e9fc2aa2cae4bf2b676e2cf215d98c7a5e8c352d81ed0147",
-          "size": 22912,
+          "sha256": "ff3af8b96fac201f1cc4980f68ed45af351111e9e57d616fa49a06eecabb3128",
+          "size": 26422,
           "type": "file"
         },
         ".codex/agents/debugger.toml": {
@@ -84434,14 +84434,14 @@
         },
         ".gemini/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "f65d6afa4b0c8636fbab4a5796ea5872990c09b1cbe214b631bd3096cee1745b",
-          "size": 17918,
+          "sha256": "2cbb0074c41ba8daa6b68bac565884dae00d41285e42cd332a4010324c30c2c7",
+          "size": 21399,
           "type": "file"
         },
         ".gemini/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fa8bc047a40dd7d71f1eff58970171f800f721c7d27d82a000ba961bd51f77c1",
-          "size": 22868,
+          "sha256": "abbbc69f9fac8367d914443863ca7abed71a7527db1008aa62f6331c73c32b53",
+          "size": 26378,
           "type": "file"
         },
         ".gemini/agents/debugger.md": {
@@ -84984,14 +84984,14 @@
         },
         ".opencode/agents/data-integrity-auditor.md": {
           "mode": "0644",
-          "sha256": "61c26993d5abe005c4c25d9d28b33037163132e26eea0f810ca53991988dad13",
-          "size": 17685,
+          "sha256": "2948ed0fa42190bebf1cc27ff536c14594c2081504d1820e3208663461ed7317",
+          "size": 21166,
           "type": "file"
         },
         ".opencode/agents/data-selection-auditor.md": {
           "mode": "0644",
-          "sha256": "fac53b9496b03774c2e857dc7f51c16c36f391b38f687af3df1a8051084a0836",
-          "size": 22635,
+          "sha256": "1bbaf7df62ad752ac8a270df00d328a117d6d37e944bec4087f6c3b6c8fd2d7b",
+          "size": 26145,
           "type": "file"
         },
         ".opencode/agents/debugger.md": {
@@ -85584,8 +85584,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -85732,14 +85732,14 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3a_empirical.md": {
           "mode": "0644",
-          "sha256": "0b79022edbab571c2428f1325e5b9e8843dddd3a3acf81d57f7769e163799318",
-          "size": 80182,
+          "sha256": "2d4a277081c2531c4647bd307fa92abea497ab690c35a086e40293e732a7570b",
+          "size": 81419,
           "type": "file"
         },
         "docs/stage_4.md": {
@@ -88926,8 +88926,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -90878,8 +90878,8 @@
         },
         "code/utils/spec_audit_scope.py": {
           "mode": "0644",
-          "sha256": "21e31099cf8247c159361bb9e76beb24bc9357b14835360c0c190f6680b6f8a9",
-          "size": 23364,
+          "sha256": "c912a170e79e98efd909bb326fce177df224ab76b2f02f5590fb49ecf44dda8b",
+          "size": 24923,
           "type": "file"
         },
         "code/utils/ssa_oact": {
@@ -94179,8 +94179,8 @@
         },
         "docs/stage_3_implications.md": {
           "mode": "0644",
-          "sha256": "531a90067ce977edbeb743b7107d5a3d7af9ff99a5a3b0f42c0222e02b67364c",
-          "size": 7702,
+          "sha256": "ca36e8cf0f9cdb707ecaf6a9b674b08cea36fca750de57de15ac5767bc4eacf1",
+          "size": 8713,
           "type": "file"
         },
         "docs/stage_3b_experiments.md": {
