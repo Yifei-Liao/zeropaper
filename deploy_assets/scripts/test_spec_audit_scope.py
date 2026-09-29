@@ -189,6 +189,13 @@ def main():
         check("an edit inside one item changes only that item's subsection digest and its section",
               moved == ["Portfolio plan / Item 1"]
               and [a[0] for a, b in zip(deep["sections"], after["sections"]) if a[1] != b[1]] == ["Portfolio plan"])
+        plan.write_text("## A / B\nx\n### C\ny\n## A\nz\n### B / C\nw\n")
+        keys = [k for k, _ in json.loads(run("sections", "--doc", str(plan), "--depth", "3").stdout)["subsections"]]
+        check("colliding composite subsection keys are suffixed, never merged",
+              keys == ["A / B / (preamble)", "A / B / C", "A / (preamble)", "A / B / C#2"])
+        plan.write_text("### stray\ntop\n## A\nx\n### B\ny\n")
+        keys = [k for k, _ in json.loads(run("sections", "--doc", str(plan), "--depth", "3").stdout)["subsections"]]
+        check("the document preamble is never split into subsections", keys == ["A / (preamble)", "A / B"])
         check("sections rejects an unsupported depth",
               run("sections", "--doc", str(plan), "--depth", "4").returncode == 2)
 

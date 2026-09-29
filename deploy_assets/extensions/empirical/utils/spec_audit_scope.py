@@ -189,11 +189,18 @@ def document_sections(doc, depth=2):
         "sections": [[key, _sha256(body.encode("utf-8"))] for key, body in sections],
     }
     if depth == 3:
-        subsections = []
-        for key, body in sections:
+        subsections, seen = [], {}
+        for key, body in sections[1:]:  # level-2 sections only, never the document preamble
             parts = split_sections(body, level=3)
             if len(parts) > 1:
-                subsections.extend([f"{key} / {sub}", _sha256(text_.encode("utf-8"))] for sub, text_ in parts)
+                for sub, text_ in parts:
+                    # Composite keys can collide across parents ("A / B" + "C" vs
+                    # "A" + "B / C"); suffix the repeat so a match is never by accident.
+                    composite = f"{key} / {sub}"
+                    seen[composite] = seen.get(composite, 0) + 1
+                    if seen[composite] > 1:
+                        composite = f"{composite}#{seen[composite]}"
+                    subsections.append([composite, _sha256(text_.encode("utf-8"))])
         result["subsections"] = subsections
     return result
 
