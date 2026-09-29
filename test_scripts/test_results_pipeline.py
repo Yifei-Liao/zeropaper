@@ -2049,6 +2049,54 @@ bundle = {{
                 self.root, [sys.executable, "code/analyze.py"]
             )
 
+    def test_isolated_runtime_pins_reproducible_plot_metadata(self) -> None:
+        # Field regression: matplotlib stamped a wall-clock CreationDate into
+        # rendered PDFs, so byte-for-byte `verify --rerender` failed and cost
+        # an attempt. The trusted runtime pins SOURCE_DATE_EPOCH and an SVG
+        # hash salt so agent-written renderers cannot hit this.
+        spec = importlib.util.spec_from_file_location("results_pipeline_repro_env", UTILITY)
+        assert spec is not None and spec.loader is not None
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        environment = os.environ.copy()
+        environment["SOURCE_DATE_EPOCH"] = "1234567890"
+        _, clean, _, _ = module.isolated_runtime(
+            [sys.executable, "-c", "pass"], self.root, self.root, environment
+        )
+        self.assertEqual(clean["SOURCE_DATE_EPOCH"], "0")
+        rc = Path(clean["MPLCONFIGDIR"]) / "matplotlibrc"
+        self.assertIn("svg.hashsalt:", rc.read_text(encoding="utf-8"))
+        try:
+            import matplotlib  # noqa: F401
+        except ImportError:
+            return
+        script = (
+            "import sys, matplotlib\n"
+            "matplotlib.use('Agg')\n"
+            "import matplotlib.pyplot as plt\n"
+            "fig, ax = plt.subplots(); ax.plot([1, 2, 3])\n"
+            "for ext in ('pdf', 'svg', 'eps'):\n"
+            "    fig.savefig(f'{sys.argv[1]}.{ext}')\n"
+        )
+        outputs = []
+        for index in range(2):
+            run_dir = self.root / f"render{index}"
+            run_dir.mkdir()
+            stem = run_dir / "plot"
+            subprocess.run(
+                [sys.executable, "-c", script, str(stem)],
+                env={**clean, "PATH": os.environ.get("PATH", "")},
+                cwd=run_dir, check=True,
+            )
+            outputs.append({
+                ext: (run_dir / f"plot.{ext}").read_bytes()
+                for ext in ("pdf", "svg", "eps")
+            })
+            if index == 0:
+                time.sleep(1.1)
+        for ext in ("pdf", "svg", "eps"):
+            self.assertEqual(outputs[0][ext], outputs[1][ext], ext)
+
     def test_environment_capture_uses_effective_venv_launcher(self) -> None:
         spec = importlib.util.spec_from_file_location("results_pipeline_capture_launcher", UTILITY)
         assert spec is not None and spec.loader is not None

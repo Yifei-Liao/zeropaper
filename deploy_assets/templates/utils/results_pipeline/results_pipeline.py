@@ -113,6 +113,12 @@ RUNTIME_ENV_KEYS = {
     "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS", "CUDA_VISIBLE_DEVICES",
 }
 INTERNAL_ENV_KEYS = {"RESULTS_BUNDLE_PATH", "RESULTS_EXHIBIT_ROOT", "RESULTS_LIVE_SERVICES"}
+# Pinned for every trusted run so `verify --rerender` can demand byte-identical
+# exhibits. Matplotlib stamps the wall clock into PDF/PS/SVG metadata unless
+# SOURCE_DATE_EPOCH is set, and salts SVG element ids with a fresh uuid unless
+# svg.hashsalt is configured; either one makes a faithful rerender differ.
+REPRODUCIBLE_RUNTIME_ENV = {"SOURCE_DATE_EPOCH": "0"}
+REPRODUCIBLE_MATPLOTLIBRC = "svg.hashsalt: zeropaper-results-pipeline\n"
 # Live services a run plan may declare (issue #307). A trusted run is
 # default-deny: a service's host-side state -- for WRDS, the daemon's Unix
 # socket, relay token, and client cache -- is exposed to the producer only when
@@ -2946,8 +2952,12 @@ def isolated_runtime(command: list[str], root: Path, cwd: Path,
         clean["VIRTUAL_ENV"] = str(neutral_venv)
     else:
         clean.pop("VIRTUAL_ENV", None)
+    clean.update(REPRODUCIBLE_RUNTIME_ENV)
     for raw in (clean["TMPDIR"], clean["XDG_CACHE_HOME"], clean["MPLCONFIGDIR"]):
         Path(raw).mkdir(parents=True, exist_ok=True)
+    (Path(clean["MPLCONFIGDIR"]) / "matplotlibrc").write_text(
+        REPRODUCIBLE_MATPLOTLIBRC, encoding="utf-8"
+    )
     runtime_roots = venv_base_roots(venv, root) if has_venv else []
     return rewritten, clean, (venv if has_venv else None), runtime_roots
 
@@ -3227,6 +3237,7 @@ def execute(command: list[str], cwd: Path, *, bundle_path: str | None = None,
     environment = os.environ.copy()
     environment["PWD"] = str(cwd)
     environment.pop("OLDPWD", None)
+    environment.update(REPRODUCIBLE_RUNTIME_ENV)
     # Always set, so code inside any trusted run can tell an undeclared
     # service from an unreachable one and say which (issue #307).
     environment["RESULTS_LIVE_SERVICES"] = ",".join(services)
