@@ -771,6 +771,24 @@ class EmpiricalInputManifestTests(unittest.TestCase):
         self.assertEqual(entries[analysis]["status"], "EXCLUDED_RETIRED")
         self.assertEqual(entries[analysis]["lifecycle"], "retired")
 
+    def test_check_all_excludes_retired_exact_stem_retry_analysis(self) -> None:
+        # docs/stage_3a_empirical.md appends `_aK` to a caller-named exact
+        # stem (empirical_analysis -> empirical_analysis_a2). Regression: the
+        # `_v`-only name grammar rejected the retired retry as a namespace
+        # collision and halted the run (halted_replication_artifact_collision).
+        analysis = "output/stage3a/empirical_analysis_a2.md"
+        (self.project / analysis).write_text(self.report.read_text())
+        self.register_analysis(analysis, "retired")
+        inventory = self.run_tool("check-all")
+        self.assertEqual(inventory["artifact_errors"], [])
+        self.assertEqual(inventory["status"], "UNCHANGED")
+        entries = {item["analysis"]: item for item in inventory["analyses"]}
+        self.assertEqual(entries[analysis]["status"], "EXCLUDED_RETIRED")
+        paths = self.run_tool("paths", "--analysis", analysis)
+        self.assertEqual(
+            paths["verify_script"], "output/stage3a/verification/empirics_verify_a2.py"
+        )
+
     def test_check_all_checks_pending_analysis(self) -> None:
         analysis = "output/stage3a/empirical_analysis_v2_a2.md"
         (self.project / analysis).write_text(self.report.read_text())

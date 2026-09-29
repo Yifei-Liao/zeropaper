@@ -31,8 +31,8 @@ DEFAULT_REPORT = Path("output/stage3a/empirical_analysis.md")
 DEFAULT_RESULT = Path("output/stage3a/empirics_verify_result.json")
 RESULTS_REGISTRY = Path("process_log/results_registry.json")
 RESULTS_LOCK = Path("process_log/results_pipeline.lock")
-ANALYSIS_NAME = re.compile(r"^empirical_analysis(?:_v[A-Za-z0-9][A-Za-z0-9_.-]*)?\.md$")
-VERIFIER_NAME = re.compile(r"^empirics_verify(?:_v[A-Za-z0-9][A-Za-z0-9_.-]*)?\.py$")
+ANALYSIS_NAME = re.compile(r"^empirical_analysis(?:_[va][A-Za-z0-9][A-Za-z0-9_.-]*)?\.md$")
+VERIFIER_NAME = re.compile(r"^empirics_verify(?:_[va][A-Za-z0-9][A-Za-z0-9_.-]*)?\.py$")
 TOLERANCE_CLASSES = {
     "returns_spreads_coefficients": ("relative", 0.01),
     "moments": ("relative", 0.005),

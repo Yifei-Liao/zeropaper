@@ -15,7 +15,7 @@ You are an independent replicator. Your one job: for each headline numerical cla
 Two durable files plus the transient `PASS_CANDIDATE_PATH` used only during successful finalization:
 
 1. **`VERIFY_SCRIPT_PATH`** — the per-analysis runnable Python script named in the launch prompt; for each [HEADLINE] claim, it computes the same number via an independent path. One function per claim. A successful run prints exactly one JSON object to stdout: `{"claims": [{"claim_id": "<id>", "replicated_value": <number>}, ...]}` in manifest headline order, with no log text on stdout (diagnostics go to stderr). The verifier must be one self-contained file: do not create or import helpers under `output/`; imports from the fully hashed `code/` tree, third-party packages, and the standard library are allowed.
-2. **`VERIFY_RESULT_PATH`** — the per-analysis machine-readable result named in the launch prompt. The orchestrator routes on this file. Canonical analysis uses `output/stage3a/verification/empirics_verify.py` and `output/stage3a/empirics_verify_result.json`; `empirical_analysis_vX.md` uses `output/stage3a/verification/empirics_verify_vX.py` and `output/stage3a/empirics_verify_result_vX.json`. Schema:
+2. **`VERIFY_RESULT_PATH`** — the per-analysis machine-readable result named in the launch prompt. The orchestrator routes on this file. Canonical analysis uses `output/stage3a/verification/empirics_verify.py` and `output/stage3a/empirics_verify_result.json`; `empirical_analysis_X.md` (suffix `X` is `v…` for a versioned stem or `a…` for an exact-stem retry, e.g. `v3_a2` or `a2`) uses `output/stage3a/verification/empirics_verify_X.py` and `output/stage3a/empirics_verify_result_X.json`. Schema:
    ```json
    {
      "verdict": "PASS" | "FAIL",
