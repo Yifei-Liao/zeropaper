@@ -49,10 +49,23 @@ runs it, so the bound does not rest on the auditor's own discipline.
 Stage 3a data-integrity, data-selection, or coverage report and exits 1 if any
 row was carried (``Evidence`` cell ``carried (v{N}_a{K})``) over a source probe
 that is not the source's own update marker (``Source probe`` cell not starting
-``marker:``).  Carried evidence over a marker-less source may ride through
-repair rounds but never reaches acceptance (issue #347): an in-place value
-revision at such a source changes neither the cache bytes nor the identifier
-list, so the orchestrator re-fires the auditor in full before activation.
+``marker:``), or if any row's ``Evidence`` is neither ``live`` nor ``carried``
+(a ``not verified`` unit whose live leg did not complete).  Carried evidence
+over a marker-less source may ride through repair rounds but never reaches
+acceptance (issue #347): an in-place value revision at such a source changes
+neither the cache bytes nor the identifier list, so the orchestrator re-fires
+the auditor in full before activation.
+
+``carry-diff --prior-spec A --spec B`` decides whether any audit row may carry
+across a specification revision.  It splits both files at depth 3 and prints
+``blocking`` — every section added, removed, or changed anywhere but inside
+its own ``### `` subsections (its ``(preamble)`` text, a section with no
+subsections, the document preamble), except the changelog and the sections in
+``CARRY_BLIND_SECTIONS``, which govern no construction or validation — and
+``subsections_changed``, the ``### `` entries that differ or exist on one side
+only.  Exit 1 with a non-empty ``blocking`` list means nothing carries across
+this revision; otherwise a changed subsection disqualifies only the rows that
+bind it or whose unit it names (the auditor's own name scan).
 
 ``census-carry --prior-certificate C --prior-certificate-sha256 H --spec S --rights R --dataset-version N
 --out O`` re-binds an accepted PASS coverage certificate to a new spec version
@@ -275,16 +288,55 @@ def acceptance_carries(report):
         raise ScopeError(f"report {report}: scope table has no Evidence column")
     evidence = header.index("evidence")
     probe = header.index("source probe") if "source probe" in header else None
-    unmarked = []
+    unmarked, unverified = [], []
     for cells in rows[2:]:
         if len(cells) != len(header):
             raise ScopeError(f"report {report}: scope table row has {len(cells)} cells, "
                              f"header has {len(header)}")
-        if not cells[evidence].strip("`* ").lower().startswith("carried"):
+        state = cells[evidence].strip("`* ").lower()
+        if state.startswith("live"):
+            continue
+        if not state.startswith("carried"):
+            unverified.append(cells[0])
             continue
         if probe is None or not PROBE_MARKER.match(cells[probe]):
             unmarked.append(cells[0])
-    return unmarked
+    return unmarked, unverified
+
+
+# Spec sections that govern no construction or validation rule, so a change
+# there never bears on an audit row's carried evidence.  The changelog section
+# (heading starts "Changelog") differs on every revision by construction.
+CARRY_BLIND_SECTIONS = frozenset({"One-sentence contribution", "Incumbent comparison"})
+CHANGELOG_HEADING = re.compile(r"changelog\b", re.IGNORECASE)
+
+
+def carry_diff(prior_spec, spec):
+    """Sections whose change refuses every cross-version carry, and changed subsections."""
+    before, after = document_sections(prior_spec, 3), document_sections(spec, 3)
+    sections_a, sections_b = dict(before["sections"]), dict(after["sections"])
+    subs_a, subs_b = dict(before["subsections"]), dict(after["subsections"])
+
+    def blind(key):
+        base = key.split("#")[0]
+        return base in CARRY_BLIND_SECTIONS or bool(CHANGELOG_HEADING.match(base))
+
+    def children(subs, key):
+        return {k: v for k, v in subs.items() if k.startswith(key + " / ")}
+
+    blocking, changed = [], []
+    for key in sorted(sections_a.keys() | sections_b.keys(), key=lambda k: (k != "(preamble)", k)):
+        if blind(key) or sections_a.get(key) == sections_b.get(key):
+            continue
+        kids_a, kids_b = children(subs_a, key), children(subs_b, key)
+        preamble = key + " / (preamble)"
+        if (key not in sections_a or key not in sections_b or not kids_a or not kids_b
+                or kids_a.get(preamble) != kids_b.get(preamble)):
+            blocking.append(key)
+            continue
+        changed.extend(sorted(k for k in kids_a.keys() | kids_b.keys()
+                              if k != preamble and kids_a.get(k) != kids_b.get(k)))
+    return {"blocking": blocking, "subsections_changed": changed}
 
 
 def read_block(report):
@@ -454,6 +506,9 @@ def main(argv=None):
     sections_cmd.add_argument("--depth", type=int, default=2, choices=(2, 3))
     carries_cmd = sub.add_parser("acceptance-carries")
     carries_cmd.add_argument("--report", required=True)
+    diff_cmd = sub.add_parser("carry-diff")
+    diff_cmd.add_argument("--prior-spec", required=True)
+    diff_cmd.add_argument("--spec", required=True)
     depth_cmd = sub.add_parser("depth")
     depth_cmd.add_argument("--prior-report", required=True)
     depth_cmd.add_argument("--report", required=True)
@@ -479,12 +534,20 @@ def main(argv=None):
         return 0
     if args.command == "acceptance-carries":
         try:
-            unmarked = acceptance_carries(args.report)
+            unmarked, unverified = acceptance_carries(args.report)
         except ScopeError as exc:
             print(f"spec_audit_scope: {exc}; re-fire the auditor in full", file=sys.stderr)
             return 2
-        print(json.dumps({"carried_without_marker": unmarked}, indent=2))
-        return 1 if unmarked else 0
+        print(json.dumps({"carried_without_marker": unmarked, "not_verified": unverified}, indent=2))
+        return 1 if unmarked or unverified else 0
+    if args.command == "carry-diff":
+        try:
+            result = carry_diff(args.prior_spec, args.spec)
+        except ScopeError as exc:
+            print(f"spec_audit_scope: {exc}; nothing carries across this revision", file=sys.stderr)
+            return 2
+        print(json.dumps(result, indent=2))
+        return 1 if result["blocking"] else 0
     if args.command == "depth":
         try:
             result = depth(args.prior_report, args.report)

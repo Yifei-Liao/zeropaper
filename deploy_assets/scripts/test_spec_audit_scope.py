@@ -241,6 +241,11 @@ def main():
         out = run("acceptance-carries", "--report", str(rep))
         check("acceptance-carries flags a snapshot-named carry over an identifier-list probe",
               out.returncode == 1 and json.loads(out.stdout)["carried_without_marker"] == ["crsp"])
+        rep.write_text(scope_report(["| crsp | sha256:aa | marker: x | not verified |",
+                              "| fomc | sha256:bb | marker: y | live (not re-checked) |"]))
+        out = run("acceptance-carries", "--report", str(rep))
+        check("acceptance-carries flags a row whose live leg did not complete",
+              out.returncode == 1 and json.loads(out.stdout) == {"carried_without_marker": [], "not_verified": ["crsp"]})
         rep.write_text(scope_report(["| crsp | sha256:aa | `marker: v7` | **carried (round 1)** |",
                               "| fomc | sha256:bb | ids-sha256:cc | carried (round 2) |"]))
         out = run("acceptance-carries", "--report", str(rep))
@@ -257,6 +262,39 @@ def main():
         rep.write_text(scope_report(["| crsp | sha256:aa | marker: x |"]))
         check("acceptance-carries on a ragged row exits 2",
               run("acceptance-carries", "--report", str(rep)).returncode == 2)
+
+    print()
+    print("[carry-diff] which spec changes refuse a cross-version carry")
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        base = ("# D\n\n## Changelog v1 -> v2\nwhat changed\n\n## One-sentence contribution\nold\n\n"
+                "## Validation plan\nshared rule\n### Class spine\nsessions\n### Class dst\nclock changes\n\n"
+                "## Inclusion rules\nglobal window 1990-2024\n")
+        a, b = tmp / "v1.md", tmp / "v2.md"
+        a.write_text(base)
+        b.write_text(base.replace("Changelog v1 -> v2", "Changelog v2 -> v3").replace("old", "new")
+                     .replace("clock changes", "clock changes, 1974 excluded"))
+        out = run("carry-diff", "--prior-spec", str(a), "--spec", str(b))
+        check("a changelog, contribution-sentence, and one-subsection change blocks nothing and names the subsection",
+              out.returncode == 0 and json.loads(out.stdout) == {"blocking": [], "subsections_changed": ["Validation plan / Class dst"]})
+        b.write_text(base.replace("1990-2024", "1985-2024"))
+        out = run("carry-diff", "--prior-spec", str(a), "--spec", str(b))
+        check("a changed section without subsections blocks every carry",
+              out.returncode == 1 and json.loads(out.stdout)["blocking"] == ["Inclusion rules"])
+        b.write_text(base.replace("shared rule", "shared rule, tightened"))
+        out = run("carry-diff", "--prior-spec", str(a), "--spec", str(b))
+        check("a changed section preamble above its subsections blocks every carry",
+              out.returncode == 1 and json.loads(out.stdout)["blocking"] == ["Validation plan"])
+        b.write_text(base + "## Construction staging\ndefer dst\n")
+        out = run("carry-diff", "--prior-spec", str(a), "--spec", str(b))
+        check("an added section blocks every carry",
+              out.returncode == 1 and json.loads(out.stdout)["blocking"] == ["Construction staging"])
+        b.write_text("intro\n" + base)
+        out = run("carry-diff", "--prior-spec", str(a), "--spec", str(b))
+        check("a changed document preamble blocks every carry",
+              out.returncode == 1 and json.loads(out.stdout)["blocking"] == ["(preamble)"])
+        check("carry-diff on a missing file exits 2",
+              run("carry-diff", "--prior-spec", str(a), "--spec", str(tmp / "absent.md")).returncode == 2)
 
     print()
     print("[census-carry] re-bind a PASS certificate when only census-blind sections changed")
