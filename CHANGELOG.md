@@ -16,6 +16,20 @@ going forward; `setup.sh` stamps `<version>+<git-hash>` into every deployment.
 
 ---
 
+## 2.56.0
+
+**Field fixes from the live data-first runs (Sep 25–30), versioned together.** 53 commits landed on `main` from the run box without a version, plus 4 babysitter fixes reviewed and completed here.
+- **Audit carry across a `theory_version` bump.** An audit row whose evidence scope is byte-identical — including the spec file's digest — carries across a version bump; a name-scanned spec diff gates it, and unverified rows block PASS. `PRIOR_AUDIT_REPORT` is passed by rule from a named step-8 snapshot. Scope-digest auditors keep one `## Scope digests` table.
+- **Release-only repair.** A pending release member can retire alone (`--superseded-by` rejected there), with a repair-scope line and a LIMITATIONS entry; the rule governs every batch route. Per-attempt full verification of the active pair is replaced by a code-closure digest check.
+- **Registry speed.** `results_pipeline` registry commands run in seconds instead of tens of minutes (memoized registry, content digests in dependency signatures); `inspect-registry` timeout 60s → 600s.
+- **Construction guard.** Advisory precheck on smoke outputs before the live run, with digest- and path-column floors so the precheck predicts the live check; a bare integer column is no longer read as a source reference.
+- **Empiricist.** Fetch from the origin with an identified User-Agent before any mirror; retry budgets sized to what a failure costs; expensive derivations paid once, smoke runs small in rows but never in coverage; long resampling across cores with byte-identical results; digests hashed in the run (copied digests fail the guard); Monte Carlo headlines need simulation noise below tolerance; publish the constructed sets a headline is computed on; fix and report the whole class a finding names (also data-selection-auditor).
+- **Coverage census.** Digest-verified origin fetches are the default; one fetcher per output file; no PID-based stale locks; coverage-auditor tries the sibling endpoint of the same index before calling an enumerator unreachable.
+- **Stage 3a.** Staged follow-ups fork shared code instead of editing it; release-bound code is forked on every re-fire and the active release pre-verified.
+- **Seeded Gate 4.** Correctness returns are capped by `loops.gate4_correctness_return`.
+- **Runtime hygiene.** Stall-check cron no longer double-fires; `launch.sh` seeds scheduled tasks and exports `PYTHONDONTWRITEBYTECODE=1`; background jobs end with the step that started them; gitignore covers `code/tmp/` data, acquisition locks, auditor rerun trees.
+- **Babysitter fixes (reviewed).** `empirical_input_manifest` accepts the doc-sanctioned exact-stem retry names `_aK` (K numeric; `_a` followed by non-digits is rejected) and no longer hard-requires `code/empirical.py` — the fresh-attempt transition names a new entrypoint per attempt, the receipt binds which ran, and every file under `code/` is still hashed; an empty `code/` fails closed. Trusted runs pin `SOURCE_DATE_EPOCH=0` and a fixed SVG hash salt so re-renders are byte-identical. Two effects to know: producer analysis runs also see `SOURCE_DATE_EPOCH=0`, so code reading it gets 1970; and receipts produced before 2.56.0 with timestamped exhibits will not pass `verify --rerender` — re-produce them rather than re-verify.
+
 ## 2.55.0
 
 **Fewer redundant paper-evidence checks, and data-first docs that describe data-first.**

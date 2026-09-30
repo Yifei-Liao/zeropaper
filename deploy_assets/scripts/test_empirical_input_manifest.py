@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -788,6 +789,34 @@ class EmpiricalInputManifestTests(unittest.TestCase):
         self.assertEqual(
             paths["verify_script"], "output/stage3a/verification/empirics_verify_a2.py"
         )
+
+    def test_exact_stem_retry_grammar_requires_numeric_attempt(self) -> None:
+        for name in ("empirical_analysis_attack.md", "empirical_analysis_a.md",
+                     "empirical_analysis_a2x.md"):
+            analysis = f"output/stage3a/{name}"
+            (self.project / analysis).write_text(self.report.read_text())
+            outcome = self.run_tool("paths", "--analysis", analysis, check=False)
+            self.assertNotEqual(outcome["returncode"], 0, name)
+        for name in ("empirical_analysis_a12.md", "empirical_analysis_a2_rerun.md",
+                     "empirical_analysis_v3_a2.md"):
+            self.run_tool("paths", "--analysis", f"output/stage3a/{name}")
+
+    def test_manifest_needs_no_code_empirical_py(self) -> None:
+        (self.project / "code" / "empirical.py").unlink()
+        (self.project / "code" / "empirical_v1_a2.py").write_text("print(1)\n")
+        manifest = self.run_tool("snapshot")
+        files = manifest["code_files"]
+        self.assertNotIn("code/empirical.py", files)
+        self.assertIn("code/empirical_v1_a2.py", files)
+
+    def test_empty_code_surface_fails_closed(self) -> None:
+        spec = importlib.util.spec_from_file_location("eim_under_test", SCRIPT)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as empty:
+            (Path(empty) / "code").mkdir()
+            with self.assertRaises(module.ManifestError):
+                module._code_surface(Path(empty))
 
     def test_check_all_checks_pending_analysis(self) -> None:
         analysis = "output/stage3a/empirical_analysis_v2_a2.md"

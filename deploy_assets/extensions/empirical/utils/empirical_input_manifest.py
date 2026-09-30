@@ -31,8 +31,8 @@ DEFAULT_REPORT = Path("output/stage3a/empirical_analysis.md")
 DEFAULT_RESULT = Path("output/stage3a/empirics_verify_result.json")
 RESULTS_REGISTRY = Path("process_log/results_registry.json")
 RESULTS_LOCK = Path("process_log/results_pipeline.lock")
-ANALYSIS_NAME = re.compile(r"^empirical_analysis(?:_[va][A-Za-z0-9][A-Za-z0-9_.-]*)?\.md$")
-VERIFIER_NAME = re.compile(r"^empirics_verify(?:_[va][A-Za-z0-9][A-Za-z0-9_.-]*)?\.py$")
+ANALYSIS_NAME = re.compile(r"^empirical_analysis(?:_(?:v[A-Za-z0-9][A-Za-z0-9_.-]*|a[0-9]+(?:_[A-Za-z0-9][A-Za-z0-9_.-]*)?))?\.md$")
+VERIFIER_NAME = re.compile(r"^empirics_verify(?:_(?:v[A-Za-z0-9][A-Za-z0-9_.-]*|a[0-9]+(?:_[A-Za-z0-9][A-Za-z0-9_.-]*)?))?\.py$")
 TOLERANCE_CLASSES = {
     "returns_spreads_coefficients": ("relative", 0.01),
     "moments": ("relative", 0.005),
@@ -183,7 +183,12 @@ def artifact_paths(analysis_path: Path) -> dict[str, str]:
 
 
 def _code_surface(project_root: Path) -> list[Path]:
-    """Return every regular file under code/."""
+    """Return every regular file under code/.
+
+    No particular entrypoint name is required: the fresh-attempt transition
+    assigns a new ANALYSIS_ENTRYPOINT per attempt, and the results receipt,
+    not this manifest, binds which entrypoint ran. Hashing every regular file
+    still catches any deletion, rename, or edit as code drift."""
     code_root = project_root / "code"
     discovered: list[Path] = []
     def fail_walk(error: OSError) -> None:
