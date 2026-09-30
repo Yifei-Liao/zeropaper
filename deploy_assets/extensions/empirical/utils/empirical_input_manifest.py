@@ -185,7 +185,6 @@ def artifact_paths(analysis_path: Path) -> dict[str, str]:
 def _code_surface(project_root: Path) -> list[Path]:
     """Return every regular file under code/."""
     code_root = project_root / "code"
-    _regular_file_bytes(code_root / "empirical.py", project_root)
     discovered: list[Path] = []
     def fail_walk(error: OSError) -> None:
         raise ManifestError(f"cannot enumerate complete code surface: {error}")
@@ -203,6 +202,8 @@ def _code_surface(project_root: Path) -> list[Path]:
             child = directory_path / name
             _regular_file_bytes(child, project_root)
             discovered.append(child)
+    if not discovered:
+        raise ManifestError("code surface is empty: no regular files under code/")
     return sorted(discovered, key=lambda path: path.relative_to(project_root).as_posix())
 
 
