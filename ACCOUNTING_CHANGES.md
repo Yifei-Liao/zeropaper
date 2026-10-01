@@ -21,6 +21,13 @@ TAR / JAR / JAE; `field` means RAS / CAR / Management Science).
   bar; submission tier; scorer anchors; and four domain-example keys added as
   finance overrides (`CROSS_SUBFIELD_SCOPE`, `EDITOR_WRONG_FIELD_EXAMPLE`,
   `EDITOR_DOMAIN_SUFFICIENT_EXAMPLES`, `EDITOR_ADJACENT_EXAMPLE`).
+- Literature scouting (`literature-scout`, `gap-scout`), via four more finance
+  vocab overrides (`LIT_SCOUT_FIELD`, `SCOUT_FRONTIER_BULLET`,
+  `GAP_FRESHNESS_BULLET`, `SCOUT_WP_CLAUSE`): the pre-publication frontier and
+  gap-freshness checks now read accounting conference programs (JAR, JAE, RAS,
+  CAR conferences; AAA Annual Meeting and section midyears; Stanford Summer
+  Camp; LBS Symposium; EAA Congress) and SSRN's accounting eJournals first,
+  keeping NBER agendas for finance- and economics-adjacent questions.
 - Shared agent bodies: `editor.md`, `referee-freeform.md`, `paper-writer.md`,
   `polish-identification.md`,
   `shared_modes/empirical_first/identification-designer-core.md`.
