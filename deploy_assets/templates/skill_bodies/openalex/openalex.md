@@ -50,6 +50,7 @@ Add `--abstracts` to pull and reconstruct each work's abstract from OpenAlex's i
 ## Venue aliases
 
 ```
+Accounting: no alias; pass the source IDs (TAR S160506855, JAR S111116695, JAE S62142384, RAS S11853582, CAR S65924262)
 Finance:    jf, jfe, rfs, jfqa, raps, rcfs, ms
 Economics:  aer, qje, jpe, ecma, restud
 Macro:      jme
@@ -63,6 +64,10 @@ Run `openalex.py venues` to see resolved source IDs and works counts. You can al
 ## Common patterns
 
 ```bash
+# Top-cited papers in TAR/JAR/JAE on a topic, last 10 years (source IDs)
+code/utils/openalex/openalex.py search "audit quality" \
+    --venue S160506855,S111116695,S62142384 --years 2015-2026 --top 25 --sort cited
+
 # Top-cited papers in JF/JFE/RFS on a topic, last 10 years
 code/utils/openalex/openalex.py search "intermediary asset pricing" \
     --venue jf,jfe,rfs --years 2015-2026 --top 25 --sort cited
