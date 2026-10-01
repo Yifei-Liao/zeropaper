@@ -279,7 +279,7 @@ The `style` agent enforces these (and more) during autonomous review and the pol
 <!-- EMPIRICAL_FIRST_START -->
 <!-- AUTONOMOUS_START -->
 - **No numerical claims outside rendered Stage 3a / 3b exhibits.** Every coefficient, standard error, sample-size figure, calibration number, descriptive statistic, or comparison must be visible in a rendered table/figure under `output/stage3a/` or `output/stage3b/`. If it is absent, write `[NEEDS <PRODUCER>: exhibit for description]`, naming the owner. The only exception is a fulfilled exceptional-direct-result request already registered in an active bundle/receipt and destined for the auditor's `exceptional_direct_results`; consult only that exact result. Otherwise do not draft the number, consult JSON, or write/run scripts. (Stage 2b does not run under empirical-first.)
-- **Length:** empirical finance papers in top-3 journals run 35-50 pages including tables, figures, and main-text appendix; allocate the budget between identification.tex / results.tex / mechanism.tex / robustness.tex with the bulk of the budget on results + robustness. Internet appendix can hold additional tables.
+- **Length:** empirical accounting papers in top journals run 35-50 pages including tables, figures, and main-text appendix; allocate the budget between identification.tex / results.tex / mechanism.tex / robustness.tex with the bulk of the budget on results + robustness. Internet appendix can hold additional tables.
 <!-- AUTONOMOUS_END -->
 <!-- EMPIRICAL_FIRST_END -->
 <!-- DATA_FIRST_START -->
