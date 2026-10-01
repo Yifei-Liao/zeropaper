@@ -1,10 +1,10 @@
 | Target tier | Examples | Advance | Revise | Rework | Abandon |
 |-------------|----------|---------|--------|--------|---------|
 | **top-5** | AER, Econometrica, QJE, JPE, ReStud | 80+ | 60-79 | 40-59 | <40 |
-| **top-3-fin** | JF, JFE, RFS, JF Insights & Perspectives (JFIP) | 75+ | 55-74 | 35-54 | <35 |
-| **field** | JFQA, Review of Finance, Management Science | 65+ | 45-64 | 30-44 | <30 |
+| **top-3-fin** | TAR, JAR, JAE | 75+ | 55-74 | 35-54 | <35 |
+| **field** | Review of Accounting Studies, Contemporary Accounting Research, Management Science | 65+ | 45-64 | 30-44 | <30 |
 | **letters** | Economics Letters | 55+ | 40-54 | 25-39 | <25 |
 
 ## Outlet notes
 
-**JF Insights & Perspectives (JFIP)** — AFA-published sister journal to *Journal of Finance*, submission portal opened January 2026. Placed in the **top-3-fin** tier on a quality-bar read: the AFA frames JFIP as JF-equivalent, so a paper must clear a JF-level bar to get in — it is simply the short-format route, not a lower-quality one. The tier placement reflects the **quality bar the paper must clear**, not CV/tenure weight. Format constraints: ≤7,000 words main text, ≤5 exhibits (each reduces budget by 200 words), single-insight, in-or-out review (no R&R). Within top-3-fin, it is the best-fit outlet for a paper that is tight, single-mechanism, and already fits these caps as written; sprawling multi-mechanism papers that clear the top-3 bar go to JF/JFE/RFS, not JFIP.
+**Tier names in this accounting build.** The tier keys keep their original names: `top-3-fin` means the top-3 accounting journals (The Accounting Review, Journal of Accounting Research, Journal of Accounting and Economics), and `field` means the next rung (Review of Accounting Studies, Contemporary Accounting Research, Management Science). No short-format outlet sits in these tiers, so format-fit never changes the within-tier outlet choice.
