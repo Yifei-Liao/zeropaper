@@ -309,10 +309,10 @@ _setup_config_resolve_variant_descriptors() {
     NUMERICAL_VERIFICATION_BULLET="Don't settle for numerical verification of what should be a theorem."
     case "$VARIANT" in
         finance)
-            PAPER_TYPE="finance theory paper"
-            TARGET_JOURNALS="top-3 finance journal (JF, JFE, RFS)"
-            DOMAIN_AREAS="finance — asset pricing, corporate finance, information economics, market design, financial intermediation, banking, household finance, and behavioral finance. Scope is broad, and the following are SUFFICIENT (not necessary) conditions: a model involving an asset market, a firm or manager optimizing value, risk (borne, shared, or priced), banks/credit/lending, or households allocating across assets is in finance scope even when the topic looks like IO, information economics, or regulation. These are sufficient, not necessary — a paper can be finance without any of them."
-            JOURNAL_LIST="Top-3 finance: JF, JFE, RFS, JF Insights & Perspectives (JFIP — top-3-fin tier on quality bar, JF-equivalent standard; CV credit lags; ≤7k words, single-insight, no R&R). Also: Review of Finance, Management Science, JFQA. Top accounting: JAR, JAE, TAR, RAS. Top-5 econ: AER, Econometrica, QJE, JPE, ReStud."
+            PAPER_TYPE="accounting theory paper"
+            TARGET_JOURNALS="top accounting journal (TAR, JAR, JAE)"
+            DOMAIN_AREAS="accounting — financial reporting and disclosure, auditing and assurance, accounting standard setting and regulation, taxation, managerial accounting and corporate governance, information intermediaries (auditors, analysts, rating agencies, data vendors), and the capital-market consequences of accounting information (investor processing, liquidity, cost of capital). Scope is broad, and the following are SUFFICIENT (not necessary) conditions: a question about how accounting or financial-reporting information is produced, verified, disclosed, regulated, or used; about auditors or other information intermediaries; or about firms' reporting, disclosure, or tax choices is in accounting scope even when the topic looks like finance, IO, information economics, or law. These are sufficient, not necessary — a paper can be accounting without any of them."
+            JOURNAL_LIST="Top accounting (the top-3-fin tier in this accounting build): The Accounting Review (TAR), Journal of Accounting Research (JAR), Journal of Accounting and Economics (JAE). Next rung (the field tier): Review of Accounting Studies (RAS), Contemporary Accounting Research (CAR), Management Science. Also relevant: top-3 finance (JF, JFE, RFS) and top-5 econ (AER, Econometrica, QJE, JPE, ReStud)."
             AGENT_DIR="finance"
             MECHANISM_QUALIFIER="economic"
             MECHANISM_QUALIFIER_AN="an economic"
@@ -322,7 +322,7 @@ _setup_config_resolve_variant_descriptors() {
             INITIAL_TIER="top-3-fin"
             TIER_LADDER_PROSE='top-5 → top-3-fin → field → letters'
             TIER_LIST_INLINE='`top-5`, `top-3-fin`, `field`, `letters`'
-            TIER_DOWNGRADE_EXAMPLES='for `top-3-fin`: JF, JFE, RFS, JF Insights \& Perspectives; for `field`: JFQA, Review of Finance, Management Science; for `letters`: Economics Letters'
+            TIER_DOWNGRADE_EXAMPLES='for `top-3-fin`: TAR, JAR, JAE; for `field`: Review of Accounting Studies, Contemporary Accounting Research, Management Science; for `letters`: Economics Letters'
             ;;
         macro)
             PAPER_TYPE="macroeconomics theory paper"
@@ -389,7 +389,7 @@ _setup_config_apply_mode_descriptors() {
     if [ "$MODE" = "empirical-first" ]; then
         case "$VARIANT" in
             finance)
-                PAPER_TYPE="causal-identification empirical finance paper"
+                PAPER_TYPE="causal-identification empirical accounting paper"
                 DOMAIN_AREAS="empirical finance — asset pricing, corporate finance, information economics, market design, financial intermediation, or behavioral finance — with the contribution resting on a credibly-identified causal estimand plus a prose+DAG mechanism"
                 DOC_SUBTITLE="Autonomous Empirical Paper Pipeline"
                 ;;
@@ -397,7 +397,7 @@ _setup_config_apply_mode_descriptors() {
     elif [ "$MODE" = "data-first" ]; then
         case "$VARIANT" in
             finance)
-                PAPER_TYPE="data-contribution finance paper"
+                PAPER_TYPE="data-contribution accounting paper"
                 DOMAIN_AREAS="empirical finance data infrastructure — the contribution is an open, documented, validated dataset (with full per-source provenance, explicit construction and dating conventions, and cross-source coverage triangulation) plus a portfolio of facts established on it: replications of known results, adjudications of published disagreements traceable to data construction, and new descriptive facts. In scope: any dataset serving asset pricing, corporate finance, market microstructure, financial intermediation, household finance, or macro-finance research."
                 DOC_SUBTITLE="Autonomous Data Paper Pipeline"
                 ;;
