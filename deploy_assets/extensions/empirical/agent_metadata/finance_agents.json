@@ -40,7 +40,7 @@
   },
   "identification-auditor": {
     "name": "identification-auditor",
-    "description": "Adversarial audit of the identification strategy in an empirical finance plan. Launched at Stage 3a after the empiricist writes empirical_plan.md and before execution. Returns PASS / REVISE / FAIL with severity-ranked named failure modes (e.g., TWFE-staggered-no-robust-estimator, weak-iv-stockyogo-misuse, no-rd-manipulation-test). Does not audit code or data construction (empirics-auditor handles that). Checks estimand-vs-theory match. Returns OUT-OF-SCOPE for macro-style designs.",
+    "description": "Adversarial audit of the identification strategy in an empirical accounting plan. Launched at Stage 3a after the empiricist writes empirical_plan.md and before execution. Returns PASS / REVISE / FAIL with severity-ranked named failure modes (e.g., TWFE-staggered-no-robust-estimator, weak-iv-stockyogo-misuse, no-rd-manipulation-test). Does not audit code or data construction (empirics-auditor handles that). Checks estimand-vs-theory match. Returns OUT-OF-SCOPE for macro-style designs.",
     "category": "evaluator",
     "tools": "Read, Write",
     "model": "opus",
