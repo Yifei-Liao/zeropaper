@@ -6,7 +6,7 @@ If no argument was provided, the rest of this skill is a policy reference — re
 
 ## Purpose
 
-Policy + procedure for not reimplementing econometric methods that have canonical, author-maintained packages. Field-tier finance referees (JF / JFE / RFS) reject custom Python (or R / Stata) code that re-derives well-known estimators — they expect canonical implementations from canonical references. Custom code reproduces by definition but routinely disagrees with canonical defaults on small-sample corrections, bias adjustments, and edge cases. See [issue #36](https://github.com/alejandroll10/zeropaper/issues/36) for the motivating examples.
+Policy + procedure for not reimplementing econometric methods that have canonical, author-maintained packages. Field-tier accounting referees (TAR / JAR / JAE) reject custom Python (or R / Stata) code that re-derives well-known estimators — they expect canonical implementations from canonical references. Custom code reproduces by definition but routinely disagrees with canonical defaults on small-sample corrections, bias adjustments, and edge cases. See [issue #36](https://github.com/alejandroll10/zeropaper/issues/36) for the motivating examples.
 
 This skill **does not catalog packages.** It tells you (a) when to look one up, (b) where to look, and (c) how to document a deviation. The catalog of which package is canonical for which method is a moving target (new ports appear, old ones go unmaintained); you discover the current state on demand.
 
@@ -80,4 +80,4 @@ The corresponding entry in `output/stage3a/*.json` should mirror the justificati
 
 ## Coverage scope
 
-This skill is finance-focused (JF / JFE / RFS empirical work). Macro-identification methods (SVAR, HFI, narrative shocks, DSGE-aware estimators) and labor / IO methods are partially covered — most have canonical packages in the same way, but the agent's lookup may be less reliable. If you are working in those domains, give the method-checker's flags extra scrutiny and don't treat absence-of-flag as confirmation that no canonical exists.
+This skill is focused on empirical accounting and finance work (TAR / JAR / JAE, JF / JFE / RFS). Macro-identification methods (SVAR, HFI, narrative shocks, DSGE-aware estimators) and labor / IO methods are partially covered — most have canonical packages in the same way, but the agent's lookup may be less reliable. If you are working in those domains, give the method-checker's flags extra scrutiny and don't treat absence-of-flag as confirmation that no canonical exists.
